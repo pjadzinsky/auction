@@ -47,10 +47,11 @@ class MyHTMLParser(HTMLParser):
 
 
 if __name__ == "__main__":
-    url_file = '/Users/pjadzinsky/PycharmProjects/auction/urls/20190901_mountain_view.html'
+    url_files = ['/Users/pjadzinsky/PycharmProjects/auction/urls/20190901_palo_alto.html',
+                 '/Users/pjadzinsky/PycharmProjects/auction/urls/20190901_mountain_view.html']
     parser = MyHTMLParser()
-    print(1)
-    for line in open(url_file):
-        parser.feed(line)
-    print(parser.df.head())
-    parser.df.to_csv('/tmp/url.csv')
+    for url_file in url_files:
+        for line in open(url_file):
+            parser.feed(line)
+        print(parser.df.head())
+        parser.df.to_csv('/tmp/url.csv')
