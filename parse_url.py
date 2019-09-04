@@ -1,4 +1,7 @@
+from datetime import datetime
 from html.parser import HTMLParser
+import os
+
 import pandas as pd
 import re
 
@@ -46,12 +49,20 @@ class MyHTMLParser(HTMLParser):
         print('New column found:', self.column)
 
 
-if __name__ == "__main__":
-    url_files = ['/Users/pjadzinsky/PycharmProjects/auction/urls/20190901_palo_alto.html',
-                 '/Users/pjadzinsky/PycharmProjects/auction/urls/20190901_mountain_view.html']
+def process_html_files(files, output_name=None):
+    if not output_name:
+        today_str = datetime.strftime(datetime.today(), '%Y%m%d')
+        output_name = os.path.join('csv', '{}.csv'.format(today_str))
+
     parser = MyHTMLParser()
-    for url_file in url_files:
+    for url_file in files:
         for line in open(url_file):
             parser.feed(line)
         print(parser.df.head())
-        parser.df.to_csv('/tmp/url.csv')
+        parser.df.to_csv(output_name, sep='\t')
+
+
+if __name__ == "__main__":
+    url_files = ['/Users/pjadzinsky/PycharmProjects/auction/urls/20190901_palo_alto.html',
+                 '/Users/pjadzinsky/PycharmProjects/auction/urls/20190901_mountain_view.html']
+    process_html_files(url_files)
