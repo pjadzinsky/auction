@@ -3,3 +3,5 @@ __pycache__
 chromedriver
 going_headless
 **/*.js
+**/*.xml
+**/*.iml
