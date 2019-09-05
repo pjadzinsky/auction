@@ -3,22 +3,91 @@
     I found the element in the html that when I hover over, highlights the whole table of properties.
     Then copy pasted the html into 'urls' folder
 2. Pass those files to parse_url.process_html_files(files)
-    This step generates csv/<date>.csv with all data from auction.com
+    This step generates from_auction/<date>.from_auction with all data from auction.com
 3. How do we know if auction finished succesfully? Call zillow to get estimated value/rents and
     once transaction closes the executed price
 
 """
 from datetime import date, datetime, timedelta
+import os
+
 import pandas as pd
 import zillow
-pd.set_option('max_columns', 25)
+
+import parse_url
+from config import ZILLOW_FOLDER, AUCTION_FOLDER
 
 HALF_YEAR = timedelta(days=182)
 
-def main():
-    df = pd.read_csv('csv/20190902.csv', sep='\t')
+
+def main(date):
+    # load files in 'urls' folder starting with 'date'.
+    # output is <date>.from_auction in 'from_auction' folder
+    files = parse_url.files_by_date(date)
+    df = parse_url.load_last_auction_df()
+
+    # add any new auctions in 'files' to 'df'
+    parse_url.process_html_files(df, date, files)
+
+    # change compute 'auction_end_date' from 'asset_auction_date'
     df.loc[:, 'auction_end_date'] = df['asset_auction_date'].apply(parse_date)
-    print(df[['asset_auction_date', 'auction_end_date']])
+
+    # extract parameters to their own columns: city, state, zipcode and county
+    parse_city_state_zipcode_county(df)
+
+    # add data from zillow
+    completed_df = zillowfy(df)
+
+    df.to_csv(os.path.join(AUCTION_FOLDER, '{}.csv'.format(date)), index=False)
+    completed_df.to_csv(os.path.join(ZILLOW_FOLDER, '{}.csv'.format(date)), index=False)
+
+
+def zillowfy(df):
+    """
+    Add data from zillow if property was sold
+    """
+    completed_df = pd.DataFrame([])
+    indexes_to_drop = []
+    for index, data in df.iterrows():
+        if 'zillow_id' in data and data['zillow_id']:
+            # we already got data for this property, it was sold. No need to do anything else
+            continue
+        address = data['asset_address_content_1']
+        zipcode = data['zipcode']
+        summary = zillow.get_summary(address, zipcode)
+        if summary.last_sold_date:
+            last_sold_date = datetime.strptime(summary.last_sold_date, '%m/%d/%Y').date()
+            if data['auction_end_date'] < last_sold_date:
+                data['zillow_id'] = summary.zillow_id
+                data['zestimate_amount'] = summary.zestimate_amount
+                data['zestimate_valuation_range_high'] = summary.zestimate_valuation_range_high
+                data['zestimate_valuation_range_low'] = summary.zestimate_valuationRange_low
+                data['zillow_last_date_sold'] = last_sold_date
+                data['zillow_lasl_sold_price'] = summary.last_sold_price
+                completed_df.append(data, ignore_index=True)
+                indexes_to_drop.append(index)
+
+    df.drop(indexes_to_drop, inplace=True)
+    return completed_df
+
+
+
+
+def parse_city_state_zipcode_county(df):
+    """
+    In place, extract 'city', 'state', 'zipcode' and 'county' from 'asset_address_content_2'
+
+    :param df:
+    :return:
+    """
+    for index, auction in df.iterrows():
+        city, state_zipcode, county = auction.asset_address_content_2.split(',')
+        state, zipcode = state_zipcode.split()
+        df.loc[index, 'city'] = city
+        df.loc[index, 'state'] = state
+        df.loc[index, 'zipcode'] = zipcode
+        df.loc[index, 'county'] = county.replace(' County', '')
+
 
 
 def parse_date(date_str):
@@ -53,4 +122,4 @@ def parse_date(date_str):
 
 
 if __name__ == "__main__":
-    main()
+    main('20190901')

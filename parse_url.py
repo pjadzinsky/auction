@@ -1,17 +1,23 @@
-from datetime import datetime
 from html.parser import HTMLParser
+import glob
 import os
 
 import pandas as pd
 import re
 
+from config import URL_FOLDER, AUCTION_FOLDER
+
 pd.set_option('max_columns', 25)
+
 
 class MyHTMLParser(HTMLParser):
     property_id = None
     column = None
     root_regex = re.compile('asset_[0-9]*_root')
-    df = pd.DataFrame([])
+
+    def __init__(self, df):
+        HTMLParser.__init__(self)
+        self.df = df
 
     def handle_starttag(self, tag, attrs):
         if tag == 'a':
@@ -49,20 +55,39 @@ class MyHTMLParser(HTMLParser):
         print('New column found:', self.column)
 
 
-def process_html_files(files, output_name=None):
+def process_html_files(df, date, files, output_name=None):
     if not output_name:
-        today_str = datetime.strftime(datetime.today(), '%Y%m%d')
-        output_name = os.path.join('csv', '{}.csv'.format(today_str))
+        output_name = os.path.join(AUCTION_FOLDER, '{}.csv'.format(date))
 
-    parser = MyHTMLParser()
+    parser = MyHTMLParser(df)
     for url_file in files:
         for line in open(url_file):
             parser.feed(line)
         print(parser.df.head())
-        parser.df.to_csv(output_name, sep='\t')
+        parser.df.to_csv(output_name)
+
+    return output_name
+
+
+def load_last_auction_df():
+    all_csvs = glob.glob(os.path.join(AUCTION_FOLDER, '*.csv'))
+    if all_csvs:
+        last_csv = sorted(all_csvs)[-1]
+        df = pd.read_csv(last_csv, index_col=0)
+    else:
+        df = pd.DataFrame([])
+        df.index.name = 'auction_id'
+
+    return df
+
+
+def files_by_date(date):
+    files = glob.glob(os.path.join(URL_FOLDER, '{}*.html'.format(date)))
+    return files
 
 
 if __name__ == "__main__":
-    url_files = ['/Users/pjadzinsky/PycharmProjects/auction/urls/20190901_palo_alto.html',
-                 '/Users/pjadzinsky/PycharmProjects/auction/urls/20190901_mountain_view.html']
-    process_html_files(url_files)
+    date = '20190901'
+    df = load_last_auction_df()
+    url_files = files_by_date(date)
+    process_html_files(date, url_files)
