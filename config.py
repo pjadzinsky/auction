@@ -1,3 +1,4 @@
-ZILLOW_FOLDER = 'from_zillow'
+COMPLETED_FOLDER = 'completed'
 URL_FOLDER = 'urls'
-AUCTION_FOLDER = 'from_auction'
+ACTIVE_AUCTION_FOLDER = 'active_auction'
+PENDING_TRANSACTION_FOLDER = 'pending_transaction'

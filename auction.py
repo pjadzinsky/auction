@@ -3,7 +3,7 @@
     I found the element in the html that when I hover over, highlights the whole table of properties.
     Then copy pasted the html into 'urls' folder
 2. Pass those files to parse_url.process_html_files(files)
-    This step generates from_auction/<date>.from_auction with all data from auction.com
+    This step generates active_auction/<date>.active_auction with all data from auction.com
 3. How do we know if auction finished succesfully? Call zillow to get estimated value/rents and
     once transaction closes the executed price
 
@@ -15,31 +15,60 @@ import pandas as pd
 import zillow
 
 import parse_url
-from config import ZILLOW_FOLDER, AUCTION_FOLDER
+from config import COMPLETED_FOLDER, ACTIVE_AUCTION_FOLDER, PENDING_TRANSACTION_FOLDER
 
 HALF_YEAR = timedelta(days=182)
 
 
-def main(date):
-    # load files in 'urls' folder starting with 'date'.
-    # output is <date>.from_auction in 'from_auction' folder
-    files = parse_url.files_by_date(date)
-    df = parse_url.load_last_auction_df()
+def main(wildcard):
+    """
+    We have 3 types of properties, each will live in a corresponding csv
+    1. Properties that are actively in auction (active_df/ACTIVE_AUCTION_FOLDER)
+    2. Properties that were identified in the past as being in auction, but for which we have no
+        transaction data yet (pending_transaction_df/PENDING_TRANSACTION_FOLDER)
+    3. Properties that were in auction in the past and for which we have gathered all the transaction
+        data from zillow (completed_df/COMPLETED_FOLDER)
 
-    # add any new auctions in 'files' to 'df'
-    parse_url.process_html_files(df, date, files)
+
+    :param date:
+    :return:
+    """
+
+    # load files in 'urls' folder starting with 'date'.
+    files = parse_url.files_by_date(wildcard)
+    base_name = '{}.csv'.format(date.today().strftime('%Y%m%d'))
+    pending_transaction_df = parse_url.load_last_df(PENDING_TRANSACTION_FOLDER)
+
+    # Get active auctions in 'files' to 'active_auctions_df'
+    active_auctions_df = parse_url.process_html_files(base_name, files)
+
+    # we only need to zillowfy properties that are not schedule (or active) in auction.com
+    pending_transaction_df = remove_properties(pending_transaction_df, active_auctions_df)
 
     # change compute 'auction_end_date' from 'asset_auction_date'
-    df.loc[:, 'auction_end_date'] = df['asset_auction_date'].apply(parse_date)
+    pending_transaction_df.loc[:, 'auction_end_date'] = pending_transaction_df['asset_auction_date'].apply(parse_date)
 
     # extract parameters to their own columns: city, state, zipcode and county
-    parse_city_state_zipcode_county(df)
+    parse_city_state_zipcode_county(pending_transaction_df)
 
-    # add data from zillow
-    completed_df = zillowfy(df)
+    # add data from zillow, properties in completed_df are removed from pending_transaction_df
+    completed_df = zillowfy(pending_transaction_df)
 
-    df.to_csv(os.path.join(AUCTION_FOLDER, '{}.csv'.format(date)), index=False)
-    completed_df.to_csv(os.path.join(ZILLOW_FOLDER, '{}.csv'.format(date)), index=False)
+    # next time we run, we only rely on pending_transaction properties. Any properties in this csv
+    # that are not active, will be considered for zillowfy. We therefor have to save all properties
+    # that are in pending_transaction_df + active_auctions_df
+    pending_transaction_df = pending_transaction_df.append(active_auctions_df)
+    active_auctions_df.to_csv(os.path.join(ACTIVE_AUCTION_FOLDER, base_name))
+    completed_df.to_csv(os.path.join(COMPLETED_FOLDER, base_name))
+    pending_transaction_df.to_csv(os.path.join(PENDING_TRANSACTION_FOLDER, base_name))
+
+
+def remove_properties(from_here, that_are_in_here):
+    ids_to_remove = that_are_in_here.index
+    all_ids = from_here.index
+    missing_ids = set(all_ids).difference(ids_to_remove)
+    missing_df = from_here.loc[missing_ids]
+    return missing_df
 
 
 def zillowfy(df):
@@ -122,4 +151,4 @@ def parse_date(date_str):
 
 
 if __name__ == "__main__":
-    main('20190901')
+    main('20190905*.html')
