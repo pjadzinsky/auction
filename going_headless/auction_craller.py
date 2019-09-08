@@ -67,8 +67,10 @@ def crall_all_counties():
     :return:
     """
     today_str = date.today().strftime('%Y%m%d')
+    """
     for county in COUNTIES:
         crall_county(county, today_str)
+    """
 
     # Get active auctions in 'files' to 'active_auctions_df'
     wildcard = '{}_*.html'.format(today_str)

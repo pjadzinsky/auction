@@ -1,12 +1,16 @@
 from html.parser import HTMLParser
+#from tempfile import TemporaryDirectory
 import glob
 import pprint
 import os
+#import shutil
+#import subprocess
+import time
 
 import pandas as pd
 import re
 
-from config import URL_FOLDER, ACTIVE_AUCTION_FOLDER, PROJ_ROOT
+from config import URL_FOLDER, ACTIVE_AUCTION_FOLDER, PROJ_ROOT, URL_ATTRIBUTES
 
 pd.set_option('max_columns', 25)
 
@@ -15,8 +19,16 @@ class MyHTMLParser(HTMLParser):
     property_id = None
     column = None
     root_regex = re.compile('asset_[0-9]*_root')
-    df = pd.DataFrame([])
-    df.index.name = 'auction_id'
+
+    def __init__(self):
+        HTMLParser.__init__(self)
+        self.df = pd.DataFrame([])
+        self.df.index.name = 'auction_id'
+
+    def clear_df(self):
+        del self.df
+        self.df = pd.DataFrame([])
+        self.df.index.name = 'auction_id'
 
     def handle_starttag(self, tag, attrs):
         if tag == 'a':
@@ -28,8 +40,9 @@ class MyHTMLParser(HTMLParser):
         pass
 
     def handle_data(self, data):
-        if self.property_id:
-            self.df.loc[self.property_id, self.column] = data
+        if self.column in URL_ATTRIBUTES:
+            if self.property_id:
+                self.df.loc[self.property_id, self.column] = data
 
     def set_property_id(self, attrs):
         for attr, value in attrs:
@@ -48,19 +61,21 @@ class MyHTMLParser(HTMLParser):
 
 def process_html_files(wildcard, basename, folder=os.path.join(PROJ_ROOT, URL_FOLDER)):
     url_files = files_by_date(wildcard, folder)
+    #url_files = [f for f in url_files if 'Clara_1' in f]
     print('Converting {} files to csv'.format(len(url_files)))
     pprint.pprint(url_files)
 
-    output_name = os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, '{}.csv'.format(basename))
-    print('Saving csv to: ', output_name)
-
     parser = MyHTMLParser()
     for url_file in url_files:
+        t0 = time.time()
         for line in open(url_file):
             parser.feed(line)
-        parser.df.to_csv(output_name)
+        t1 = time.time()
+        print('processing {} took {}s'.format(url_file, t1 - t0))
 
     df = parser.df
+    output_name = os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, '{}.csv'.format(basename))
+    df.to_csv(output_name)
     # extract parameters to their own columns: city, state, zipcode and county
     parse_city_state_zipcode_county(df)
 
@@ -104,7 +119,8 @@ def parse_city_state_zipcode_county(df):
 if __name__ == "__main__":
     wildcard = '20190907_Alameda_1.html'
     folder = URL_FOLDER
+    t0 = time.time()
     df = process_html_files(wildcard, 'test')
+    print('process_html_files took {}s'.format(time.time() - t0))
     print(df.groupby('county').count()['city'])
-    df.to_csv(os.path.join(ACTIVE_AUCTION_FOLDER),)
     print(df.shape)
