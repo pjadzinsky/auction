@@ -1,7 +1,5 @@
 **/__pycache__
 __pycache__
-chromedriver
-going_headless
 **/*.js
 **/*.xml
 **/*.iml
