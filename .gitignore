@@ -5,3 +5,4 @@ going_headless
 **/*.js
 **/*.xml
 **/*.iml
+**/*.html

@@ -1,5 +1,6 @@
 from html.parser import HTMLParser
 import glob
+import pprint
 import os
 
 import pandas as pd
@@ -47,7 +48,11 @@ class MyHTMLParser(HTMLParser):
 
 def process_html_files(wildcard, basename, folder=os.path.join(PROJ_ROOT, URL_FOLDER)):
     url_files = files_by_date(wildcard, folder)
-    output_name = os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename)
+    print('Converting {} files to csv'.format(len(url_files)))
+    pprint.pprint(url_files)
+
+    output_name = os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, '{}.csv'.format(basename))
+    print('Saving csv to: ', output_name)
 
     parser = MyHTMLParser()
     for url_file in url_files:
