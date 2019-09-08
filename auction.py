@@ -1,5 +1,6 @@
 """
-1. I generated html files in 'urls' by following 'gioloe' response here https://stackoverflow.com/questions/3314429/how-to-view-generated-html-code-in-firefox/3314453#3314453
+1. I generated html files in 'urls' by following 'gioloe' response here
+https://stackoverflow.com/questions/3314429/how-to-view-generated-html-code-in-firefox/3314453#3314453
     I found the element in the html that when I hover over, highlights the whole table of properties.
     Then copy pasted the html into 'urls' folder
 2. Pass those files to parse_url.process_html_files(files)
@@ -30,26 +31,22 @@ def main(wildcard):
         data from zillow (completed_df/COMPLETED_FOLDER)
 
 
-    :param date:
+    :param wildcard: will process all html files in URL_FOLDER matching it
     :return:
     """
-
-    # load files in 'urls' folder starting with 'date'.
-    files = parse_url.files_by_date(wildcard)
+    # load files in 'urls' folder matching <wildcard>.
     base_name = '{}.csv'.format(date.today().strftime('%Y%m%d'))
     pending_transaction_df = parse_url.load_last_df(PENDING_TRANSACTION_FOLDER)
 
     # Get active auctions in 'files' to 'active_auctions_df'
-    active_auctions_df = parse_url.process_html_files(base_name, files)
+    active_auctions_df = parse_url.process_html_files(wildcard, base_name)
+    print(active_auctions_df.groupby('county').count()['city'])
 
     # we only need to zillowfy properties that are not schedule (or active) in auction.com
     pending_transaction_df = remove_properties(pending_transaction_df, active_auctions_df)
 
     # change compute 'auction_end_date' from 'asset_auction_date'
     pending_transaction_df.loc[:, 'auction_end_date'] = pending_transaction_df['asset_auction_date'].apply(parse_date)
-
-    # extract parameters to their own columns: city, state, zipcode and county
-    parse_city_state_zipcode_county(pending_transaction_df)
 
     # add data from zillow, properties in completed_df are removed from pending_transaction_df
     completed_df = zillowfy(pending_transaction_df)
@@ -100,25 +97,6 @@ def zillowfy(df):
     return completed_df
 
 
-
-
-def parse_city_state_zipcode_county(df):
-    """
-    In place, extract 'city', 'state', 'zipcode' and 'county' from 'asset_address_content_2'
-
-    :param df:
-    :return:
-    """
-    for index, auction in df.iterrows():
-        city, state_zipcode, county = auction.asset_address_content_2.split(',')
-        state, zipcode = state_zipcode.split()
-        df.loc[index, 'city'] = city
-        df.loc[index, 'state'] = state
-        df.loc[index, 'zipcode'] = zipcode
-        df.loc[index, 'county'] = county.replace(' County', '')
-
-
-
 def parse_date(date_str):
     today = date.today()
     auction_year = today.year
@@ -151,4 +129,5 @@ def parse_date(date_str):
 
 
 if __name__ == "__main__":
-    main('20190905*.html')
+    main('20190906_Alameda_1.html')
+

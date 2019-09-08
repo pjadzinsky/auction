@@ -5,7 +5,7 @@ import os
 import pandas as pd
 import re
 
-from config import URL_FOLDER, ACTIVE_AUCTION_FOLDER
+from config import URL_FOLDER, ACTIVE_AUCTION_FOLDER, PROJ_ROOT
 
 pd.set_option('max_columns', 25)
 
@@ -45,16 +45,21 @@ class MyHTMLParser(HTMLParser):
                 break
 
 
-def process_html_files(basename, files):
-    output_name = os.path.join(ACTIVE_AUCTION_FOLDER, basename)
+def process_html_files(wildcard, basename, folder=os.path.join(PROJ_ROOT, URL_FOLDER)):
+    url_files = files_by_date(wildcard, folder)
+    output_name = os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename)
 
     parser = MyHTMLParser()
-    for url_file in files:
+    for url_file in url_files:
         for line in open(url_file):
             parser.feed(line)
         parser.df.to_csv(output_name)
 
-    return parser.df
+    df = parser.df
+    # extract parameters to their own columns: city, state, zipcode and county
+    parse_city_state_zipcode_county(df)
+
+    return df
 
 
 def load_last_df(folder):
@@ -69,12 +74,32 @@ def load_last_df(folder):
     return df
 
 
-def files_by_date(wildcard):
-    files = glob.glob(os.path.join(URL_FOLDER, wildcard))
+def files_by_date(wildcard, folder):
+    files = glob.glob(os.path.join(folder, wildcard))
     return files
 
 
+def parse_city_state_zipcode_county(df):
+    """
+    In place, extract 'city', 'state', 'zipcode' and 'county' from 'asset_address_content_2'
+
+    :param df:
+    :return:
+    """
+    for index, auction in df.iterrows():
+        city, state_zipcode, county = auction.asset_address_content_2.split(',')
+        state, zipcode = state_zipcode.split()
+        df.loc[index, 'city'] = city
+        df.loc[index, 'state'] = state
+        df.loc[index, 'zipcode'] = zipcode
+        df.loc[index, 'county'] = county.replace(' County', '')
+
+
+
 if __name__ == "__main__":
-    date = '20190901*.html'
-    url_files = files_by_date(date)
-    process_html_files(date, url_files)
+    wildcard = '20190907_Alameda_1.html'
+    folder = URL_FOLDER
+    df = process_html_files(wildcard, 'test')
+    print(df.groupby('county').count()['city'])
+    df.to_csv(os.path.join(ACTIVE_AUCTION_FOLDER),)
+    print(df.shape)
