@@ -1,0 +1,421 @@
+INFO[0]:auction:146:2019-09-15 12:26:50,262:info
+DEBUG[0]:auction:147:2019-09-15 12:26:50,262:debug
+INFO[0]:auction:146:2019-09-15 12:28:14,939:info
+DEBUG[0]:auction:147:2019-09-15 12:28:14,939:debug
+ERROR[0]:auction:148:2019-09-15 12:28:14,939:error
+INFO[0]:auction:146:2019-09-15 12:29:40,088:info
+DEBUG[0]:auction:147:2019-09-15 12:29:40,088:debug
+ERROR[0]:auction:148:2019-09-15 12:29:40,088:error
+ERROR[0]:auction:150:2019-09-15 12:29:40,088:some error
+NoneType: None
+INFO[0]:auction:146:2019-09-15 12:32:07,223:********************************************************************************
+INFO[0]:auction_crawler:140:2019-09-15 12:32:07,224:json file found, loaded with 350 auctions
+INFO[0]:auction:146:2019-09-15 12:32:41,444:********************************************************************************
+INFO[0]:auction_crawler:140:2019-09-15 12:32:41,444:json file found, loaded with 350 auctions
+DEBUG[0]:remote_connection:388:2019-09-15 12:32:42,464:POST http://127.0.0.1:54487/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+DEBUG[0]:connectionpool:206:2019-09-15 12:32:42,465:Starting new HTTP connection (1): 127.0.0.1:54487
+DEBUG[0]:connectionpool:396:2019-09-15 12:32:42,758:http://127.0.0.1:54487 "POST /session HTTP/1.1" 200 686
+DEBUG[0]:remote_connection:440:2019-09-15 12:32:42,759:Finished Request
+INFO[0]:auction_crawler:165:2019-09-15 12:32:42,771:action_crawler identified 0 new properties
+INFO[0]:auction_crawler:169:2019-09-15 12:32:42,771:action_crawler identified 28 deactivated properties
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2752640
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2807552
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2831245
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2827533
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 1400466
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2701977
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2840729
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2834589
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2815134
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2677286
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2823464
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2824104
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2815916
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2731844
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2805840
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 1264092
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2694881
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2829026
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2829029
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2805990
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2787177
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2791151
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 1365490
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,772:problem with deactivated id: 2719859
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,773:problem with deactivated id: 2831476
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,773:problem with deactivated id: 2671990
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,773:problem with deactivated id: 2814458
+ERROR[0]:auction_crawler:204:2019-09-15 12:32:42,773:problem with deactivated id: 2807932
+DEBUG[0]:remote_connection:388:2019-09-15 12:32:42,773:DELETE http://127.0.0.1:54487/session/e27ff1f4770eddfcd230f11a793ef80c/window {}
+DEBUG[0]:connectionpool:396:2019-09-15 12:32:42,829:http://127.0.0.1:54487 "DELETE /session/e27ff1f4770eddfcd230f11a793ef80c/window HTTP/1.1" 200 12
+DEBUG[0]:remote_connection:440:2019-09-15 12:32:42,830:Finished Request
+INFO[0]:auction:146:2019-09-15 12:33:16,275:********************************************************************************
+INFO[0]:auction_crawler:140:2019-09-15 12:33:16,275:json file found, loaded with 350 auctions
+DEBUG[0]:remote_connection:388:2019-09-15 12:33:17,301:POST http://127.0.0.1:54652/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+DEBUG[0]:connectionpool:206:2019-09-15 12:33:17,303:Starting new HTTP connection (1): 127.0.0.1:54652
+DEBUG[0]:connectionpool:396:2019-09-15 12:33:17,509:http://127.0.0.1:54652 "POST /session HTTP/1.1" 200 686
+DEBUG[0]:remote_connection:440:2019-09-15 12:33:17,510:Finished Request
+INFO[0]:auction:146:2019-09-15 12:34:15,449:********************************************************************************
+INFO[0]:auction_crawler:140:2019-09-15 12:34:15,449:json file found, loaded with 350 auctions
+DEBUG[0]:remote_connection:388:2019-09-15 12:34:16,474:POST http://127.0.0.1:54910/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+DEBUG[0]:connectionpool:206:2019-09-15 12:34:16,476:Starting new HTTP connection (1): 127.0.0.1:54910
+DEBUG[0]:connectionpool:396:2019-09-15 12:34:16,679:http://127.0.0.1:54910 "POST /session HTTP/1.1" 200 686
+DEBUG[0]:remote_connection:440:2019-09-15 12:34:16,680:Finished Request
+INFO[0]:auction_crawler:165:2019-09-15 12:35:13,201:action_crawler identified 0 new properties
+INFO[0]:auction_crawler:169:2019-09-15 12:35:14,113:action_crawler identified 28 deactivated properties
+ERROR[0]:<input>:1:2019-09-15 12:35:56,072:2752640
+Traceback (most recent call last):
+  File "/Users/pjadzinsky/PycharmProjects/auction/going_headless/auction_crawler.py", line 199, in crawl_individual_auction_ids
+    href = auction_id_href[auction_id]    # we are done crawling
+KeyError: 2752640
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:34,831:problem with deactivated id: 2752640
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,679:problem with deactivated id: 2807552
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,680:problem with deactivated id: 2831245
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,681:problem with deactivated id: 2827533
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,681:problem with deactivated id: 1400466
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,681:problem with deactivated id: 2701977
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,681:problem with deactivated id: 2840729
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,681:problem with deactivated id: 2834589
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,681:problem with deactivated id: 2815134
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,681:problem with deactivated id: 2677286
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,682:problem with deactivated id: 2823464
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,682:problem with deactivated id: 2824104
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,682:problem with deactivated id: 2815916
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,682:problem with deactivated id: 2731844
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,682:problem with deactivated id: 2805840
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,682:problem with deactivated id: 1264092
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,682:problem with deactivated id: 2694881
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,683:problem with deactivated id: 2829026
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,683:problem with deactivated id: 2829029
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,683:problem with deactivated id: 2805990
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,683:problem with deactivated id: 2787177
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,683:problem with deactivated id: 2791151
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,683:problem with deactivated id: 1365490
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,684:problem with deactivated id: 2719859
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,684:problem with deactivated id: 2831476
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,684:problem with deactivated id: 2671990
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,684:problem with deactivated id: 2814458
+ERROR[0]:auction_crawler:204:2019-09-15 12:36:48,684:problem with deactivated id: 2807932
+DEBUG[0]:remote_connection:388:2019-09-15 12:36:48,684:DELETE http://127.0.0.1:54910/session/78da5837124c28fc258950b2f246dea9/window {}
+DEBUG[0]:connectionpool:396:2019-09-15 12:36:48,745:http://127.0.0.1:54910 "DELETE /session/78da5837124c28fc258950b2f246dea9/window HTTP/1.1" 200 12
+DEBUG[0]:remote_connection:440:2019-09-15 12:36:48,746:Finished Request
+INFO[0]:auction:146:2019-09-15 12:37:22,767:********************************************************************************
+INFO[0]:auction_crawler:140:2019-09-15 12:37:22,767:json file found, loaded with 350 auctions
+DEBUG[0]:remote_connection:388:2019-09-15 12:37:23,793:POST http://127.0.0.1:55680/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+DEBUG[0]:connectionpool:206:2019-09-15 12:37:23,795:Starting new HTTP connection (1): 127.0.0.1:55680
+DEBUG[0]:connectionpool:396:2019-09-15 12:37:24,003:http://127.0.0.1:55680 "POST /session HTTP/1.1" 200 686
+DEBUG[0]:remote_connection:440:2019-09-15 12:37:24,004:Finished Request
+INFO[0]:auction_crawler:165:2019-09-15 12:37:36,861:action_crawler identified 0 new properties
+INFO[0]:auction_crawler:169:2019-09-15 12:37:36,862:action_crawler identified 28 deactivated properties
+ERROR[0]:auction_crawler:204:2019-09-15 12:45:19,455:2752640
+Traceback (most recent call last):
+  File "/Users/pjadzinsky/PycharmProjects/auction/going_headless/auction_crawler.py", line 199, in crawl_individual_auction_ids
+    href = auction_id_href[auction_id]    # we are done crawling
+KeyError: 2752640
+INFO[0]:auction:146:2019-09-15 12:45:30,441:********************************************************************************
+INFO[0]:auction_crawler:140:2019-09-15 12:45:30,442:json file found, loaded with 350 auctions
+DEBUG[0]:remote_connection:388:2019-09-15 12:45:31,465:POST http://127.0.0.1:57677/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+DEBUG[0]:connectionpool:206:2019-09-15 12:45:31,467:Starting new HTTP connection (1): 127.0.0.1:57677
+DEBUG[0]:connectionpool:396:2019-09-15 12:45:31,687:http://127.0.0.1:57677 "POST /session HTTP/1.1" 200 686
+DEBUG[0]:remote_connection:440:2019-09-15 12:45:31,688:Finished Request
+INFO[0]:auction_crawler:165:2019-09-15 12:45:31,704:action_crawler identified 0 new properties
+INFO[0]:auction_crawler:169:2019-09-15 12:45:31,704:action_crawler identified 28 deactivated properties
+INFO[0]:auction_crawler:198:2019-09-15 12:45:56,386:2752640 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:03,029:2807552 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:06,323:2831245 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,207:2827533 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,251:1400466 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,251:2701977 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,251:2840729 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,251:2834589 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,251:2815134 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,251:2677286 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,251:2823464 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2824104 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2815916 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2731844 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2805840 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:1264092 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2694881 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2829026 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2829029 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2805990 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2787177 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2791151 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:1365490 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2719859 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,252:2831476 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,253:2671990 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,253:2814458 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:12,253:2807932 key not present in href
+DEBUG[0]:remote_connection:388:2019-09-15 12:46:12,253:DELETE http://127.0.0.1:57677/session/c3c29c59fb1fdcf53a876faa29a1c05d/window {}
+DEBUG[0]:connectionpool:396:2019-09-15 12:46:12,436:http://127.0.0.1:57677 "DELETE /session/c3c29c59fb1fdcf53a876faa29a1c05d/window HTTP/1.1" 200 12
+DEBUG[0]:remote_connection:440:2019-09-15 12:46:12,436:Finished Request
+INFO[0]:auction:146:2019-09-15 12:46:32,859:********************************************************************************
+INFO[0]:auction_crawler:140:2019-09-15 12:46:32,860:json file found, loaded with 350 auctions
+DEBUG[0]:remote_connection:388:2019-09-15 12:46:33,889:POST http://127.0.0.1:57951/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+DEBUG[0]:connectionpool:206:2019-09-15 12:46:33,891:Starting new HTTP connection (1): 127.0.0.1:57951
+DEBUG[0]:connectionpool:396:2019-09-15 12:46:34,102:http://127.0.0.1:57951 "POST /session HTTP/1.1" 200 686
+DEBUG[0]:remote_connection:440:2019-09-15 12:46:34,103:Finished Request
+INFO[0]:auction_crawler:220:2019-09-15 12:46:34,116:just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active_auction/20190915.csv
+INFO[0]:auction_crawler:165:2019-09-15 12:46:34,116:action_crawler identified 0 new properties
+INFO[0]:auction_crawler:169:2019-09-15 12:46:34,116:action_crawler identified 28 deactivated properties
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,556:2752640 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,556:2807552 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,557:2831245 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,557:2827533 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,557:1400466 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,557:2701977 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,557:2840729 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,557:2834589 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,558:2815134 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,558:2677286 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,558:2823464 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,558:2824104 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,558:2815916 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,559:2731844 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,559:2805840 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,559:1264092 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,559:2694881 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,559:2829026 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,559:2829029 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,559:2805990 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,559:2787177 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,560:2791151 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,560:1365490 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,560:2719859 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,560:2831476 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,560:2671990 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,560:2814458 key not present in href
+INFO[0]:auction_crawler:198:2019-09-15 12:46:44,560:2807932 key not present in href
+DEBUG[0]:remote_connection:388:2019-09-15 12:46:44,561:DELETE http://127.0.0.1:57951/session/8761a3c7df494df4d6bed044890c63f7/window {}
+DEBUG[0]:connectionpool:396:2019-09-15 12:46:44,620:http://127.0.0.1:57951 "DELETE /session/8761a3c7df494df4d6bed044890c63f7/window HTTP/1.1" 200 12
+DEBUG[0]:remote_connection:440:2019-09-15 12:46:44,621:Finished Request
+I:auction:146:2019-09-15 12:48:58,430: ********************************************************************************
+I:auction_crawler:140:2019-09-15 12:48:58,430: json file found, loaded with 350 auctions
+D:remote_connection:388:2019-09-15 12:48:59,458: POST http://127.0.0.1:58634/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+D:connectionpool:206:2019-09-15 12:48:59,460: Starting new HTTP connection (1): 127.0.0.1:58634
+D:connectionpool:396:2019-09-15 12:48:59,668: http://127.0.0.1:58634 "POST /session HTTP/1.1" 200 686
+D:remote_connection:440:2019-09-15 12:48:59,668: Finished Request
+I:auction_crawler:220:2019-09-15 12:48:59,682: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active_auction/20190915.csv
+I:auction_crawler:165:2019-09-15 12:48:59,682: action_crawler identified 0 new properties
+I:auction_crawler:169:2019-09-15 12:48:59,682: action_crawler identified 28 deactivated properties
+I:auction_crawler:198:2019-09-15 12:49:01,568: 2752640 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,569: 2807552 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,569: 2831245 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,569: 2827533 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,569: 1400466 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,569: 2701977 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,569: 2840729 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,569: 2834589 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,570: 2815134 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,570: 2677286 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,570: 2823464 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,570: 2824104 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,570: 2815916 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,570: 2731844 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,570: 2805840 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,570: 1264092 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,571: 2694881 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,571: 2829026 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,571: 2829029 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,571: 2805990 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,571: 2787177 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,571: 2791151 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,571: 1365490 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,571: 2719859 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,572: 2831476 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,572: 2671990 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,572: 2814458 key not present in href
+I:auction_crawler:198:2019-09-15 12:49:01,572: 2807932 key not present in href
+D:remote_connection:388:2019-09-15 12:49:01,572: DELETE http://127.0.0.1:58634/session/a3780f15547661296149a5c31f757eeb/window {}
+D:connectionpool:396:2019-09-15 12:49:01,632: http://127.0.0.1:58634 "DELETE /session/a3780f15547661296149a5c31f757eeb/window HTTP/1.1" 200 12
+D:remote_connection:440:2019-09-15 12:49:01,633: Finished Request
+I:auction:146:2019-09-15 13:28:02,177: ********************************************************************************
+I:auction_crawler:140:2019-09-15 13:28:02,177: json file found, loaded with 350 auctions
+D:remote_connection:388:2019-09-15 13:28:03,205: POST http://127.0.0.1:63899/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+D:connectionpool:206:2019-09-15 13:28:03,206: Starting new HTTP connection (1): 127.0.0.1:63899
+D:connectionpool:396:2019-09-15 13:28:03,451: http://127.0.0.1:63899 "POST /session HTTP/1.1" 200 686
+D:remote_connection:440:2019-09-15 13:28:03,451: Finished Request
+I:auction_crawler:222:2019-09-15 13:28:03,459: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active_auction/20190915.csv
+I:auction_crawler:165:2019-09-15 13:28:03,459: action_crawler identified 0 new properties
+I:auction_crawler:169:2019-09-15 13:28:03,459: action_crawler identified 28 deactivated properties
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2752640 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2807552 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2831245 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2827533 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 1400466 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2701977 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2840729 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2834589 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2815134 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2677286 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2823464 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2824104 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2815916 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2731844 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2805840 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 1264092 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2694881 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2829026 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2829029 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2805990 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2787177 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2791151 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 1365490 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,460: 2719859 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,461: 2831476 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,461: 2671990 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,461: 2814458 key not present in href
+I:auction_crawler:199:2019-09-15 13:28:03,461: 2807932 key not present in href
+D:remote_connection:388:2019-09-15 13:28:03,461: DELETE http://127.0.0.1:63899/session/91b0490dd45362d3c49cfd08436c4c1c/window {}
+D:connectionpool:396:2019-09-15 13:28:03,517: http://127.0.0.1:63899 "DELETE /session/91b0490dd45362d3c49cfd08436c4c1c/window HTTP/1.1" 200 12
+D:remote_connection:440:2019-09-15 13:28:03,517: Finished Request
+I:auction:146:2019-09-15 13:32:00,522: ********************************************************************************
+I:auction_crawler:140:2019-09-15 13:32:00,523: json file found, loaded with 350 auctions
+D:remote_connection:388:2019-09-15 13:32:01,541: POST http://127.0.0.1:64881/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+D:connectionpool:206:2019-09-15 13:32:01,542: Starting new HTTP connection (1): 127.0.0.1:64881
+D:connectionpool:396:2019-09-15 13:32:01,750: http://127.0.0.1:64881 "POST /session HTTP/1.1" 200 686
+D:remote_connection:440:2019-09-15 13:32:01,750: Finished Request
+I:auction_crawler:227:2019-09-15 13:32:01,758: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active_auction/20190915.csv
+I:auction_crawler:165:2019-09-15 13:32:01,759: action_crawler identified 0 new properties
+I:auction_crawler:169:2019-09-15 13:32:01,759: action_crawler identified 28 deactivated properties
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2752640 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2807552 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2831245 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2827533 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 1400466 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2701977 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2840729 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2834589 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2815134 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2677286 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2823464 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2824104 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,760: 2815916 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2731844 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2805840 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 1264092 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2694881 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2829026 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2829029 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2805990 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2787177 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2791151 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 1365490 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2719859 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2831476 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2671990 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2814458 key not present in href
+I:auction_crawler:204:2019-09-15 13:32:01,761: 2807932 key not present in href
+D:remote_connection:388:2019-09-15 13:32:01,761: DELETE http://127.0.0.1:64881/session/9491e1dd90cd4284e86d55f3b859e3bf/window {}
+D:connectionpool:396:2019-09-15 13:32:01,818: http://127.0.0.1:64881 "DELETE /session/9491e1dd90cd4284e86d55f3b859e3bf/window HTTP/1.1" 200 12
+D:remote_connection:440:2019-09-15 13:32:01,818: Finished Request
+I:auction:146:2019-09-15 13:35:50,332: ********************************************************************************
+I:auction_crawler:140:2019-09-15 13:35:50,332: json file found, loaded with 350 auctions
+D:remote_connection:388:2019-09-15 13:35:51,355: POST http://127.0.0.1:49471/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+D:connectionpool:206:2019-09-15 13:35:51,356: Starting new HTTP connection (1): 127.0.0.1:49471
+D:connectionpool:396:2019-09-15 13:35:51,566: http://127.0.0.1:49471 "POST /session HTTP/1.1" 200 686
+D:remote_connection:440:2019-09-15 13:35:51,567: Finished Request
+I:auction_crawler:230:2019-09-15 13:35:51,574: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active_auction/20190915.csv
+I:auction_crawler:165:2019-09-15 13:35:51,574: action_crawler identified 0 new properties
+I:auction_crawler:169:2019-09-15 13:35:51,575: action_crawler identified 0 deactivated properties
+I:auction_crawler:230:2019-09-15 13:35:51,579: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/pending_transaction/20190915.csv
+D:remote_connection:388:2019-09-15 13:35:51,585: DELETE http://127.0.0.1:49471/session/c47a030b6fabe6353e05ccd27a901e7f/window {}
+D:connectionpool:396:2019-09-15 13:35:51,642: http://127.0.0.1:49471 "DELETE /session/c47a030b6fabe6353e05ccd27a901e7f/window HTTP/1.1" 200 12
+D:remote_connection:440:2019-09-15 13:35:51,643: Finished Request
+I:auction:146:2019-09-15 13:44:49,998: ********************************************************************************
+I:auction_crawler:140:2019-09-15 13:44:49,999: json file found, loaded with 350 auctions
+D:remote_connection:388:2019-09-15 13:44:51,021: POST http://127.0.0.1:51673/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+D:connectionpool:206:2019-09-15 13:44:51,023: Starting new HTTP connection (1): 127.0.0.1:51673
+D:connectionpool:396:2019-09-15 13:44:51,229: http://127.0.0.1:51673 "POST /session HTTP/1.1" 200 686
+D:remote_connection:440:2019-09-15 13:44:51,229: Finished Request
+I:auction_crawler:231:2019-09-15 13:44:51,237: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active_auction/20190915.csv
+I:auction_crawler:165:2019-09-15 13:44:51,237: action_crawler identified 0 new properties
+I:auction_crawler:169:2019-09-15 13:44:51,237: action_crawler identified 0 deactivated properties
+I:auction_crawler:231:2019-09-15 13:44:51,242: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/pending_transaction/20190915.csv
+D:remote_connection:388:2019-09-15 13:44:51,256: DELETE http://127.0.0.1:51673/session/c29adea8da08008e2ed8fb467fb2a3be/window {}
+D:connectionpool:396:2019-09-15 13:44:51,313: http://127.0.0.1:51673 "DELETE /session/c29adea8da08008e2ed8fb467fb2a3be/window HTTP/1.1" 200 12
+D:remote_connection:440:2019-09-15 13:44:51,313: Finished Request
+I:auction:146:2019-09-15 13:46:07,425: ********************************************************************************
+I:auction_crawler:140:2019-09-15 13:46:07,426: json file found, loaded with 350 auctions
+D:remote_connection:388:2019-09-15 13:46:08,446: POST http://127.0.0.1:52006/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+D:connectionpool:206:2019-09-15 13:46:08,447: Starting new HTTP connection (1): 127.0.0.1:52006
+D:connectionpool:396:2019-09-15 13:46:08,708: http://127.0.0.1:52006 "POST /session HTTP/1.1" 200 686
+D:remote_connection:440:2019-09-15 13:46:08,708: Finished Request
+I:auction_crawler:227:2019-09-15 13:46:08,717: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active_auction/20190915.csv
+I:auction_crawler:165:2019-09-15 13:46:08,717: action_crawler identified 0 new properties
+I:auction_crawler:169:2019-09-15 13:46:08,717: action_crawler identified 0 deactivated properties
+I:auction_crawler:227:2019-09-15 13:46:08,722: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/pending_transaction/20190915.csv
+I:auction_crawler:204:2019-09-15 13:46:08,734: 2752640.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2807552.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2831245.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2827533.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 1400466.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2701977.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2840729.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2834589.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2815134.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2677286.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2823464.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2824104.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2815916.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2731844.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2805840.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 1264092.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2694881.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2829026.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2829029.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2805990.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2787177.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2791151.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 1365490.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2719859.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,735: 2831476.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,736: 2671990.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,736: 2814458.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,736: 2807932.0 key not present in href
+I:auction_crawler:204:2019-09-15 13:46:08,736: nan key not present in href
+D:remote_connection:388:2019-09-15 13:46:08,736: DELETE http://127.0.0.1:52006/session/de681dd9a8e382f9eb50e1b974feb8d0/window {}
+D:connectionpool:396:2019-09-15 13:46:08,792: http://127.0.0.1:52006 "DELETE /session/de681dd9a8e382f9eb50e1b974feb8d0/window HTTP/1.1" 200 12
+D:remote_connection:440:2019-09-15 13:46:08,792: Finished Request
+I:auction:146:2019-09-15 15:05:04,208: ********************************************************************************
+I:auction_crawler:140:2019-09-15 15:05:04,212: json file found, loaded with 353 auctions
+D:remote_connection:388:2019-09-15 15:05:05,237: POST http://127.0.0.1:53203/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "binary": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary", "args": ["--headless"]}}}
+D:connectionpool:206:2019-09-15 15:05:05,239: Starting new HTTP connection (1): 127.0.0.1:53203
+D:connectionpool:396:2019-09-15 15:05:05,458: http://127.0.0.1:53203 "POST /session HTTP/1.1" 200 686
+D:remote_connection:440:2019-09-15 15:05:05,459: Finished Request
+I:auction_crawler:227:2019-09-15 15:05:05,473: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active_auction/20190915.csv
+I:auction_crawler:165:2019-09-15 15:05:05,474: action_crawler identified 3 new properties
+I:auction_crawler:169:2019-09-15 15:05:05,474: action_crawler identified 0 deactivated properties
+I:auction_crawler:227:2019-09-15 15:05:05,484: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/pending_transaction/20190915.csv
+I:auction_crawler:236:2019-09-15 15:06:01,411: extracting info for active auction: 2801984
+D:remote_connection:388:2019-09-15 15:06:01,411: POST http://127.0.0.1:53203/session/2c4d0ba821c00f4877fc305eb15bf457/url {"url": "http://www.auction.com/details/303-daybreak-court-san-ramon-ca-94583-2801984-o_1253l"}
+D:connectionpool:396:2019-09-15 15:06:09,904: http://127.0.0.1:53203 "POST /session/2c4d0ba821c00f4877fc305eb15bf457/url HTTP/1.1" 200 14
+D:remote_connection:440:2019-09-15 15:06:09,905: Finished Request
+D:remote_connection:388:2019-09-15 15:06:12,908: GET http://127.0.0.1:53203/session/2c4d0ba821c00f4877fc305eb15bf457/source {}
+D:connectionpool:396:2019-09-15 15:06:12,942: http://127.0.0.1:53203 "GET /session/2c4d0ba821c00f4877fc305eb15bf457/source HTTP/1.1" 200 413129
+D:remote_connection:440:2019-09-15 15:06:12,947: Finished Request
+I:auction_crawler:236:2019-09-15 15:06:17,832: extracting info for active auction: 1400466
+D:remote_connection:388:2019-09-15 15:06:17,833: POST http://127.0.0.1:53203/session/2c4d0ba821c00f4877fc305eb15bf457/url {"url": "http://www.auction.com/details/5719-dimas-court-pleasanton-ca-94566-1400466-o_1256l"}
+D:connectionpool:396:2019-09-15 15:06:19,304: http://127.0.0.1:53203 "POST /session/2c4d0ba821c00f4877fc305eb15bf457/url HTTP/1.1" 200 14
+D:remote_connection:440:2019-09-15 15:06:19,304: Finished Request
+D:remote_connection:388:2019-09-15 15:06:22,368: GET http://127.0.0.1:53203/session/2c4d0ba821c00f4877fc305eb15bf457/source {}
+D:connectionpool:396:2019-09-15 15:06:22,557: http://127.0.0.1:53203 "GET /session/2c4d0ba821c00f4877fc305eb15bf457/source HTTP/1.1" 200 395237
+D:remote_connection:440:2019-09-15 15:06:22,584: Finished Request
+I:auction_crawler:236:2019-09-15 15:06:35,864: extracting info for active auction: 2828519
+D:remote_connection:388:2019-09-15 15:06:35,864: POST http://127.0.0.1:53203/session/2c4d0ba821c00f4877fc305eb15bf457/url {"url": "http://www.auction.com/details/10237-countryside-way-sacramento-ca-95827-2828519-o_1254"}
+D:connectionpool:396:2019-09-15 15:06:37,189: http://127.0.0.1:53203 "POST /session/2c4d0ba821c00f4877fc305eb15bf457/url HTTP/1.1" 200 14
+D:remote_connection:440:2019-09-15 15:06:37,189: Finished Request
+D:remote_connection:388:2019-09-15 15:06:40,288: GET http://127.0.0.1:53203/session/2c4d0ba821c00f4877fc305eb15bf457/source {}
+D:connectionpool:396:2019-09-15 15:06:40,312: http://127.0.0.1:53203 "GET /session/2c4d0ba821c00f4877fc305eb15bf457/source HTTP/1.1" 200 372762
+D:remote_connection:440:2019-09-15 15:06:40,375: Finished Request
+D:remote_connection:388:2019-09-15 15:07:02,644: GET http://127.0.0.1:53203/session/2c4d0ba821c00f4877fc305eb15bf457/source {}
+D:connectionpool:396:2019-09-15 15:07:02,670: http://127.0.0.1:53203 "GET /session/2c4d0ba821c00f4877fc305eb15bf457/source HTTP/1.1" 200 373430
+D:remote_connection:440:2019-09-15 15:07:02,674: Finished Request
+D:remote_connection:388:2019-09-15 15:07:26,250: GET http://127.0.0.1:53203/session/2c4d0ba821c00f4877fc305eb15bf457/source {}
+D:connectionpool:396:2019-09-15 15:07:26,274: http://127.0.0.1:53203 "GET /session/2c4d0ba821c00f4877fc305eb15bf457/source HTTP/1.1" 200 373044
+D:remote_connection:440:2019-09-15 15:07:26,278: Finished Request
+D:remote_connection:388:2019-09-15 15:22:51,753: GET http://127.0.0.1:53203/session/2c4d0ba821c00f4877fc305eb15bf457/source {}
+D:connectionpool:396:2019-09-15 15:22:51,781: http://127.0.0.1:53203 "GET /session/2c4d0ba821c00f4877fc305eb15bf457/source HTTP/1.1" 200 373044
+D:remote_connection:440:2019-09-15 15:22:51,785: Finished Request

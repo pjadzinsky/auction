@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 
 import pandas as pd
 
-from config import ACTIVE_AUCTION_FOLDER, COUNTIES, KEYS_TO_EXTRACT, PROJ_ROOT
+from config import ACTIVE_AUCTION_FOLDER, COUNTIES, KEYS_TO_EXTRACT, PENDING_TRANSACTION_FOLDER, PROJ_ROOT
 AUCTION_COM = "http://www.auction.com"
 
 logger = logging.getLogger(__name__)
@@ -168,6 +168,12 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
     deactivated_ids = set(active_auction_df.index).difference(active_ids)
     logger.info('action_crawler identified {} deactivated properties'.format(len(deactivated_ids)))
 
+
+    deactivated_df = load_last_df(os.path.join(PROJ_ROOT, PENDING_TRANSACTION_FOLDER))
+    deactivated_df = deactivated_df.append(active_auction_df.loc[deactivated_ids])
+    deactivated_df.drop_duplicates(inplace=True)
+    active_auction_df.drop(deactivated_ids, inplace=True)
+
     # legacy data transfomration
     """
     deactivated_df = active_auction_df.loc[deactivated_ids]
@@ -193,8 +199,7 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
         except Exception as e:
             logger.error('problem with id: {}'.format(auction_id))
 
-    deactivated_df = pd.DataFrame()
-    for auction_id in deactivated_ids:
+    for auction_id in deactivated_df.index:
         if auction_id not in auction_id_href:
             logger.info('{} key not present in href'.format(auction_id))
             continue
@@ -208,7 +213,9 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
             logger.exception(e)
     driver.close()
 
-    active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, '{}.csv'.format(today_str)))
+    basename = '{}.csv'.format(today_str)
+    active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
+    deactivated_df.to_csv(os.path.join(PROJ_ROOT, PENDING_TRANSACTION_FOLDER, basename))
     return active_auction_df
 
 
