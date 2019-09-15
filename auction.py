@@ -13,6 +13,8 @@ from datetime import date, datetime, timedelta
 import os
 
 import pandas as pd
+
+from going_headless import auction_craller
 import zillow
 
 import parse_url
@@ -34,13 +36,21 @@ def main(wildcard):
     :param wildcard: will process all html files in URL_FOLDER matching it
     :return:
     """
-    # load files in 'urls' folder matching <wildcard>.
-    base_name = '{}.csv'.format(date.today().strftime('%Y%m%d'))
-    pending_transaction_df = parse_url.load_last_df(PENDING_TRANSACTION_FOLDER)
+    # go to auction.com and get all properties being auctioned in all counties in config.COUNTIES
+    # then for each property for which we don't yet have all the info, go into the property auction
+    # page and extract such info. At the end, a new csv file will be created in ACTIVE_AUCTION_FOLDER
+    # with all the properties currently active
+    active_auctions_df = auction_craller.crall_all_counties()
+    print(active_auctions_df.groupby('county').city.count())
+
+    # the list of properties we have to zillowfy is compossed of:
+    # 1. those that are already in this list
+    # 2. those that are marked as pending in active_auctions_df
+    # plus those properties in active_auctions_df, with
+    pending_transaction_df = auction_craller.load_last_df(PENDING_TRANSACTION_FOLDER)
 
     # Get active auctions in 'files' to 'active_auctions_df'
-    active_auctions_df = parse_url.process_html_files(wildcard, base_name)
-    print(active_auctions_df.groupby('county').count()['city'])
+    base_name = '{}.csv'.format(date.today().strftime('%Y%m%d'))
 
     # we only need to zillowfy properties that are not schedule (or active) in auction.com
     pending_transaction_df = remove_properties(pending_transaction_df, active_auctions_df)

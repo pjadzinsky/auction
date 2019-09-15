@@ -1,4 +1,5 @@
 auction_id,asset_address_content_1,asset_address_content_2,asset_auction_date,asset_auction_type,asset_beds,asset_baths,asset_sqft,label_after_repair_value_value,label_starting_bid_value,asset_save_label,asset_No Buyer's Premium_label,asset_image,asset_Broker Commission Available_label,asset_Newly Listed_label
+1339048,39773 COSTA WAY,"FREMONT, CA 94538, Alameda County","Oct 10, 9:00am","Foreclosure Sale, In Person",4,2,"1,734","$1,040,000","$265,000",Save,No Buyer's Premium,,,
 2838647,1221 ENVIEW CT,"STOCKTON, CA 95210, San Joaquin County","Sep 19, 9:00am","Foreclosure Sale, In Person",2,2,"1,422","$288,000",–,Save,No Buyer's Premium,,,
 2833046,807 LIMESTONE AVENUE,"LATHROP, CA 95330, San Joaquin County","Sep 19, 9:00am","Foreclosure Sale, In Person",4,2,"1,528","$446,000","$240,000",Save,No Buyer's Premium,,,
 2819183,1638 UNION LN,"TRACY, CA 95377, San Joaquin County","Sep 19, 9:00am","Foreclosure Sale, In Person",3,3,"1,599","$512,000","$365,000",Save,No Buyer's Premium,,,
@@ -242,7 +243,6 @@ auction_id,asset_address_content_1,asset_address_content_2,asset_auction_date,as
 2815316,330 PARKVIEW TERRACE #201,"OAKLAND, CA 94610, Alameda County","Sep 26, 9:00am","Foreclosure Sale, In Person",2,2,"1,330","$800,000","$50,000",Save,No Buyer's Premium,HOT,,
 2820523,2637 74TH AVENUE,"Oakland, CA 94605, Alameda County",Sep 10 - 12,"Bank Owned, Online",2,1,748,"$578,000","$150,000",Save,No Buyer's Premium,,,
 2812840,466 CRESCENT STREET UNIT # 326,"OAKLAND, CA 94610, Alameda County","Oct 10, 9:00am","Foreclosure Sale, In Person",2,2,"1,116","$792,000","$650,000",Save,No Buyer's Premium,,,
-1339048,39773 COSTA WAY,"FREMONT, CA 94538, Alameda County","Oct 10, 9:00am","Foreclosure Sale, In Person",4,2,"1,734","$1,040,000","$265,000",Save,No Buyer's Premium,,,
 2807549,4205 STAR RIDGE RD,"HAYWARD, CA 94542, Alameda County","Oct 11, 12:00pm","Foreclosure Sale, In Person",4,3,"2,218","$1,256,000",–,Save,No Buyer's Premium,,,
 2799446,22558 6TH ST,"HAYWARD, CA 94541, Alameda County","Sep 25, Time TBD","Foreclosure Sale, In Person",3,1.5,"1,849","$800,000",–,Save,No Buyer's Premium,,,
 2805953,2312 BELVEDERE AVE,"SAN LEANDRO, CA 94577, Alameda County","Oct 01, Time TBD","Foreclosure Sale, In Person",3,1.5,"1,364","$555,000",–,Save,No Buyer's Premium,,,

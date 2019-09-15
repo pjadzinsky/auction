@@ -9,3 +9,10 @@ URL_ATTRIBUTES = ["auction_id", "asset_address_content_1", "asset_address_conten
                   "asset_auction_type", "asset_beds", "asset_baths", "asset_sqft", "label_after_repair_value_value",
                   "label_starting_bid_value", "asset_save_label", "asset_No Buyer's Premium_label", "asset_image",
                   "asset_Newly Listed_label", "asset_Broker Commission Available_label"]
+KEYS_TO_EXTRACT = ['venue_code', 'venue_id', 'auction_date', 'venue_type', 'trustee_sale',
+                   'online_event', 'interior_access', 'financing_available', 'cash_only',
+                   'est_opening_bid', 'property_id', 'property_address', 'property_city',
+                   'property_state_code', 'property_zip', 'lot_size', 'home_square_footage', 'bedrooms',
+                   'baths', 'year_built', 'property_county', 'property_occupancy_status', 'property_type',
+                   'saved_count', 'estimated_value', 'opening_bid', 'est_debt', 'after_repair_value',
+                   'propertyViews']
