@@ -1,3 +1,5 @@
+import os
+
 COMPLETED_FOLDER = 'completed'
 URL_FOLDER = 'urls'
 ACTIVE_AUCTION_FOLDER = 'active_auction'
@@ -16,3 +18,4 @@ KEYS_TO_EXTRACT = ['venue_code', 'venue_id', 'auction_date', 'venue_type', 'trus
                    'baths', 'year_built', 'property_county', 'property_occupancy_status', 'property_type',
                    'saved_count', 'estimated_value', 'opening_bid', 'est_debt', 'after_repair_value',
                    'propertyViews']
+LOGS = os.path.join(PROJ_ROOT, 'auction.log')

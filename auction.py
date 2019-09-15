@@ -10,16 +10,17 @@ https://stackoverflow.com/questions/3314429/how-to-view-generated-html-code-in-f
 
 """
 from datetime import date, datetime, timedelta
+import logging
 import os
 
 import pandas as pd
 
-from going_headless import auction_craller
+from going_headless import auction_crawler
 import zillow
 
-import parse_url
-from config import COMPLETED_FOLDER, ACTIVE_AUCTION_FOLDER, PENDING_TRANSACTION_FOLDER
+from config import COMPLETED_FOLDER, ACTIVE_AUCTION_FOLDER, PENDING_TRANSACTION_FOLDER, LOGS
 
+logger = logging.getLogger(__name__)
 HALF_YEAR = timedelta(days=182)
 
 
@@ -40,14 +41,14 @@ def main(wildcard):
     # then for each property for which we don't yet have all the info, go into the property auction
     # page and extract such info. At the end, a new csv file will be created in ACTIVE_AUCTION_FOLDER
     # with all the properties currently active
-    active_auctions_df = auction_craller.crall_all_counties()
-    print(active_auctions_df.groupby('county').city.count())
+    active_auctions_df = auction_crawler.crawl_all_counties()
+    logger.info(active_auctions_df.groupby('county').city.count())
 
     # the list of properties we have to zillowfy is compossed of:
     # 1. those that are already in this list
     # 2. those that are marked as pending in active_auctions_df
     # plus those properties in active_auctions_df, with
-    pending_transaction_df = auction_craller.load_last_df(PENDING_TRANSACTION_FOLDER)
+    pending_transaction_df = auction_crawler.load_last_df(PENDING_TRANSACTION_FOLDER)
 
     # Get active auctions in 'files' to 'active_auctions_df'
     base_name = '{}.csv'.format(date.today().strftime('%Y%m%d'))
@@ -139,5 +140,13 @@ def parse_date(date_str):
 
 
 if __name__ == "__main__":
-    main('20190906_Alameda_1.html')
+    logging.basicConfig(filename=LOGS,
+                        format='%(levelname).1s:%(module)s:%(lineno)d:%(asctime)s: %(message)s',
+                        level=logging.DEBUG)
+    logger.info('*' * 80)
+    today_str = date.today().strftime('%Y%m%d')
+
+    hrefs = auction_crawler.crawl_all_counties(today_str)
+    auction_crawler.crawl_individual_auction_ids(today_str, hrefs)
+    #main('20190906_Alameda_1.html')
 
