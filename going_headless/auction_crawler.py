@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 
 import pandas as pd
 
-from config import ACTIVE_AUCTION_FOLDER, COUNTIES, KEYS_TO_EXTRACT, PENDING_TRANSACTION_FOLDER, PROJ_ROOT
+from config import ACTIVE_AUCTION_FOLDER, COUNTIES, KEYS_TO_EXTRACT, PENDING_TRANSACTION_FOLDER, PROJ_ROOT, URL_FOLDER
 AUCTION_COM = "http://www.auction.com"
 
 logger = logging.getLogger(__name__)
@@ -232,12 +232,32 @@ def load_last_df(folder):
     return df
 
 
-def get_single_auction_data(auction_id, href, driver):
-    logger.info('extracting info for active auction: {}'.format(auction_id))
-    url = AUCTION_COM + href
-    driver.get(url)
-    time.sleep(3)
-    auction_series = extract_property_series(driver.page_source)
+def get_single_auction_data(auction_id, href, driver, force):
+    """
+    Get pd.Series for given auction_id. If we already have a local copy we'll use that copy without
+    downloading data from server (unless 'force' is set)
+    :param auction_id: int
+    :param href:  str, url to download
+    :param driver:
+    :param force: bool:
+        True, forces downloading data from server
+        False, if local_name exists will load content from file
+    :return:
+    """
+    local_name = os.path.join(PROJ_ROOT, URL_FOLDER, '{}.html'.format(auction_id))
+    if os.path.isfile(local_name) and not force:
+        with open(local_name) as fid:
+            html_text = fid.readlines()
+    else:
+        logger.info('extracting info for active auction: {}'.format(auction_id))
+        url = AUCTION_COM + href
+        driver.get(url)
+        time.sleep(3)
+        with open(local_name, 'w+t') as fid:
+            fid.write(driver.page_source)
+        html_text = driver.page_source
+
+    auction_series = extract_property_series(html_text)
     auction_series['href'] = href
     auction_series.name = int(auction_id)
     return auction_series
