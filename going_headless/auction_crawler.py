@@ -13,7 +13,8 @@ from selenium.webdriver.chrome.options import Options
 
 import pandas as pd
 
-from config import ACTIVE_AUCTION_FOLDER, COUNTIES, KEYS_TO_EXTRACT, PENDING_TRANSACTION_FOLDER, PROJ_ROOT, URL_FOLDER
+from config import ACTIVE_AUCTION_FOLDER, COMPLETED_FOLDER, COUNTIES, KEYS_TO_EXTRACT, \
+    PENDING_TRANSACTION_FOLDER, PROJ_ROOT, URL_FOLDER
 AUCTION_COM = "http://www.auction.com"
 
 logger = logging.getLogger(__name__)
@@ -194,28 +195,30 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
     for auction_id in new_auction_ids:
         try:
             href = auction_id_href[auction_id]
-            auction_series = get_single_auction_data(auction_id, href, driver)
+            auction_series = get_single_auction_data(auction_id, href, driver, force=False)
             active_auction_df = active_auction_df.append(auction_series)
         except Exception as e:
             logger.error('problem with id: {}'.format(auction_id))
 
-    for auction_id in deactivated_df.index:
-        if auction_id not in auction_id_href:
-            logger.info('{} key not present in href'.format(auction_id))
+    for auction_id, href in deactivated_df.href.iteritems():
+        if not href:
+            logger.info('{} key has no href'.format(auction_id))
             continue
 
         try:
-            href = auction_id_href[auction_id]    # we are done crawling
-            auction_series = get_single_auction_data(auction_id, href, driver)
-            deactivated_df = deactivated_df.append(auction_series)
-            logger.info('auction series: {}'.format(auction_series))
+            auction_series = get_single_auction_data(auction_id, href, driver, force=True)
+            deactivated_df[auction_id] = auction_series
         except Exception as e:
             logger.exception(e)
     driver.close()
 
     basename = '{}.csv'.format(today_str)
+    completed_df = deactivated_df[deactivated_df.status_label == 'Completed - Pending Sale Result']
+    deactivated_df.drop(completed_df.index, inplace=True)
+
     active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
     deactivated_df.to_csv(os.path.join(PROJ_ROOT, PENDING_TRANSACTION_FOLDER, basename))
+    completed_df.to_csv(os.path.join(PROJ_ROOT, COMPLETED_FOLDER, basename))
     return active_auction_df
 
 
