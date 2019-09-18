@@ -10,11 +10,11 @@ from html.parser import HTMLParser
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-
+import numpy as np
 import pandas as pd
 
 from config import ACTIVE_AUCTION_FOLDER, COMPLETED_FOLDER, COUNTIES, KEYS_TO_EXTRACT, \
-    PENDING_TRANSACTION_FOLDER, PROJ_ROOT, URL_FOLDER
+    PENDING_TRANSACTION_FOLDER, PROJ_ROOT, URL_FOLDER, READY_FOR_ZILLOW_FOLDER
 AUCTION_COM = "http://www.auction.com"
 
 logger = logging.getLogger(__name__)
@@ -169,7 +169,6 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
     deactivated_ids = set(active_auction_df.index).difference(active_ids)
     logger.info('action_crawler identified {} deactivated properties'.format(len(deactivated_ids)))
 
-
     deactivated_df = load_last_df(os.path.join(PROJ_ROOT, PENDING_TRANSACTION_FOLDER))
     deactivated_df = deactivated_df.append(active_auction_df.loc[deactivated_ids])
     deactivated_df.drop_duplicates(inplace=True)
@@ -207,20 +206,27 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
 
         try:
             auction_series = get_single_auction_data(auction_id, href, driver, force=True)
-            deactivated_df[auction_id] = auction_series
+            deactivated_df.loc[auction_id] = auction_series
         except Exception as e:
             logger.exception(e)
     driver.close()
 
     basename = '{}.csv'.format(today_str)
-    completed_df = deactivated_df[deactivated_df.status_label == 'Completed - Pending Sale Result']
-    deactivated_df.drop(completed_df.index, inplace=True)
+    to_zillowfy_df = deactivated_df[deactivated_df.status_label == 'Completed - Pending Sale Result']
+    deactivated_df.drop(to_zillowfy_df.index, inplace=True)
 
     active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
     deactivated_df.to_csv(os.path.join(PROJ_ROOT, PENDING_TRANSACTION_FOLDER, basename))
-    completed_df.to_csv(os.path.join(PROJ_ROOT, COMPLETED_FOLDER, basename))
+    to_zillowfy_df.to_csv(os.path.join(PROJ_ROOT, READY_FOR_ZILLOW_FOLDER, basename))
     return active_auction_df
 
+
+def find_duplicates(df):
+    df.sort_index(inplace=True)
+    diff = np.diff(df.index.to_list())
+    if min(diff) == 0:
+        idxs = np.where(diff==0)[0]
+        return df.index[idxs]
 
 def load_last_df(folder):
     all_csvs = glob.glob(os.path.join(folder, '*.csv'))
