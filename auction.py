@@ -18,7 +18,7 @@ import pandas as pd
 from going_headless import auction_crawler
 import zillow
 
-from config import COMPLETED_FOLDER, ACTIVE_AUCTION_FOLDER, PENDING_TRANSACTION_FOLDER, LOGS
+from config import COMPLETED_FOLDER, ACTIVE_AUCTION_FOLDER, CANCELED_FOLDER, LOGS
 
 logger = logging.getLogger(__name__)
 HALF_YEAR = timedelta(days=182)
@@ -48,7 +48,7 @@ def main(wildcard):
     # 1. those that are already in this list
     # 2. those that are marked as pending in active_auctions_df
     # plus those properties in active_auctions_df, with
-    pending_transaction_df = auction_crawler.load_last_df(PENDING_TRANSACTION_FOLDER)
+    pending_transaction_df = auction_crawler.load_last_df(CANCELED_FOLDER)
 
     # Get active auctions in 'files' to 'active_auctions_df'
     base_name = '{}.csv'.format(date.today().strftime('%Y%m%d'))
@@ -68,7 +68,7 @@ def main(wildcard):
     pending_transaction_df = pending_transaction_df.append(active_auctions_df)
     active_auctions_df.to_csv(os.path.join(ACTIVE_AUCTION_FOLDER, base_name))
     completed_df.to_csv(os.path.join(COMPLETED_FOLDER, base_name))
-    pending_transaction_df.to_csv(os.path.join(PENDING_TRANSACTION_FOLDER, base_name))
+    pending_transaction_df.to_csv(os.path.join(CANCELED_FOLDER, base_name))
 
 
 def remove_properties(from_here, that_are_in_here):

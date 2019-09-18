@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 
 from config import ACTIVE_AUCTION_FOLDER, COMPLETED_FOLDER, COUNTIES, KEYS_TO_EXTRACT, \
-    PENDING_TRANSACTION_FOLDER, PROJ_ROOT, URL_FOLDER, READY_FOR_ZILLOW_FOLDER
+    CANCELED_FOLDER, PROJ_ROOT, URL_FOLDER, AUCTIONED_FOLDER
 AUCTION_COM = "http://www.auction.com"
 
 logger = logging.getLogger(__name__)
@@ -155,6 +155,31 @@ def crawl_all_counties(today_str):
 
 
 def crawl_individual_auction_ids(today_str, auction_id_href):
+    """
+    Get into every href pointed at by auction_id_href and for each one extract all the information
+    needed from auction.com (we actually extract info only for new properties, not for all)
+
+    Currently this method does not return anything but creates 3 csvs
+    active_auction/<date>.csv, canceled/<date>.csv, auctioned/<date>.csv
+
+    active_auction_csv:
+        This file has information about all properties currently being auctioned or schedule for auction.
+        This is un updated file. We load the last recorded file and add any new properties in
+        auction_id_href.
+
+    canceled:
+        These are auctions that were active at some point but are not active anymore.
+        Could be that the auction was carried out, but most likely it was canceled.
+
+    auctioned:
+        This are auctions that were successfully carried out. They are in contract. It could be
+        that the contract is not carried out and the property appears again in auction.
+
+    :param today_str: str, 20190930
+    :param auction_id_href: dict mapping auction_id to href
+    :return:
+        None
+    """
     driver = get_chrome_driver()
     # now we load the last active_auction dataframe we have in file. This is outdated info
     # but the last one we got
@@ -165,45 +190,22 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
     new_auction_ids = active_ids.difference(active_auction_df.index)
     logger.info('action_crawler identified {} new properties'.format(len(new_auction_ids)))
 
-    # We have to identify auction ids that were active before but are no longer active
+    # We have to identify auction ids that were active before but are no longer active (auctioned + canceled)
     deactivated_ids = set(active_auction_df.index).difference(active_ids)
     logger.info('action_crawler identified {} deactivated properties'.format(len(deactivated_ids)))
 
-    deactivated_df = load_last_df(os.path.join(PROJ_ROOT, PENDING_TRANSACTION_FOLDER))
-    deactivated_df = deactivated_df.append(active_auction_df.loc[deactivated_ids])
-    deactivated_df.drop_duplicates(inplace=True)
+    deactivated_df = active_auction_df.loc[deactivated_ids]
     active_auction_df.drop(deactivated_ids, inplace=True)
 
-    # legacy data transfomration
-    """
-    deactivated_df = active_auction_df.loc[deactivated_ids]
-    addresses = deactivated_df[['asset_address_content_1', 'asset_address_content_2']].apply(
-        lambda x: x.asset_address_content_1 + ', ' + x.asset_address_content_2, axis=1)
-
-    auction_id_parser = AuctionIDParser()
-    for address in addresses:
-        CA_index = address.rfind('CA ')
-        address = address[:CA_index + 2]
-        get_auction_ids(driver, auction_id_parser, address, suffix='')
-        logger.info(len(auction_id_parser.href))
-
-    with open(today_str + 'addresses.json', 'w+t') as fid:
-        json.dump(auction_id_parser.href, fid, indent=4)
-    """
     # add missing auction_ids to previously_active
-    for auction_id in new_auction_ids:
+    for auction_id, href in new_auction_ids.href.iteritems():
         try:
-            href = auction_id_href[auction_id]
             auction_series = get_single_auction_data(auction_id, href, driver, force=False)
-            active_auction_df = active_auction_df.append(auction_series)
+            active_auction_df.loc[auction_id] = auction_series
         except Exception as e:
-            logger.error('problem with id: {}'.format(auction_id))
+            logger.exception(e)
 
     for auction_id, href in deactivated_df.href.iteritems():
-        if not href:
-            logger.info('{} key has no href'.format(auction_id))
-            continue
-
         try:
             auction_series = get_single_auction_data(auction_id, href, driver, force=True)
             deactivated_df.loc[auction_id] = auction_series
@@ -212,12 +214,12 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
     driver.close()
 
     basename = '{}.csv'.format(today_str)
-    to_zillowfy_df = deactivated_df[deactivated_df.status_label == 'Completed - Pending Sale Result']
-    deactivated_df.drop(to_zillowfy_df.index, inplace=True)
+    auctioned_df = deactivated_df[deactivated_df.status_label == 'Completed - Pending Sale Result']
+    canceled_df = deactivated_df.drop(auctioned_df.index)
 
     active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
-    deactivated_df.to_csv(os.path.join(PROJ_ROOT, PENDING_TRANSACTION_FOLDER, basename))
-    to_zillowfy_df.to_csv(os.path.join(PROJ_ROOT, READY_FOR_ZILLOW_FOLDER, basename))
+    canceled_df.to_csv(os.path.join(PROJ_ROOT, CANCELED_FOLDER, basename))
+    auctioned_df.to_csv(os.path.join(PROJ_ROOT, AUCTIONED_FOLDER, basename))
     return active_auction_df
 
 
