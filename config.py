@@ -2,7 +2,7 @@ import os
 
 COMPLETED_FOLDER = 'completed'
 URL_FOLDER = 'urls'
-ACTIVE_AUCTION_FOLDER = 'active_auction'
+ACTIVE_AUCTION_FOLDER = 'active'
 CANCELED_FOLDER = 'canceled'
 AUCTIONED_FOLDER = 'auctioned'
 COUNTIES = ['Alameda', 'Contra Costa', 'Marin', 'Napa', 'Sacramento', 'San Francisco', 'San Joaquin',

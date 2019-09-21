@@ -4,7 +4,7 @@ https://stackoverflow.com/questions/3314429/how-to-view-generated-html-code-in-f
     I found the element in the html that when I hover over, highlights the whole table of properties.
     Then copy pasted the html into 'urls' folder
 2. Pass those files to parse_url.process_html_files(files)
-    This step generates active_auction/<date>.active_auction with all data from auction.com
+    This step generates active/<date>.active with all data from auction.com
 3. How do we know if auction finished succesfully? Call zillow to get estimated value/rents and
     once transaction closes the executed price
 
@@ -18,7 +18,7 @@ import pandas as pd
 from going_headless import auction_crawler
 import zillow
 
-from config import COMPLETED_FOLDER, ACTIVE_AUCTION_FOLDER, CANCELED_FOLDER, LOGS
+from config import COMPLETED_FOLDER, ACTIVE_AUCTION_FOLDER, CANCELED_FOLDER, LOGS, AUCTIONED_FOLDER, PROJ_ROOT
 
 logger = logging.getLogger(__name__)
 HALF_YEAR = timedelta(days=182)
@@ -48,7 +48,7 @@ def main(wildcard):
     # 1. those that are already in this list
     # 2. those that are marked as pending in active_auctions_df
     # plus those properties in active_auctions_df, with
-    pending_transaction_df = auction_crawler.load_last_df(CANCELED_FOLDER)
+    pending_transaction_df, _ = auction_crawler.load_last_df(CANCELED_FOLDER)
 
     # Get active auctions in 'files' to 'active_auctions_df'
     base_name = '{}.csv'.format(date.today().strftime('%Y%m%d'))
@@ -79,33 +79,50 @@ def remove_properties(from_here, that_are_in_here):
     return missing_df
 
 
-def zillowfy(df):
+def zillowfy(today_str):
     """
-    Add data from zillow if property was sold
+    Load last csv from AUCTIONED_FOLDER (these are all the properties that according to auction.com
+    were auctioned)
+    For each property get data from zillow.
+    If last sold date > auctioned_date, update information accordingly
+    Properties with data from zillow are pulled out of the AUCTIONED_FOLDER and saved onto the
+    COMPLETED_FOLDER
     """
-    completed_df = pd.DataFrame([])
-    indexes_to_drop = []
-    for index, data in df.iterrows():
-        if 'zillow_id' in data and data['zillow_id']:
-            # we already got data for this property, it was sold. No need to do anything else
-            continue
-        address = data['asset_address_content_1']
-        zipcode = data['zipcode']
-        summary = zillow.get_summary(address, zipcode)
+    auctioned, auctioned_filename = auction_crawler.load_last_df(AUCTIONED_FOLDER)
+    for index, data in auctioned.iterrows():
+        address = data['property_address']
+        zipcode = data['property_zip']
+        try:
+            summary = zillow.get_summary(address, zipcode)
+        except Exception as e:
+            logger.exception(e)
+            logger.info('{}, {}'.format(address, zipcode))
+
         if summary.last_sold_date:
             last_sold_date = datetime.strptime(summary.last_sold_date, '%m/%d/%Y').date()
-            if data['auction_end_date'] < last_sold_date:
+            auction_date = datetime.strptime(data['auction_date'], '%Y-%m-%d').date()
+            if auction_date < last_sold_date:
                 data['zillow_id'] = summary.zillow_id
                 data['zestimate_amount'] = summary.zestimate_amount
                 data['zestimate_valuation_range_high'] = summary.zestimate_valuation_range_high
                 data['zestimate_valuation_range_low'] = summary.zestimate_valuationRange_low
                 data['zillow_last_date_sold'] = last_sold_date
                 data['zillow_lasl_sold_price'] = summary.last_sold_price
-                completed_df.append(data, ignore_index=True)
-                indexes_to_drop.append(index)
+                logger.info('{}, {} sold on {} for {}'.format(address,
+                                                              zipcode,
+                                                              last_sold_date,
+                                                              summary.last_sold_price_currency))
+        else:
+            logger.info('No zillow data for {}, {}'.format(address, zipcode))
 
-    df.drop(indexes_to_drop, inplace=True)
-    return completed_df
+    if 'zillow_id' in auctioned:
+        index_completed = auctioned['zillow_id']
+        completed = auctioned.loc[index_completed]
+        auctioned.drop(index_completed, inplace=True)
+
+        basename = "{}.csv".format(today_str)
+        completed.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
+        auctioned.to_csv(auctioned_filename + '.new')
 
 
 def parse_date(date_str):
@@ -148,5 +165,5 @@ if __name__ == "__main__":
 
     hrefs = auction_crawler.crawl_all_counties(today_str)
     auction_crawler.crawl_individual_auction_ids(today_str, hrefs)
-    #main('20190906_Alameda_1.html')
+    zillowfy(today_str)
 

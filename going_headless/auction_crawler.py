@@ -70,7 +70,7 @@ def get_chrome_driver():
     return driver
 
 
-def get_auction_ids(driver, auction_id_parser, search_str, suffix=' County, CA'):
+def get_auction_ids(driver, auction_id_parser, date_str, search_str, suffix=' County, CA'):
     """
     This method searches in auction.com with some 'search_str' criteria and parsers the html to extract
     the Auction ID and associated href and stores them in attribute 'href' of 'auction_id_parser'
@@ -92,12 +92,15 @@ def get_auction_ids(driver, auction_id_parser, search_str, suffix=' County, CA')
     search_field.send_keys(search_str)
     search_field.send_keys(Keys.RETURN)
     time.sleep(5)
-    driver.save_screenshot('/tmp/{}.png'.format(search_str))
 
     # pagination starts at i = 1
     i = 1
     while True:
         auction_id_parser.feed(driver.page_source)
+        filename = os.path.join(URL_FOLDER, '{}_{}_{}.html'.format(search_str, date_str, i))
+        with open(filename, 'w+t') as fid:
+            fid.write(driver.page_source)
+
         try:
             next_button = driver.find_element_by_link_text(str(i))
             next_button.click()
@@ -123,17 +126,17 @@ def find_drivers_finder(driver, attr):
             continue
 
 
-def crawl_all_counties(today_str):
+def crawl_all_counties(today_str, force=False):
     """
     Wrapper to call crawl_county on each County in config.COUNTIES
-    Saves output to active_auction <Date>.json
+    Saves output to active <Date>.json
     It also logger.infos how many properties it found per county at the end
     :return:
     """
 
     # if we already have a json file, load it and return it
     json_file = os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, '{}.json'.format(today_str))
-    if os.path.isfile(json_file):
+    if os.path.isfile(json_file) and not force:
         with open(json_file) as fid:
             temp_dir = json.load(fid)
             # we are saving keys as strings rather than ints, we convert them as soon as we load them back
@@ -143,7 +146,7 @@ def crawl_all_counties(today_str):
         driver = get_chrome_driver()
         auction_id_parser = AuctionIDParser()
         for county in COUNTIES:
-            get_auction_ids(driver, auction_id_parser, county)
+            get_auction_ids(driver, auction_id_parser, today_str, county)
 
         driver.close()
         with open(json_file, 'w+t') as fid:
@@ -160,7 +163,7 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
     needed from auction.com (we actually extract info only for new properties, not for all)
 
     Currently this method does not return anything but creates 3 csvs
-    active_auction/<date>.csv, canceled/<date>.csv, auctioned/<date>.csv
+    active/<date>.csv, canceled/<date>.csv, auctioned/<date>.csv
 
     active_auction_csv:
         This file has information about all properties currently being auctioned or schedule for auction.
@@ -181,9 +184,9 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
         None
     """
     driver = get_chrome_driver()
-    # now we load the last active_auction dataframe we have in file. This is outdated info
+    # now we load the last active dataframe we have in file. This is outdated info
     # but the last one we got
-    active_auction_df = load_last_df(os.path.join(PROJ_ROOT, 'active_auction'))
+    active_auction_df, _ = load_last_df(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER))
 
     # We have to identify auction ids for which we don't have info yet
     active_ids = set(auction_id_href.keys())
@@ -195,11 +198,11 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
     logger.info('action_crawler identified {} deactivated properties'.format(len(deactivated_ids)))
 
     deactivated_df = active_auction_df.loc[deactivated_ids]
-    active_auction_df.drop(deactivated_ids, inplace=True)
 
     # add missing auction_ids to previously_active
-    for auction_id, href in new_auction_ids.href.iteritems():
+    for auction_id in new_auction_ids:
         try:
+            href = auction_id_href[auction_id]
             auction_series = get_single_auction_data(auction_id, href, driver, force=False)
             active_auction_df.loc[auction_id] = auction_series
         except Exception as e:
@@ -214,8 +217,14 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
     driver.close()
 
     basename = '{}.csv'.format(today_str)
-    auctioned_df = deactivated_df[deactivated_df.status_label == 'Completed - Pending Sale Result']
-    canceled_df = deactivated_df.drop(auctioned_df.index)
+    auctioned_index = deactivated_df.status_label.apply(
+        lambda x: str(x).startswith('Completed') or str(x).startswith('Sold') or str(x).startswith('Gone')
+    )
+    auctioned_df = deactivated_df.loc[auctioned_index]
+    canceled_df = deactivated_df.loc[deactivated_df.auction_status.isna()]
+
+    active_auction_df.drop(auctioned_df.index, inplace=True)
+    active_auction_df.drop(canceled_df.index, inplace=True)
 
     active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
     canceled_df.to_csv(os.path.join(PROJ_ROOT, CANCELED_FOLDER, basename))
@@ -231,6 +240,7 @@ def find_duplicates(df):
         return df.index[idxs]
 
 def load_last_df(folder):
+    last_csv = None
     all_csvs = glob.glob(os.path.join(folder, '*.csv'))
     if all_csvs:
         last_csv = sorted(all_csvs)[-1]
@@ -240,7 +250,7 @@ def load_last_df(folder):
         df = pd.DataFrame([])
         df.index.name = 'auction_id'
 
-    return df
+    return df, last_csv
 
 
 def get_single_auction_data(auction_id, href, driver, force):
@@ -258,7 +268,7 @@ def get_single_auction_data(auction_id, href, driver, force):
     local_name = os.path.join(PROJ_ROOT, URL_FOLDER, '{}.html'.format(auction_id))
     if os.path.isfile(local_name) and not force:
         with open(local_name) as fid:
-            html_text = fid.readlines()
+            html_text = fid.read()
     else:
         logger.info('extracting info for active auction: {}'.format(auction_id))
         url = AUCTION_COM + href
