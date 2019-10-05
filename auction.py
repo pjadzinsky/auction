@@ -52,6 +52,8 @@ def zillowfy(today_str):
         except Exception as e:
             logger.exception(e)
             logger.info('{}, {}'.format(address, zipcode))
+        if not hasattr(summary, 'zillow_id'):
+            logger.info('No zillow data for {}, {}'.format(address, zipcode))
 
         if summary.last_sold_date:
             last_sold_date = datetime.strptime(summary.last_sold_date, '%m/%d/%Y').date()
@@ -68,8 +70,6 @@ def zillowfy(today_str):
                                                                 last_sold_date,
                                                                 summary.last_sold_price,
                                                                 summary.last_sold_price_currency))
-        else:
-            logger.info('No zillow data for {}, {}'.format(address, zipcode))
 
     if 'zillow_id' in auctioned:
         index_completed = auctioned['zillow_id'].dropna().index
