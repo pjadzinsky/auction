@@ -200,17 +200,19 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
     deactivated_df = active_auction_df.loc[deactivated_ids]
 
     # add missing auction_ids to previously_active
-    for auction_id in new_auction_ids:
+    for i, auction_id in enumerate(new_auction_ids, 1):
         try:
             href = auction_id_href[auction_id]
-            auction_series = get_single_auction_data(auction_id, href, driver, force=False)
+            msg = 'extracting info for active auction: {}, {}/{}'.format(auction_id, i, len(new_auction_ids))
+            auction_series = get_single_auction_data(auction_id, href, driver, force=False, msg=msg)
             active_auction_df.loc[auction_id] = auction_series
         except Exception as e:
             logger.exception(e)
 
-    for auction_id, href in deactivated_df.href.iteritems():
+    for i, (auction_id, href) in enumerate(deactivated_df.href.iteritems(), 1):
         try:
-            auction_series = get_single_auction_data(auction_id, href, driver, force=True)
+            msg = 'extracting info for deactivated auction: {}, {}/{}'.format(auction_id, i, len(deactivated_df))
+            auction_series = get_single_auction_data(auction_id, href, driver, force=True, msg=msg)
             deactivated_df.loc[auction_id] = auction_series
         except Exception as e:
             logger.exception(e)
@@ -220,10 +222,17 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
     auctioned_index = deactivated_df.status_label.apply(
         lambda x: str(x).startswith('Completed') or str(x).startswith('Sold') or str(x).startswith('Gone')
     )
-    auctioned_df = deactivated_df.loc[auctioned_index]
+    # auctioned_df should be an up to date list, including properties identified in the past as auctioned
+    old_auctioned_df, _ = load_last_df(AUCTIONED_FOLDER)
+    new_auctioned_df = deactivated_df.loc[auctioned_index]
+    auctioned_df = old_auctioned_df.append(new_auctioned_df)
+    logger.info('previous auctioned_df shape: {}'.format(old_auctioned_df.shape))
+    logger.info('new auctiond_df has shape: {}'.format(new_auctioned_df.shape))
+    logger.info('total auctioned_df shape: {}'.format(auctioned_df.shape))
     canceled_df = deactivated_df.loc[deactivated_df.auction_status.isna()]
 
-    active_auction_df.drop(auctioned_df.index, inplace=True)
+
+    active_auction_df.drop(new_auctioned_df.index, inplace=True)
     active_auction_df.drop(canceled_df.index, inplace=True)
 
     active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
@@ -253,7 +262,7 @@ def load_last_df(folder):
     return df, last_csv
 
 
-def get_single_auction_data(auction_id, href, driver, force):
+def get_single_auction_data(auction_id, href, driver, force, msg):
     """
     Get pd.Series for given auction_id. If we already have a local copy we'll use that copy without
     downloading data from server (unless 'force' is set)
@@ -270,7 +279,7 @@ def get_single_auction_data(auction_id, href, driver, force):
         with open(local_name) as fid:
             html_text = fid.read()
     else:
-        logger.info('extracting info for active auction: {}'.format(auction_id))
+        logger.info(msg)
         url = AUCTION_COM + href
         driver.get(url)
         time.sleep(3)
