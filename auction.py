@@ -12,6 +12,8 @@ https://stackoverflow.com/questions/3314429/how-to-view-generated-html-code-in-f
 from datetime import date, datetime, timedelta
 import logging
 import os
+import traceback
+import webbrowser
 
 import pandas as pd
 
@@ -22,53 +24,6 @@ from config import COMPLETED_FOLDER, ACTIVE_AUCTION_FOLDER, CANCELED_FOLDER, LOG
 
 logger = logging.getLogger(__name__)
 HALF_YEAR = timedelta(days=182)
-
-
-def main(wildcard):
-    """
-    We have 3 types of properties, each will live in a corresponding csv
-    1. Properties that are actively in auction (active_df/ACTIVE_AUCTION_FOLDER)
-    2. Properties that were identified in the past as being in auction, but for which we have no
-        transaction data yet (pending_transaction_df/PENDING_TRANSACTION_FOLDER)
-    3. Properties that were in auction in the past and for which we have gathered all the transaction
-        data from zillow (completed_df/COMPLETED_FOLDER)
-
-
-    :param wildcard: will process all html files in URL_FOLDER matching it
-    :return:
-    """
-    # go to auction.com and get all properties being auctioned in all counties in config.COUNTIES
-    # then for each property for which we don't yet have all the info, go into the property auction
-    # page and extract such info. At the end, a new csv file will be created in ACTIVE_AUCTION_FOLDER
-    # with all the properties currently active
-    active_auctions_df = auction_crawler.crawl_all_counties()
-    logger.info(active_auctions_df.groupby('county').city.count())
-
-    # the list of properties we have to zillowfy is compossed of:
-    # 1. those that are already in this list
-    # 2. those that are marked as pending in active_auctions_df
-    # plus those properties in active_auctions_df, with
-    pending_transaction_df, _ = auction_crawler.load_last_df(CANCELED_FOLDER)
-
-    # Get active auctions in 'files' to 'active_auctions_df'
-    base_name = '{}.csv'.format(date.today().strftime('%Y%m%d'))
-
-    # we only need to zillowfy properties that are not schedule (or active) in auction.com
-    pending_transaction_df = remove_properties(pending_transaction_df, active_auctions_df)
-
-    # change compute 'auction_end_date' from 'asset_auction_date'
-    pending_transaction_df.loc[:, 'auction_end_date'] = pending_transaction_df['asset_auction_date'].apply(parse_date)
-
-    # add data from zillow, properties in completed_df are removed from pending_transaction_df
-    completed_df = zillowfy(pending_transaction_df)
-
-    # next time we run, we only rely on pending_transaction properties. Any properties in this csv
-    # that are not active, will be considered for zillowfy. We therefor have to save all properties
-    # that are in pending_transaction_df + active_auctions_df
-    pending_transaction_df = pending_transaction_df.append(active_auctions_df)
-    active_auctions_df.to_csv(os.path.join(ACTIVE_AUCTION_FOLDER, base_name))
-    completed_df.to_csv(os.path.join(COMPLETED_FOLDER, base_name))
-    pending_transaction_df.to_csv(os.path.join(CANCELED_FOLDER, base_name))
 
 
 def remove_properties(from_here, that_are_in_here):
@@ -101,28 +56,30 @@ def zillowfy(today_str):
         if summary.last_sold_date:
             last_sold_date = datetime.strptime(summary.last_sold_date, '%m/%d/%Y').date()
             auction_date = datetime.strptime(data['auction_date'], '%Y-%m-%d').date()
-            if auction_date < last_sold_date:
-                data['zillow_id'] = summary.zillow_id
-                data['zestimate_amount'] = summary.zestimate_amount
-                data['zestimate_valuation_range_high'] = summary.zestimate_valuation_range_high
-                data['zestimate_valuation_range_low'] = summary.zestimate_valuationRange_low
-                data['zillow_last_date_sold'] = last_sold_date
-                data['zillow_lasl_sold_price'] = summary.last_sold_price
-                logger.info('{}, {} sold on {} for {}'.format(address,
-                                                              zipcode,
-                                                              last_sold_date,
-                                                              summary.last_sold_price_currency))
+            if auction_date <= last_sold_date:
+                auctioned.loc[index, 'zillow_id'] = summary.zillow_id
+                auctioned.loc[index, 'zestimate_amount'] = summary.zestimate_amount
+                auctioned.loc[index, 'zestimate_valuation_range_high'] = summary.zestimate_valuation_range_high
+                auctioned.loc[index, 'zestimate_valuation_range_low'] = summary.zestimate_valuationRange_low
+                auctioned.loc[index, 'zillow_last_date_sold'] = last_sold_date
+                auctioned.loc[index, 'zillow_lasl_sold_price'] = summary.last_sold_price
+                logger.info('{}, {} sold on {} for {}{}'.format(address,
+                                                                zipcode,
+                                                                last_sold_date,
+                                                                summary.last_sold_price,
+                                                                summary.last_sold_price_currency))
         else:
             logger.info('No zillow data for {}, {}'.format(address, zipcode))
 
     if 'zillow_id' in auctioned:
-        index_completed = auctioned['zillow_id']
-        completed = auctioned.loc[index_completed]
-        auctioned.drop(index_completed, inplace=True)
+        index_completed = auctioned['zillow_id'].dropna().index
+        if not index_completed.empty:
+            completed = auctioned.loc[index_completed]
+            auctioned.drop(index_completed, inplace=True)
 
-        basename = "{}.csv".format(today_str)
-        completed.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
-        auctioned.to_csv(auctioned_filename + '.new')
+            basename = "{}.csv".format(today_str)
+            completed.to_csv(os.path.join(PROJ_ROOT, COMPLETED_FOLDER, basename))
+            auctioned.to_csv(auctioned_filename)
 
 
 def parse_date(date_str):
@@ -156,14 +113,50 @@ def parse_date(date_str):
     return auction_date
 
 
+def create_links_to_verify():
+    """
+    Create links to easily verify that:
+        'canceled' are really canceled
+        'auctioned_df' are auctioned
+        'completed' have no zillow data
+    :return:
+    """
+    with open('links.txt', 'w+t') as fid:
+        canceled_df, _ = auction_crawler.load_last_df(CANCELED_FOLDER)
+        fid.write('Canceled\n')
+        for index, row in canceled_df.iterrows():
+            url = 'http://www.auction.com' + row.href
+            fid.write(url + '\n')
+            webbrowser.open(url, new=2)
+
+        auctioned_df, _ = auction_crawler.load_last_df(AUCTIONED_FOLDER)
+        fid.write('Completed in auction.com\n')
+        for index, row in auctioned_df.iterrows():
+            url = 'http://www.auction.com' + row.href
+            fid.write(url + '\n')
+            webbrowser.open(url, new=2)
+
+        """
+        fid.write('Completed in zillow.com\n')
+        for index, row in completed_df.iterrows():
+            fid.write('http://www.auction.com' + row.href + '\n')
+        """
+
+
+
+
 if __name__ == "__main__":
     logging.basicConfig(filename=LOGS,
                         format='%(levelname).1s:%(module)s:%(lineno)d:%(asctime)s: %(message)s',
-                        level=logging.DEBUG)
+                        level=logging.INFO)
     logger.info('*' * 80)
     today_str = date.today().strftime('%Y%m%d')
 
-    hrefs = auction_crawler.crawl_all_counties(today_str)
-    auction_crawler.crawl_individual_auction_ids(today_str, hrefs)
+    recompute = True
+
+    if recompute:
+        hrefs = auction_crawler.crawl_all_counties(today_str)
+        auction_crawler.crawl_individual_auction_ids(today_str, hrefs)
     zillowfy(today_str)
+    create_links_to_verify()
 
