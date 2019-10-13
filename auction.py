@@ -139,21 +139,3 @@ if __name__ == "__main__":
         auction_crawler.crawl_individual_auction_ids(today_str, hrefs)
     zillowfy(today_str)
 
-# Completed - Reverted to Beneficiary
-# Completed - Sold to 3rd Party
-# Completed - Pending Sale Result
-# For Sale
-# Active - Scheduled for Auction
-#https://www.auction.com/details/550-mcfall-ct-santa-rosa-ca-95401-2663728-e_13547 for Sale
-#https://www.auction.com/details/123-nolan-ct-forestville-ca-95436-2833233-e_13547a scheduled
-# /details/1574-willowmont-ave-san-jose-ca-95118-2791151-e_13391a still active, why in canceled?
-#https://www.auction.com/details/2433-rockingham-cir-lodi-ca-95242-2745060-e_13547a scheduled
-#https://www.auction.com/details/7625-zilli-drive-tracy-ca-95304-2842860-e_900x scheduled for auction
-#https://www.auction.com/details/1545-yardley-st-santa-rosa-ca-95403-2799767-e_13443a scheduled for auction
-#https://www.auction.com/details/1221-enview-ct-stockton-ca-95210-2838647-e_13443 sold to 3rd party
-#https://www.auction.com/details/1121-el-vecino-avenue-modesto-ca-95350-2233215-e_13443 completed, sold to 3rd party
-#https://www.auction.com/details/5021-tacomic-drive-sacramento-ca-95842-2840729-e_900x still active
-#https://www.auction.com/residential/1815%20KAGEHIRO%20DR%2C%20TRACY%2C%20CA_qs/pending,closed,canceled_lt/ Correctly canceled
-## the one before was not understood
-#https://www.auction.com/details/340-fieldbrook-ln-watsonville-ca-95076-2805840-e_13391a idem
-#https://www.auction.com/details/2410-madden-ter-san-jose-ca-95116-2805990-e_13391a idem

@@ -220,48 +220,28 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
             logger.exception(e)
     driver.close()
 
-    basename = '{}.csv'.format(today_str)
-    auctioned_index = deactivated_df.status_label.apply(
-        # status_label could be one of these:
-        # Completed - Reverted to Beneficiary   belongs to canceled
-        # Completed - Sold to 3rd Party         belongs to auctioned
-        # Completed - Pending Sale Result       belongs to auctioned
-        # For Sale                              belongs to active
-        # Active - Scheduled for Auction        belongs to active
-        # Sold                                  belongs to auctioned
-        # Gone                                  belongs to auctioned?
-        lambda x: str(x).startswith('Completed - Sold to 3rd Party') or
-                  str(x).startswith('Completed - Pending Sale Result') or
-                  str(x).startswith('Sold') or
-                  str(x).startswith('Gone')
-    )
-    canceled_index = deactivated_df.status_label.apply(
-        lambda x: str(x).startswith('Completed = Reverted to Beneficiary')
-    )
-    wrongfuly_deactivated_idx = deactivated_df.status_label.apply(
-        lambda x: str(x).startswith('For Sale') or
-                  str(x).startswith('Active')
-    )
-    unknown_df = deactivated_df[ ~ (auctioned_index | canceled_index | wrongfuly_deactivated_idx)]
+    new_auctioned_df = deactivated_df[deactivated_df.my_status == 'auctioned']
+    canceled_df = deactivated_df[deactivated_df.my_status == 'canceled']
+    wrongfuly_deactivated_df = deactivated_df[deactivated_df.status_label == 'active']
+    unknown_df = deactivated_df[deactivated_df.status_label == 'unknown']
+
     # auctioned_df should be an up to date list, including properties identified in the past as auctioned
     old_auctioned_df, _ = load_last_df(AUCTIONED_FOLDER)
-    new_auctioned_df = deactivated_df.loc[auctioned_index]
     auctioned_df = old_auctioned_df.append(new_auctioned_df)
-    canceled_df = deactivated_df.loc[canceled_index]
     logger.info('previous auctioned_df shape: {}'.format(old_auctioned_df.shape))
     logger.info('new auctiond_df has shape: {}'.format(new_auctioned_df.shape))
     logger.info('total auctioned_df shape: {}'.format(auctioned_df.shape))
-    canceled_df = canceled_df.append(deactivated_df.loc[deactivated_df.auction_status.isna()])
+    #canceled_df = canceled_df.append(deactivated_df.loc[deactivated_df.auction_status.isna()])
 
     active_auction_df.drop(new_auctioned_df.index, inplace=True)
     active_auction_df.drop(canceled_df.index, inplace=True)
-    wrongfuly_deactivated_df = deactivated_df.loc[wrongfuly_deactivated_idx]
 
-    active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
-    canceled_df.to_csv(os.path.join(PROJ_ROOT, CANCELED_FOLDER, basename))
-    auctioned_df.to_csv(os.path.join(PROJ_ROOT, AUCTIONED_FOLDER, basename))
-    unknown_df.to_csv(os.path.join(PROJ_ROOT, UNKNOWN_FOLDER, basename))
-    wrongfuly_deactivated_df.to_csv(os.path.join(PROJ_ROOT, WRONGFULY_DEACTIVE, basename))
+    basename = '{}.csv'.format(today_str)
+    #active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
+    #canceled_df.to_csv(os.path.join(PROJ_ROOT, CANCELED_FOLDER, basename))
+    #auctioned_df.to_csv(os.path.join(PROJ_ROOT, AUCTIONED_FOLDER, basename))
+    #unknown_df.to_csv(os.path.join(PROJ_ROOT, UNKNOWN_FOLDER, basename))
+    #wrongfuly_deactivated_df.to_csv(os.path.join(PROJ_ROOT, WRONGFULY_DEACTIVE, basename))
 
     return active_auction_df
 
@@ -272,6 +252,7 @@ def find_duplicates(df):
     if min(diff) == 0:
         idxs = np.where(diff==0)[0]
         return df.index[idxs]
+
 
 def load_last_df(folder):
     last_csv = None
@@ -285,6 +266,28 @@ def load_last_df(folder):
         df.index.name = 'auction_id'
 
     return df, last_csv
+
+
+def merge_all_json(folder):
+    all_files = glob.glob(os.path.join(folder, '*.json'))
+    all_files.sort()
+    final_d = {}
+    for f in all_files:
+        with open(f) as fid:
+            d = json.load(fid)
+            final_d.update(d)
+    return final_d
+
+def load_all(folder):
+    all_csvs = glob.glob(os.path.join(folder, '*.csv'))
+    all_csvs.sort()
+    df = pd.DataFrame([])
+    for csv in all_csvs:
+        df = df.append(pd.read_csv(csv))
+
+    df = df.groupby('auction_id').last()
+    df.index = df.index.astype(int)
+    return df
 
 
 def get_single_auction_data(auction_id, href, driver, force, msg):
@@ -317,6 +320,10 @@ def get_single_auction_data(auction_id, href, driver, force, msg):
     auction_series.name = int(auction_id)
     return auction_series
 
+##########################
+# All pages open were returned by verify_csv('auctioned') and are wrong
+# I have to test why they were wrongly classified
+
 
 def extract_property_series(html_txt):
     """ From the html code that we get when clicking a particular property on auction.com (after a search)
@@ -324,6 +331,10 @@ def extract_property_series(html_txt):
     return pd.Series, name of the series will be the auction_id but that is not done here. Also
     the series lacks the href
     """
+    if os.path.isfile(html_txt):
+        with open(html_txt) as fid:
+            html_txt = fid.read()
+
     html_lines = html_txt.split('\n')
     with open('/tmp/html.txt', 'w+t') as fid:
         fid.write(html_txt)
@@ -338,6 +349,9 @@ def extract_property_series(html_txt):
             s = pd.Series()
             def extract_field(d, s, keys):
                 for k, v in d.items():
+                    if k == 'similarProperties':
+                        # don't get any info from these
+                        continue
                     if isinstance(v, dict):
                         extract_field(v, s, keys)
                     elif k in keys:
@@ -354,6 +368,25 @@ def extract_property_series(html_txt):
 
             extract_field(d, s, KEYS_TO_EXTRACT)
             break
+
+    add_my_status(s)
     return s
 
 
+def add_my_status(s):
+    # Completed - Reverted to Beneficiary   belongs to canceled
+    # Completed - Sold to 3rd Party         belongs to auctioned
+    # Completed - Pending Sale Result       belongs to auctioned
+    # Pending                               ?
+    # For Sale                              belongs to active
+    # Active - Scheduled for Auction        belongs to active
+    # Sold                                  belongs to auctioned
+    # Gone                                  belongs to auctioned?
+    if 'status_label' not in s:
+        s['my_status'] = 'unknown'
+    elif s['status_label'].startswith('Active') or s['status_label'].startswith('For Sale'):
+        s['my_status'] = 'active'
+    elif s['status_label'].startswith('Completed - Reverted to Beneficiary'):
+        s['my_status'] = 'canceled'
+    else:
+        s['my_status'] = 'auctioned'
