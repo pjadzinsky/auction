@@ -5,6 +5,8 @@ URL_FOLDER = 'urls'
 ACTIVE_AUCTION_FOLDER = 'active'
 CANCELED_FOLDER = 'canceled'
 AUCTIONED_FOLDER = 'auctioned'
+UNKNOWN_FOLDER = 'unknown'
+WRONGFULY_DEACTIVE = 'wrongfuly_deactivated'
 COUNTIES = ['Alameda', 'Contra Costa', 'Marin', 'Napa', 'Sacramento', 'San Francisco', 'San Joaquin',
             'San Mateo', 'Santa Clara', 'Santa Cruz', 'Solano', 'Sonoma', 'Stanislaus']
 PROJ_ROOT = '/Users/pjadzinsky/PycharmProjects/auction'

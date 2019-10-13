@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 
 from config import ACTIVE_AUCTION_FOLDER, COMPLETED_FOLDER, COUNTIES, KEYS_TO_EXTRACT, \
-    CANCELED_FOLDER, PROJ_ROOT, URL_FOLDER, AUCTIONED_FOLDER
+    CANCELED_FOLDER, PROJ_ROOT, URL_FOLDER, AUCTIONED_FOLDER, WRONGFULY_DEACTIVE, UNKNOWN_FOLDER
 AUCTION_COM = "http://www.auction.com"
 
 logger = logging.getLogger(__name__)
@@ -199,7 +199,7 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
 
     deactivated_df = active_auction_df.loc[deactivated_ids]
 
-    # add missing auction_ids to previously_active
+    # add new_auction_ids to previously_active
     for i, auction_id in enumerate(new_auction_ids, 1):
         try:
             href = auction_id_href[auction_id]
@@ -209,10 +209,12 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
         except Exception as e:
             logger.exception(e)
 
+    # revisit those properties that are deactivated, we have to figure out if the auction took place and/or
+    # it was canceled
     for i, (auction_id, href) in enumerate(deactivated_df.href.iteritems(), 1):
         try:
             msg = 'extracting info for deactivated auction: {}, {}/{}'.format(auction_id, i, len(deactivated_df))
-            auction_series = get_single_auction_data(auction_id, href, driver, force=True, msg=msg)
+            auction_series = get_single_auction_data(auction_id, href, driver, force=False, msg=msg)
             deactivated_df.loc[auction_id] = auction_series
         except Exception as e:
             logger.exception(e)
@@ -220,24 +222,47 @@ def crawl_individual_auction_ids(today_str, auction_id_href):
 
     basename = '{}.csv'.format(today_str)
     auctioned_index = deactivated_df.status_label.apply(
-        lambda x: str(x).startswith('Completed') or str(x).startswith('Sold') or str(x).startswith('Gone')
+        # status_label could be one of these:
+        # Completed - Reverted to Beneficiary   belongs to canceled
+        # Completed - Sold to 3rd Party         belongs to auctioned
+        # Completed - Pending Sale Result       belongs to auctioned
+        # For Sale                              belongs to active
+        # Active - Scheduled for Auction        belongs to active
+        # Sold                                  belongs to auctioned
+        # Gone                                  belongs to auctioned?
+        lambda x: str(x).startswith('Completed - Sold to 3rd Party') or
+                  str(x).startswith('Completed - Pending Sale Result') or
+                  str(x).startswith('Sold') or
+                  str(x).startswith('Gone')
     )
+    canceled_index = deactivated_df.status_label.apply(
+        lambda x: str(x).startswith('Completed = Reverted to Beneficiary')
+    )
+    wrongfuly_deactivated_idx = deactivated_df.status_label.apply(
+        lambda x: str(x).startswith('For Sale') or
+                  str(x).startswith('Active')
+    )
+    unknown_df = deactivated_df[ ~ (auctioned_index | canceled_index | wrongfuly_deactivated_idx)]
     # auctioned_df should be an up to date list, including properties identified in the past as auctioned
     old_auctioned_df, _ = load_last_df(AUCTIONED_FOLDER)
     new_auctioned_df = deactivated_df.loc[auctioned_index]
     auctioned_df = old_auctioned_df.append(new_auctioned_df)
+    canceled_df = deactivated_df.loc[canceled_index]
     logger.info('previous auctioned_df shape: {}'.format(old_auctioned_df.shape))
     logger.info('new auctiond_df has shape: {}'.format(new_auctioned_df.shape))
     logger.info('total auctioned_df shape: {}'.format(auctioned_df.shape))
-    canceled_df = deactivated_df.loc[deactivated_df.auction_status.isna()]
-
+    canceled_df = canceled_df.append(deactivated_df.loc[deactivated_df.auction_status.isna()])
 
     active_auction_df.drop(new_auctioned_df.index, inplace=True)
     active_auction_df.drop(canceled_df.index, inplace=True)
+    wrongfuly_deactivated_df = deactivated_df.loc[wrongfuly_deactivated_idx]
 
     active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
     canceled_df.to_csv(os.path.join(PROJ_ROOT, CANCELED_FOLDER, basename))
     auctioned_df.to_csv(os.path.join(PROJ_ROOT, AUCTIONED_FOLDER, basename))
+    unknown_df.to_csv(os.path.join(PROJ_ROOT, UNKNOWN_FOLDER, basename))
+    wrongfuly_deactivated_df.to_csv(os.path.join(PROJ_ROOT, WRONGFULY_DEACTIVE, basename))
+
     return active_auction_df
 
 

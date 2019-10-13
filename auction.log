@@ -2681,3 +2681,297 @@ I:auction:72:2019-10-05 11:57:40,429: No zillow data for 8700 EASTWOOD CRT, 9520
 I:auction:72:2019-10-05 11:57:40,971: No zillow data for 1029 WEST OAK STREET, 95203
 I:auction:72:2019-10-05 11:57:41,803: No zillow data for 3035 COLBY ST, 94705
 I:auction:72:2019-10-05 11:57:42,143: No zillow data for 8610 PERSHING AVENUE, 95628
+I:auction:152:2019-10-11 18:55:17,035: ********************************************************************************
+I:auction_crawler:88:2019-10-11 18:55:24,228: working on Alameda County, CA
+I:auction_crawler:88:2019-10-11 18:55:37,903: working on Contra Costa County, CA
+I:auction_crawler:88:2019-10-11 18:55:45,973: working on Marin County, CA
+I:auction_crawler:88:2019-10-11 18:55:52,660: working on Napa County, CA
+I:auction_crawler:88:2019-10-11 18:55:59,620: working on Sacramento County, CA
+I:auction_crawler:88:2019-10-11 18:56:07,720: working on San Francisco County, CA
+I:auction_crawler:88:2019-10-11 18:56:14,447: working on San Joaquin County, CA
+I:auction_crawler:88:2019-10-11 18:56:22,196: working on San Mateo County, CA
+I:auction_crawler:88:2019-10-11 18:56:29,620: working on Santa Clara County, CA
+I:auction_crawler:88:2019-10-11 18:56:37,261: working on Santa Cruz County, CA
+I:auction_crawler:88:2019-10-11 18:56:43,892: working on Solano County, CA
+I:auction_crawler:88:2019-10-11 18:56:51,370: working on Sonoma County, CA
+I:auction_crawler:88:2019-10-11 18:56:58,505: working on Stanislaus County, CA
+I:auction_crawler:257:2019-10-11 18:57:06,437: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active/20191005.csv
+I:auction_crawler:194:2019-10-11 18:57:06,438: action_crawler identified 42 new properties
+I:auction_crawler:198:2019-10-11 18:57:06,438: action_crawler identified 51 deactivated properties
+I:auction_crawler:282:2019-10-11 18:57:06,439: extracting info for active auction: 2855939, 1/42
+I:auction_crawler:282:2019-10-11 18:57:14,545: extracting info for active auction: 2855940, 2/42
+I:auction_crawler:282:2019-10-11 18:57:19,624: extracting info for active auction: 2485512, 3/42
+I:auction_crawler:282:2019-10-11 18:57:24,109: extracting info for active auction: 2856220, 4/42
+I:auction_crawler:282:2019-10-11 18:57:28,583: extracting info for active auction: 2844961, 5/42
+I:auction_crawler:282:2019-10-11 18:57:33,035: extracting info for active auction: 2814522, 7/42
+I:auction_crawler:282:2019-10-11 18:57:38,200: extracting info for active auction: 2855738, 8/42
+I:auction_crawler:282:2019-10-11 18:57:42,771: extracting info for active auction: 2846291, 10/42
+I:auction_crawler:282:2019-10-11 18:57:47,720: extracting info for active auction: 2850657, 13/42
+I:auction_crawler:282:2019-10-11 18:57:52,114: extracting info for active auction: 2850671, 14/42
+I:auction_crawler:282:2019-10-11 18:57:56,579: extracting info for active auction: 2850672, 15/42
+I:auction_crawler:282:2019-10-11 18:58:00,951: extracting info for active auction: 2838645, 16/42
+I:auction_crawler:282:2019-10-11 18:58:05,591: extracting info for active auction: 2613627, 17/42
+I:auction_crawler:282:2019-10-11 18:58:10,012: extracting info for active auction: 2855300, 18/42
+I:auction_crawler:282:2019-10-11 18:58:14,798: extracting info for active auction: 2662282, 19/42
+I:auction_crawler:282:2019-10-11 18:58:20,395: extracting info for active auction: 2840459, 20/42
+I:auction_crawler:282:2019-10-11 18:58:25,394: extracting info for active auction: 2857869, 21/42
+I:auction_crawler:282:2019-10-11 18:58:29,798: extracting info for active auction: 2849951, 22/42
+I:auction_crawler:282:2019-10-11 18:58:34,376: extracting info for active auction: 2832805, 23/42
+I:auction_crawler:282:2019-10-11 18:58:38,760: extracting info for active auction: 2850469, 24/42
+I:auction_crawler:282:2019-10-11 18:58:43,098: extracting info for active auction: 2853292, 25/42
+I:auction_crawler:282:2019-10-11 18:58:47,483: extracting info for active auction: 2853295, 26/42
+I:auction_crawler:282:2019-10-11 18:58:52,216: extracting info for active auction: 2853552, 27/42
+I:auction_crawler:282:2019-10-11 18:58:56,739: extracting info for active auction: 2768062, 28/42
+I:auction_crawler:282:2019-10-11 18:59:01,577: extracting info for active auction: 2857157, 29/42
+I:auction_crawler:282:2019-10-11 18:59:06,598: extracting info for active auction: 2857159, 30/42
+I:auction_crawler:282:2019-10-11 18:59:11,665: extracting info for active auction: 2846411, 31/42
+I:auction_crawler:282:2019-10-11 18:59:16,325: extracting info for active auction: 2847437, 32/42
+I:auction_crawler:282:2019-10-11 18:59:21,063: extracting info for active auction: 2852821, 33/42
+I:auction_crawler:282:2019-10-11 18:59:26,020: extracting info for active auction: 2857944, 35/42
+I:auction_crawler:282:2019-10-11 18:59:30,739: extracting info for active auction: 2855907, 36/42
+I:auction_crawler:282:2019-10-11 18:59:36,371: extracting info for active auction: 2857974, 41/42
+I:auction_crawler:282:2019-10-11 18:59:40,994: extracting info for active auction: 2854142, 42/42
+I:auction_crawler:282:2019-10-11 18:59:45,406: extracting info for deactivated auction: 2837891, 1/51
+I:auction_crawler:282:2019-10-11 18:59:51,313: extracting info for deactivated auction: 2647428, 2/51
+I:auction_crawler:282:2019-10-11 18:59:56,005: extracting info for deactivated auction: 2808325, 3/51
+I:auction_crawler:282:2019-10-11 19:00:00,501: extracting info for deactivated auction: 2814598, 4/51
+I:auction_crawler:282:2019-10-11 19:00:05,430: extracting info for deactivated auction: 2835578, 5/51
+I:auction_crawler:282:2019-10-11 19:00:10,263: extracting info for deactivated auction: 2840067, 6/51
+I:auction_crawler:282:2019-10-11 19:00:14,665: extracting info for deactivated auction: 2733831, 7/51
+I:auction_crawler:282:2019-10-11 19:00:19,465: extracting info for deactivated auction: 2622474, 8/51
+I:auction_crawler:282:2019-10-11 19:00:24,118: extracting info for deactivated auction: 2854411, 9/51
+I:auction_crawler:282:2019-10-11 19:00:28,259: extracting info for deactivated auction: 2840451, 10/51
+I:auction_crawler:282:2019-10-11 19:00:33,125: extracting info for deactivated auction: 2805519, 11/51
+I:auction_crawler:282:2019-10-11 19:00:37,443: extracting info for deactivated auction: 2845969, 12/51
+I:auction_crawler:282:2019-10-11 19:00:42,229: extracting info for deactivated auction: 2849048, 13/51
+I:auction_crawler:282:2019-10-11 19:00:46,875: extracting info for deactivated auction: 2845083, 14/51
+I:auction_crawler:282:2019-10-11 19:00:51,462: extracting info for deactivated auction: 2820641, 15/51
+I:auction_crawler:282:2019-10-11 19:00:56,085: extracting info for deactivated auction: 2840485, 16/51
+I:auction_crawler:282:2019-10-11 19:01:00,825: extracting info for deactivated auction: 2844454, 17/51
+I:auction_crawler:282:2019-10-11 19:01:05,993: extracting info for deactivated auction: 2549031, 18/51
+I:auction_crawler:282:2019-10-11 19:01:10,294: extracting info for deactivated auction: 2748584, 19/51
+I:auction_crawler:282:2019-10-11 19:01:14,997: extracting info for deactivated auction: 2842407, 20/51
+I:auction_crawler:282:2019-10-11 19:01:19,834: extracting info for deactivated auction: 2774702, 21/51
+I:auction_crawler:282:2019-10-11 19:01:24,000: extracting info for deactivated auction: 2726322, 22/51
+I:auction_crawler:282:2019-10-11 19:01:28,373: extracting info for deactivated auction: 2402355, 23/51
+I:auction_crawler:282:2019-10-11 19:01:32,492: extracting info for deactivated auction: 2853300, 24/51
+I:auction_crawler:282:2019-10-11 19:01:36,808: extracting info for deactivated auction: 2596923, 25/51
+I:auction_crawler:282:2019-10-11 19:01:41,089: extracting info for deactivated auction: 2765372, 26/51
+I:auction_crawler:282:2019-10-11 19:01:46,257: extracting info for deactivated auction: 2090560, 27/51
+I:auction_crawler:282:2019-10-11 19:01:50,646: extracting info for deactivated auction: 2833092, 28/51
+I:auction_crawler:282:2019-10-11 19:01:55,262: extracting info for deactivated auction: 2608580, 29/51
+I:auction_crawler:282:2019-10-11 19:01:59,436: extracting info for deactivated auction: 2828998, 30/51
+I:auction_crawler:282:2019-10-11 19:02:03,617: extracting info for deactivated auction: 2805833, 31/51
+I:auction_crawler:282:2019-10-11 19:02:08,630: extracting info for deactivated auction: 2746185, 32/51
+I:auction_crawler:282:2019-10-11 19:02:13,215: extracting info for deactivated auction: 2824780, 33/51
+I:auction_crawler:282:2019-10-11 19:02:17,551: extracting info for deactivated auction: 2815566, 34/51
+I:auction_crawler:282:2019-10-11 19:02:22,128: extracting info for deactivated auction: 2745935, 35/51
+I:auction_crawler:282:2019-10-11 19:02:26,619: extracting info for deactivated auction: 2842068, 36/51
+I:auction_crawler:282:2019-10-11 19:02:31,267: extracting info for deactivated auction: 2734934, 37/51
+I:auction_crawler:282:2019-10-11 19:02:35,843: extracting info for deactivated auction: 2471511, 38/51
+I:auction_crawler:282:2019-10-11 19:02:40,304: extracting info for deactivated auction: 2843871, 39/51
+I:auction_crawler:282:2019-10-11 19:02:44,871: extracting info for deactivated auction: 2843872, 40/51
+I:auction_crawler:282:2019-10-11 19:02:49,321: extracting info for deactivated auction: 2842595, 41/51
+I:auction_crawler:282:2019-10-11 19:02:53,934: extracting info for deactivated auction: 2819174, 42/51
+I:auction_crawler:282:2019-10-11 19:02:58,720: extracting info for deactivated auction: 2188774, 43/51
+I:auction_crawler:282:2019-10-11 19:03:03,204: extracting info for deactivated auction: 2840427, 44/51
+I:auction_crawler:282:2019-10-11 19:03:08,728: extracting info for deactivated auction: 2822385, 45/51
+I:auction_crawler:282:2019-10-11 19:03:13,644: extracting info for deactivated auction: 2843889, 46/51
+I:auction_crawler:282:2019-10-11 19:03:18,211: extracting info for deactivated auction: 2843892, 47/51
+I:auction_crawler:282:2019-10-11 19:03:22,621: extracting info for deactivated auction: 2670200, 48/51
+I:auction_crawler:282:2019-10-11 19:03:26,701: extracting info for deactivated auction: 2814458, 49/51
+I:auction_crawler:282:2019-10-11 19:03:31,189: extracting info for deactivated auction: 2802301, 50/51
+I:auction_crawler:282:2019-10-11 19:03:35,911: extracting info for deactivated auction: 2787199, 51/51
+I:auction_crawler:257:2019-10-11 19:03:40,530: just loaded df from auctioned/20191005.csv
+I:auction_crawler:229:2019-10-11 19:03:40,604: previous auctioned_df shape: (47, 40)
+I:auction_crawler:230:2019-10-11 19:03:40,604: new auctiond_df has shape: (14, 34)
+I:auction_crawler:231:2019-10-11 19:03:40,604: total auctioned_df shape: (61, 40)
+I:auction_crawler:257:2019-10-11 19:03:40,629: just loaded df from auctioned/20191011.csv
+I:auction:54:2019-10-11 19:03:49,114: 118 DE WITT AVE, 94558
+I:auction_crawler:257:2019-10-11 19:03:49,390: just loaded df from canceled/20191011.csv
+I:auction_crawler:257:2019-10-11 19:03:52,395: just loaded df from auctioned/20191011.csv
+I:auction:132:2019-10-12 17:02:46,836: ********************************************************************************
+I:auction_crawler:88:2019-10-12 17:02:55,926: working on Alameda County, CA
+I:auction_crawler:88:2019-10-12 17:03:05,390: working on Contra Costa County, CA
+I:auction_crawler:88:2019-10-12 17:03:13,435: working on Marin County, CA
+I:auction_crawler:88:2019-10-12 17:03:20,482: working on Napa County, CA
+I:auction_crawler:88:2019-10-12 17:03:27,063: working on Sacramento County, CA
+I:auction_crawler:88:2019-10-12 17:03:35,206: working on San Francisco County, CA
+I:auction_crawler:88:2019-10-12 17:03:41,990: working on San Joaquin County, CA
+I:auction_crawler:88:2019-10-12 17:03:49,988: working on San Mateo County, CA
+I:auction_crawler:88:2019-10-12 17:03:57,223: working on Santa Clara County, CA
+I:auction_crawler:88:2019-10-12 17:04:04,849: working on Santa Cruz County, CA
+I:auction_crawler:88:2019-10-12 17:04:11,499: working on Solano County, CA
+I:auction_crawler:88:2019-10-12 17:04:19,570: working on Sonoma County, CA
+I:auction_crawler:88:2019-10-12 17:04:26,797: working on Stanislaus County, CA
+I:auction_crawler:283:2019-10-12 17:04:34,770: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active/20191005.csv
+I:auction_crawler:194:2019-10-12 17:04:34,770: action_crawler identified 41 new properties
+I:auction_crawler:198:2019-10-12 17:04:34,770: action_crawler identified 53 deactivated properties
+I:auction_crawler:308:2019-10-12 17:04:36,540: extracting info for deactivated auction: 2837891, 1/53
+I:auction_crawler:308:2019-10-12 17:04:44,548: extracting info for deactivated auction: 2840067, 2/53
+I:auction_crawler:308:2019-10-12 17:04:48,693: extracting info for deactivated auction: 2808325, 3/53
+I:auction_crawler:308:2019-10-12 17:04:55,591: extracting info for deactivated auction: 2814598, 4/53
+I:auction_crawler:308:2019-10-12 17:05:00,784: extracting info for deactivated auction: 2835578, 5/53
+I:auction_crawler:308:2019-10-12 17:05:05,195: extracting info for deactivated auction: 2733831, 6/53
+E:auction_crawler:220:2019-10-12 17:05:08,377: local variable 's' referenced before assignment
+Traceback (most recent call last):
+  File "/Users/pjadzinsky/PycharmProjects/auction/going_headless/auction_crawler.py", line 217, in crawl_individual_auction_ids
+    auction_series = get_single_auction_data(auction_id, href, driver, force=True, msg=msg)
+  File "/Users/pjadzinsky/PycharmProjects/auction/going_headless/auction_crawler.py", line 316, in get_single_auction_data
+    auction_series = extract_property_series(html_text)
+  File "/Users/pjadzinsky/PycharmProjects/auction/going_headless/auction_crawler.py", line 358, in extract_property_series
+    return s
+UnboundLocalError: local variable 's' referenced before assignment
+I:auction_crawler:308:2019-10-12 17:05:08,378: extracting info for deactivated auction: 2840451, 7/53
+I:auction_crawler:308:2019-10-12 17:05:13,639: extracting info for deactivated auction: 2622474, 8/53
+I:auction_crawler:308:2019-10-12 17:05:18,181: extracting info for deactivated auction: 2854411, 9/53
+I:auction_crawler:308:2019-10-12 17:05:22,676: extracting info for deactivated auction: 2805519, 10/53
+I:auction_crawler:308:2019-10-12 17:05:26,756: extracting info for deactivated auction: 2845969, 11/53
+I:auction_crawler:308:2019-10-12 17:05:31,823: extracting info for deactivated auction: 2849048, 12/53
+I:auction_crawler:308:2019-10-12 17:05:36,492: extracting info for deactivated auction: 2845083, 13/53
+I:auction_crawler:308:2019-10-12 17:05:40,551: extracting info for deactivated auction: 2820641, 14/53
+I:auction_crawler:308:2019-10-12 17:05:45,059: extracting info for deactivated auction: 2840485, 15/53
+I:auction_crawler:308:2019-10-12 17:05:49,612: extracting info for deactivated auction: 2844454, 16/53
+I:auction_crawler:308:2019-10-12 17:05:55,110: extracting info for deactivated auction: 2549031, 17/53
+I:auction_crawler:308:2019-10-12 17:05:59,628: extracting info for deactivated auction: 2748584, 18/53
+I:auction_crawler:308:2019-10-12 17:06:04,079: extracting info for deactivated auction: 2807549, 19/53
+I:auction_crawler:308:2019-10-12 17:06:08,956: extracting info for deactivated auction: 2842407, 20/53
+I:auction_crawler:308:2019-10-12 17:06:13,110: extracting info for deactivated auction: 2774702, 21/53
+I:auction_crawler:308:2019-10-12 17:06:17,256: extracting info for deactivated auction: 2726322, 22/53
+I:auction_crawler:308:2019-10-12 17:06:21,668: extracting info for deactivated auction: 2402355, 23/53
+I:auction_crawler:308:2019-10-12 17:06:25,853: extracting info for deactivated auction: 2853300, 24/53
+I:auction_crawler:308:2019-10-12 17:06:29,962: extracting info for deactivated auction: 2791098, 25/53
+I:auction_crawler:308:2019-10-12 17:06:35,131: extracting info for deactivated auction: 2596923, 26/53
+I:auction_crawler:308:2019-10-12 17:06:39,485: extracting info for deactivated auction: 2765372, 27/53
+I:auction_crawler:308:2019-10-12 17:06:43,960: extracting info for deactivated auction: 2090560, 28/53
+I:auction_crawler:308:2019-10-12 17:06:48,227: extracting info for deactivated auction: 2833092, 29/53
+I:auction_crawler:308:2019-10-12 17:06:52,720: extracting info for deactivated auction: 2608580, 30/53
+I:auction_crawler:308:2019-10-12 17:06:56,917: extracting info for deactivated auction: 2828998, 31/53
+I:auction_crawler:308:2019-10-12 17:07:00,987: extracting info for deactivated auction: 2805833, 32/53
+I:auction_crawler:308:2019-10-12 17:07:06,007: extracting info for deactivated auction: 2746185, 33/53
+I:auction_crawler:308:2019-10-12 17:07:10,422: extracting info for deactivated auction: 2824780, 34/53
+I:auction_crawler:308:2019-10-12 17:07:14,589: extracting info for deactivated auction: 2815566, 35/53
+I:auction_crawler:308:2019-10-12 17:07:18,994: extracting info for deactivated auction: 2745935, 36/53
+I:auction_crawler:308:2019-10-12 17:07:23,446: extracting info for deactivated auction: 2828371, 37/53
+I:auction_crawler:308:2019-10-12 17:07:27,590: extracting info for deactivated auction: 2842068, 38/53
+I:auction_crawler:308:2019-10-12 17:07:32,226: extracting info for deactivated auction: 2734934, 39/53
+I:auction_crawler:308:2019-10-12 17:07:37,114: extracting info for deactivated auction: 2471511, 40/53
+I:auction_crawler:308:2019-10-12 17:07:41,481: extracting info for deactivated auction: 2843871, 41/53
+I:auction_crawler:308:2019-10-12 17:07:45,863: extracting info for deactivated auction: 2843872, 42/53
+I:auction_crawler:308:2019-10-12 17:07:50,433: extracting info for deactivated auction: 2842595, 43/53
+I:auction_crawler:308:2019-10-12 17:07:54,882: extracting info for deactivated auction: 2819174, 44/53
+I:auction_crawler:308:2019-10-12 17:07:59,235: extracting info for deactivated auction: 2188774, 45/53
+I:auction_crawler:308:2019-10-12 17:08:03,475: extracting info for deactivated auction: 2840427, 46/53
+I:auction_crawler:308:2019-10-12 17:08:08,654: extracting info for deactivated auction: 2822385, 47/53
+I:auction_crawler:308:2019-10-12 17:08:13,120: extracting info for deactivated auction: 2843889, 48/53
+I:auction_crawler:308:2019-10-12 17:08:17,663: extracting info for deactivated auction: 2843892, 49/53
+I:auction_crawler:308:2019-10-12 17:08:22,212: extracting info for deactivated auction: 2670200, 50/53
+I:auction_crawler:308:2019-10-12 17:08:26,380: extracting info for deactivated auction: 2814458, 51/53
+I:auction_crawler:308:2019-10-12 17:08:30,943: extracting info for deactivated auction: 2802301, 52/53
+I:auction_crawler:308:2019-10-12 17:08:35,452: extracting info for deactivated auction: 2787199, 53/53
+I:auction:132:2019-10-12 17:10:15,353: ********************************************************************************
+I:auction_crawler:144:2019-10-12 17:10:15,354: json file found, loaded with 360 auctions
+I:auction_crawler:283:2019-10-12 17:10:16,627: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active/20191005.csv
+I:auction_crawler:194:2019-10-12 17:10:16,627: action_crawler identified 41 new properties
+I:auction_crawler:198:2019-10-12 17:10:16,627: action_crawler identified 53 deactivated properties
+I:auction_crawler:308:2019-10-12 17:10:18,278: extracting info for deactivated auction: 2837891, 1/53
+I:auction_crawler:308:2019-10-12 17:10:25,648: extracting info for deactivated auction: 2840067, 2/53
+I:auction_crawler:308:2019-10-12 17:10:29,858: extracting info for deactivated auction: 2808325, 3/53
+I:auction_crawler:308:2019-10-12 17:10:35,612: extracting info for deactivated auction: 2814598, 4/53
+I:auction_crawler:308:2019-10-12 17:10:40,571: extracting info for deactivated auction: 2835578, 5/53
+I:auction_crawler:308:2019-10-12 17:10:45,069: extracting info for deactivated auction: 2733831, 6/53
+I:auction_crawler:308:2019-10-12 17:10:49,822: extracting info for deactivated auction: 2840451, 7/53
+I:auction_crawler:308:2019-10-12 17:10:54,811: extracting info for deactivated auction: 2622474, 8/53
+I:auction_crawler:308:2019-10-12 17:10:59,119: extracting info for deactivated auction: 2854411, 9/53
+I:auction_crawler:308:2019-10-12 17:11:03,050: extracting info for deactivated auction: 2805519, 10/53
+I:auction_crawler:308:2019-10-12 17:11:07,158: extracting info for deactivated auction: 2845969, 11/53
+I:auction_crawler:308:2019-10-12 17:11:11,524: extracting info for deactivated auction: 2849048, 12/53
+I:auction_crawler:308:2019-10-12 17:11:15,878: extracting info for deactivated auction: 2845083, 13/53
+I:auction_crawler:308:2019-10-12 17:11:19,909: extracting info for deactivated auction: 2820641, 14/53
+I:auction_crawler:308:2019-10-12 17:11:24,695: extracting info for deactivated auction: 2840485, 15/53
+I:auction_crawler:308:2019-10-12 17:11:29,189: extracting info for deactivated auction: 2844454, 16/53
+I:auction_crawler:308:2019-10-12 17:11:34,602: extracting info for deactivated auction: 2549031, 17/53
+I:auction_crawler:308:2019-10-12 17:11:38,860: extracting info for deactivated auction: 2748584, 18/53
+I:auction_crawler:308:2019-10-12 17:11:43,236: extracting info for deactivated auction: 2807549, 19/53
+I:auction_crawler:308:2019-10-12 17:11:48,212: extracting info for deactivated auction: 2842407, 20/53
+I:auction_crawler:308:2019-10-12 17:11:52,587: extracting info for deactivated auction: 2774702, 21/53
+I:auction_crawler:308:2019-10-12 17:11:56,925: extracting info for deactivated auction: 2726322, 22/53
+I:auction_crawler:308:2019-10-12 17:12:01,293: extracting info for deactivated auction: 2402355, 23/53
+I:auction_crawler:308:2019-10-12 17:12:05,602: extracting info for deactivated auction: 2853300, 24/53
+I:auction_crawler:308:2019-10-12 17:12:09,855: extracting info for deactivated auction: 2791098, 25/53
+I:auction_crawler:308:2019-10-12 17:12:14,763: extracting info for deactivated auction: 2596923, 26/53
+I:auction_crawler:308:2019-10-12 17:12:19,146: extracting info for deactivated auction: 2765372, 27/53
+I:auction_crawler:308:2019-10-12 17:12:23,516: extracting info for deactivated auction: 2090560, 28/53
+I:auction_crawler:308:2019-10-12 17:12:27,674: extracting info for deactivated auction: 2833092, 29/53
+I:auction_crawler:308:2019-10-12 17:12:32,297: extracting info for deactivated auction: 2608580, 30/53
+I:auction_crawler:308:2019-10-12 17:12:36,410: extracting info for deactivated auction: 2828998, 31/53
+I:auction_crawler:308:2019-10-12 17:12:40,371: extracting info for deactivated auction: 2805833, 32/53
+I:auction_crawler:308:2019-10-12 17:12:45,903: extracting info for deactivated auction: 2746185, 33/53
+I:auction_crawler:308:2019-10-12 17:12:50,537: extracting info for deactivated auction: 2824780, 34/53
+I:auction_crawler:308:2019-10-12 17:12:54,562: extracting info for deactivated auction: 2815566, 35/53
+I:auction_crawler:308:2019-10-12 17:12:58,937: extracting info for deactivated auction: 2745935, 36/53
+I:auction_crawler:308:2019-10-12 17:13:03,460: extracting info for deactivated auction: 2828371, 37/53
+I:auction_crawler:308:2019-10-12 17:13:07,536: extracting info for deactivated auction: 2842068, 38/53
+I:auction_crawler:308:2019-10-12 17:13:12,483: extracting info for deactivated auction: 2734934, 39/53
+I:auction_crawler:308:2019-10-12 17:13:16,818: extracting info for deactivated auction: 2471511, 40/53
+I:auction_crawler:308:2019-10-12 17:13:21,606: extracting info for deactivated auction: 2843871, 41/53
+I:auction_crawler:308:2019-10-12 17:13:26,296: extracting info for deactivated auction: 2843872, 42/53
+I:auction_crawler:308:2019-10-12 17:13:30,678: extracting info for deactivated auction: 2842595, 43/53
+I:auction_crawler:308:2019-10-12 17:13:35,246: extracting info for deactivated auction: 2819174, 44/53
+I:auction_crawler:308:2019-10-12 17:13:39,760: extracting info for deactivated auction: 2188774, 45/53
+I:auction_crawler:308:2019-10-12 17:13:43,937: extracting info for deactivated auction: 2840427, 46/53
+I:auction_crawler:308:2019-10-12 17:13:48,888: extracting info for deactivated auction: 2822385, 47/53
+I:auction_crawler:308:2019-10-12 17:13:53,371: extracting info for deactivated auction: 2843889, 48/53
+I:auction_crawler:308:2019-10-12 17:13:57,924: extracting info for deactivated auction: 2843892, 49/53
+I:auction_crawler:308:2019-10-12 17:14:02,029: extracting info for deactivated auction: 2670200, 50/53
+I:auction_crawler:308:2019-10-12 17:14:06,337: extracting info for deactivated auction: 2814458, 51/53
+I:auction_crawler:308:2019-10-12 17:14:10,774: extracting info for deactivated auction: 2802301, 52/53
+I:auction_crawler:308:2019-10-12 17:14:15,277: extracting info for deactivated auction: 2787199, 53/53
+I:auction_crawler:283:2019-10-12 17:14:19,390: just loaded df from auctioned/20191005.csv
+I:auction_crawler:251:2019-10-12 17:14:19,401: previous auctioned_df shape: (47, 40)
+I:auction_crawler:252:2019-10-12 17:14:19,401: new auctiond_df has shape: (12, 34)
+I:auction_crawler:253:2019-10-12 17:14:19,401: total auctioned_df shape: (59, 40)
+I:auction:132:2019-10-12 17:18:57,560: ********************************************************************************
+I:auction_crawler:144:2019-10-12 17:18:57,560: json file found, loaded with 360 auctions
+I:auction_crawler:283:2019-10-12 17:18:58,846: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active/20191005.csv
+I:auction_crawler:194:2019-10-12 17:18:58,846: action_crawler identified 41 new properties
+I:auction_crawler:198:2019-10-12 17:18:58,846: action_crawler identified 53 deactivated properties
+I:auction_crawler:308:2019-10-12 17:19:00,490: extracting info for deactivated auction: 2837891, 1/53
+I:auction:132:2019-10-12 17:19:32,337: ********************************************************************************
+I:auction_crawler:144:2019-10-12 17:19:32,337: json file found, loaded with 360 auctions
+I:auction_crawler:283:2019-10-12 17:19:33,614: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active/20191005.csv
+I:auction_crawler:194:2019-10-12 17:19:33,615: action_crawler identified 41 new properties
+I:auction_crawler:198:2019-10-12 17:19:33,615: action_crawler identified 53 deactivated properties
+I:auction_crawler:283:2019-10-12 17:19:37,030: just loaded df from auctioned/20191005.csv
+I:auction_crawler:251:2019-10-12 17:19:37,040: previous auctioned_df shape: (47, 40)
+I:auction_crawler:252:2019-10-12 17:19:37,040: new auctiond_df has shape: (12, 34)
+I:auction_crawler:253:2019-10-12 17:19:37,040: total auctioned_df shape: (59, 40)
+I:auction:132:2019-10-12 17:23:35,094: ********************************************************************************
+I:auction_crawler:144:2019-10-12 17:23:35,095: json file found, loaded with 360 auctions
+I:auction_crawler:283:2019-10-12 17:23:36,386: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active/20191005.csv
+I:auction_crawler:194:2019-10-12 17:23:36,386: action_crawler identified 41 new properties
+I:auction_crawler:198:2019-10-12 17:23:36,386: action_crawler identified 53 deactivated properties
+I:auction_crawler:283:2019-10-12 17:23:45,670: just loaded df from auctioned/20191005.csv
+I:auction_crawler:251:2019-10-12 17:23:45,836: previous auctioned_df shape: (47, 40)
+I:auction_crawler:252:2019-10-12 17:23:45,836: new auctiond_df has shape: (12, 34)
+I:auction_crawler:253:2019-10-12 17:23:45,836: total auctioned_df shape: (59, 40)
+I:auction:132:2019-10-12 17:24:50,542: ********************************************************************************
+I:auction_crawler:144:2019-10-12 17:24:50,544: json file found, loaded with 360 auctions
+I:auction_crawler:282:2019-10-12 17:24:51,816: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active/20191005.csv
+I:auction_crawler:194:2019-10-12 17:24:51,817: action_crawler identified 41 new properties
+I:auction_crawler:198:2019-10-12 17:24:51,817: action_crawler identified 53 deactivated properties
+I:auction_crawler:282:2019-10-12 17:24:58,451: just loaded df from auctioned/20191005.csv
+I:auction_crawler:251:2019-10-12 17:24:58,469: previous auctioned_df shape: (47, 40)
+I:auction_crawler:252:2019-10-12 17:24:58,469: new auctiond_df has shape: (12, 34)
+I:auction_crawler:253:2019-10-12 17:24:58,469: total auctioned_df shape: (59, 40)
+I:auction:132:2019-10-12 17:26:59,466: ********************************************************************************
+I:auction_crawler:144:2019-10-12 17:26:59,467: json file found, loaded with 360 auctions
+I:auction_crawler:282:2019-10-12 17:27:00,726: just loaded df from /Users/pjadzinsky/PycharmProjects/auction/active/20191012.csv
+I:auction_crawler:194:2019-10-12 17:27:00,727: action_crawler identified 0 new properties
+I:auction_crawler:198:2019-10-12 17:27:00,727: action_crawler identified 22 deactivated properties
+I:auction_crawler:282:2019-10-12 17:27:02,272: just loaded df from auctioned/20191012.csv
+I:auction_crawler:251:2019-10-12 17:27:02,288: previous auctioned_df shape: (59, 40)
+I:auction_crawler:252:2019-10-12 17:27:02,288: new auctiond_df has shape: (0, 34)
+I:auction_crawler:253:2019-10-12 17:27:02,288: total auctioned_df shape: (59, 40)
+I:auction_crawler:282:2019-10-12 17:27:37,362: just loaded df from auctioned/20191012.csv
+I:auction_crawler:282:2019-10-12 17:28:13,396: just loaded df from canceled/20191012.csv

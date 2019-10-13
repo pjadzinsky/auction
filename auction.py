@@ -113,36 +113,16 @@ def parse_date(date_str):
     return auction_date
 
 
-def create_links_to_verify():
+def verify_csv(folder, url_head='http://www.auction.com'):
     """
-    Create links to easily verify that:
-        'canceled' are really canceled
-        'auctioned_df' are auctioned
-        'completed' have no zillow data
-    :return:
+    Create links to easily verify that properties in this folder are correctly categorized:
     """
     with open('links.txt', 'w+t') as fid:
-        canceled_df, _ = auction_crawler.load_last_df(CANCELED_FOLDER)
-        fid.write('Canceled\n')
-        for index, row in canceled_df.iterrows():
-            url = 'http://www.auction.com' + row.href
+        df, _ = auction_crawler.load_last_df(folder)
+        for index, row in df.iterrows():
+            url = url_head + row.href
             fid.write(url + '\n')
             webbrowser.open(url, new=2)
-
-        auctioned_df, _ = auction_crawler.load_last_df(AUCTIONED_FOLDER)
-        fid.write('Completed in auction.com\n')
-        for index, row in auctioned_df.iterrows():
-            url = 'http://www.auction.com' + row.href
-            fid.write(url + '\n')
-            webbrowser.open(url, new=2)
-
-        """
-        fid.write('Completed in zillow.com\n')
-        for index, row in completed_df.iterrows():
-            fid.write('http://www.auction.com' + row.href + '\n')
-        """
-
-
 
 
 if __name__ == "__main__":
@@ -158,5 +138,22 @@ if __name__ == "__main__":
         hrefs = auction_crawler.crawl_all_counties(today_str)
         auction_crawler.crawl_individual_auction_ids(today_str, hrefs)
     zillowfy(today_str)
-    create_links_to_verify()
 
+# Completed - Reverted to Beneficiary
+# Completed - Sold to 3rd Party
+# Completed - Pending Sale Result
+# For Sale
+# Active - Scheduled for Auction
+#https://www.auction.com/details/550-mcfall-ct-santa-rosa-ca-95401-2663728-e_13547 for Sale
+#https://www.auction.com/details/123-nolan-ct-forestville-ca-95436-2833233-e_13547a scheduled
+# /details/1574-willowmont-ave-san-jose-ca-95118-2791151-e_13391a still active, why in canceled?
+#https://www.auction.com/details/2433-rockingham-cir-lodi-ca-95242-2745060-e_13547a scheduled
+#https://www.auction.com/details/7625-zilli-drive-tracy-ca-95304-2842860-e_900x scheduled for auction
+#https://www.auction.com/details/1545-yardley-st-santa-rosa-ca-95403-2799767-e_13443a scheduled for auction
+#https://www.auction.com/details/1221-enview-ct-stockton-ca-95210-2838647-e_13443 sold to 3rd party
+#https://www.auction.com/details/1121-el-vecino-avenue-modesto-ca-95350-2233215-e_13443 completed, sold to 3rd party
+#https://www.auction.com/details/5021-tacomic-drive-sacramento-ca-95842-2840729-e_900x still active
+#https://www.auction.com/residential/1815%20KAGEHIRO%20DR%2C%20TRACY%2C%20CA_qs/pending,closed,canceled_lt/ Correctly canceled
+## the one before was not understood
+#https://www.auction.com/details/340-fieldbrook-ln-watsonville-ca-95076-2805840-e_13391a idem
+#https://www.auction.com/details/2410-madden-ter-san-jose-ca-95116-2805990-e_13391a idem
