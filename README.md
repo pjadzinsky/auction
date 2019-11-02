@@ -1,3 +1,19 @@
+Oct 25, 2019,
+chromedriver Canary problems. Follow instruction on this link https://chromedriver.chromium.org/chromedriver-canary
+
+Oct 19, 2019,
+
+auction.com script kind of works, but it is very unstable. Bugs and constant problems.
+I'm thinking whether instead of doing something as complex just do:
+1. Get active auctions, save json file mapping auction_id to href
+1. Grab all previous json file, for all new properties, download and save href url
+1. Prepare a list with properties to query in zillow. These are all the properties that were active in the last
+N days and are not active now.
+1. Grab the DF of zillowed properties, anything in the list that is not in the df has to be queried
+1. pass that list through zillow api. First that requires parsing each saved url to extract address and zip
+
+
+
 Sep 14, 2019
 
 There are different Crawling steps

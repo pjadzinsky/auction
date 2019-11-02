@@ -4,7 +4,6 @@ import logging
 import os
 import re
 import time
-from datetime import date
 from html.parser import HTMLParser
 
 from selenium import webdriver
@@ -13,8 +12,9 @@ from selenium.webdriver.chrome.options import Options
 import numpy as np
 import pandas as pd
 
-from config import ACTIVE_AUCTION_FOLDER, COMPLETED_FOLDER, COUNTIES, KEYS_TO_EXTRACT, \
-    CANCELED_FOLDER, PROJ_ROOT, URL_FOLDER, AUCTIONED_FOLDER, WRONGFULY_DEACTIVE, UNKNOWN_FOLDER
+from config import ACTIVE_AUCTION_FOLDER, COUNTIES, KEYS_TO_EXTRACT, \
+    CANCELED_FOLDER, PROJ_ROOT, URL_FOLDER, AUCTIONED_FOLDER, WRONGFULY_DEACTIVE, UNKNOWN_FOLDER, \
+    COLUMNS, REPLACE_LIST
 AUCTION_COM = "http://www.auction.com"
 
 logger = logging.getLogger(__name__)
@@ -73,7 +73,8 @@ def get_chrome_driver():
 def get_auction_ids(driver, auction_id_parser, date_str, search_str, suffix=' County, CA'):
     """
     This method searches in auction.com with some 'search_str' criteria and parsers the html to extract
-    the Auction ID and associated href and stores them in attribute 'href' of 'auction_id_parser'
+    the Auction ID and associated href and stores them in attribute 'href' of 'auction_id_parser' (a dictionary
+    mapping auction_id to href)
 
     All the heavy work is done by the auction_id_parser
 
@@ -157,93 +158,62 @@ def crawl_all_counties(today_str, force=False):
     return auction_id_href
 
 
-def crawl_individual_auction_ids(today_str, auction_id_href):
-    """
-    Get into every href pointed at by auction_id_href and for each one extract all the information
-    needed from auction.com (we actually extract info only for new properties, not for all)
-
-    Currently this method does not return anything but creates 3 csvs
-    active/<date>.csv, canceled/<date>.csv, auctioned/<date>.csv
-
-    active_auction_csv:
-        This file has information about all properties currently being auctioned or schedule for auction.
-        This is un updated file. We load the last recorded file and add any new properties in
-        auction_id_href.
-
-    canceled:
-        These are auctions that were active at some point but are not active anymore.
-        Could be that the auction was carried out, but most likely it was canceled.
-
-    auctioned:
-        This are auctions that were successfully carried out. They are in contract. It could be
-        that the contract is not carried out and the property appears again in auction.
-
-    :param today_str: str, 20190930
-    :param auction_id_href: dict mapping auction_id to href
-    :return:
-        None
-    """
+def crawl_state(today_str, state):
     driver = get_chrome_driver()
-    # now we load the last active dataframe we have in file. This is outdated info
-    # but the last one we got
-    active_auction_df, _ = load_last_df(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER))
+    auction_id_parser = AuctionIDParser()
 
-    # We have to identify auction ids for which we don't have info yet
-    active_ids = set(auction_id_href.keys())
-    new_auction_ids = active_ids.difference(active_auction_df.index)
-    logger.info('action_crawler identified {} new properties'.format(len(new_auction_ids)))
+    # if I already got a json file for today_str, add it to auction_id_parser
+    json_file = os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, '{}.json'.format(today_str))
+    if os.path.isfile(json_file):
+        with open(json_file) as fid:
+            href = json.load(json_file)
+            auction_id_parser.href = href
 
-    # We have to identify auction ids that were active before but are no longer active (auctioned + canceled)
-    deactivated_ids = set(active_auction_df.index).difference(active_ids)
-    logger.info('action_crawler identified {} deactivated properties'.format(len(deactivated_ids)))
-
-    deactivated_df = active_auction_df.loc[deactivated_ids]
-
-    # add new_auction_ids to previously_active
-    for i, auction_id in enumerate(new_auction_ids, 1):
-        try:
-            href = auction_id_href[auction_id]
-            msg = 'extracting info for active auction: {}, {}/{}'.format(auction_id, i, len(new_auction_ids))
-            auction_series = get_single_auction_data(auction_id, href, driver, force=False, msg=msg)
-            active_auction_df.loc[auction_id] = auction_series
-        except Exception as e:
-            logger.exception(e)
-
-    # revisit those properties that are deactivated, we have to figure out if the auction took place and/or
-    # it was canceled
-    for i, (auction_id, href) in enumerate(deactivated_df.href.iteritems(), 1):
-        try:
-            msg = 'extracting info for deactivated auction: {}, {}/{}'.format(auction_id, i, len(deactivated_df))
-            auction_series = get_single_auction_data(auction_id, href, driver, force=False, msg=msg)
-            deactivated_df.loc[auction_id] = auction_series
-        except Exception as e:
-            logger.exception(e)
+    get_auction_ids(driver, auction_id_parser, today_str, state, suffix=' state')
     driver.close()
+    with open(json_file, 'w+t') as fid:
+        json.dump(auction_id_parser.href, fid, indent=4)
 
-    new_auctioned_df = deactivated_df[deactivated_df.my_status == 'auctioned']
-    canceled_df = deactivated_df[deactivated_df.my_status == 'canceled']
-    wrongfuly_deactivated_df = deactivated_df[deactivated_df.status_label == 'active']
-    unknown_df = deactivated_df[deactivated_df.status_label == 'unknown']
+    auction_id_href = auction_id_parser.href
 
-    # auctioned_df should be an up to date list, including properties identified in the past as auctioned
-    old_auctioned_df, _ = load_last_df(AUCTIONED_FOLDER)
-    auctioned_df = old_auctioned_df.append(new_auctioned_df)
-    logger.info('previous auctioned_df shape: {}'.format(old_auctioned_df.shape))
-    logger.info('new auctiond_df has shape: {}'.format(new_auctioned_df.shape))
-    logger.info('total auctioned_df shape: {}'.format(auctioned_df.shape))
-    #canceled_df = canceled_df.append(deactivated_df.loc[deactivated_df.auction_status.isna()])
+    return auction_id_href
 
-    active_auction_df.drop(new_auctioned_df.index, inplace=True)
-    active_auction_df.drop(canceled_df.index, inplace=True)
 
-    basename = '{}.csv'.format(today_str)
-    #active_auction_df.to_csv(os.path.join(PROJ_ROOT, ACTIVE_AUCTION_FOLDER, basename))
-    #canceled_df.to_csv(os.path.join(PROJ_ROOT, CANCELED_FOLDER, basename))
-    #auctioned_df.to_csv(os.path.join(PROJ_ROOT, AUCTIONED_FOLDER, basename))
-    #unknown_df.to_csv(os.path.join(PROJ_ROOT, UNKNOWN_FOLDER, basename))
-    #wrongfuly_deactivated_df.to_csv(os.path.join(PROJ_ROOT, WRONGFULY_DEACTIVE, basename))
+def start_clean(save_str):
+    # grab all auctions and href we ever recorded, 'hrefs' is a dictionary mapping auction_id to href
+    hrefs = merge_all_json('active')
+    driver = get_chrome_driver()
+    df = pd.DataFrame([], columns=COLUMNS)
 
-    return active_auction_df
+    for i, (auction_id, href) in enumerate(hrefs.items(), 1):
+        try:
+            msg = 'extracting info for active auction: {}, {}/{}'.format(auction_id, i, len(hrefs))
+            auction_series = get_single_auction_data(auction_id, href, driver, force=False, msg=msg)
+            df.loc[auction_id] = auction_series
+        except Exception as e:
+            logger.exception(e)
+
+    all_status = ['active', 'auctioned', 'canceled', 'unknown']
+    seen_status = np.unique(df.my_status).tolist()
+    print(all_status)
+    print(seen_status)
+    try:
+        assert all_status == seen_status
+    except:
+        all_status.remove('unknown')
+        assert all_status == seen_status
+
+
+    def save_df(df, which, folder, save_name):
+        sub_df = df[df.my_status == which]
+        sub_df.to_csv(os.path.join(folder, '{}.csv'.format(save_name)))
+
+    # split df into 'active', 'auctioned', 'cancel', 'unknown'
+    save_df(df, 'active', ACTIVE_AUCTION_FOLDER, save_str)
+    save_df(df, 'auctioned', AUCTIONED_FOLDER, save_str)
+    save_df(df, 'canceled', CANCELED_FOLDER, save_str)
+    save_df(df, 'unknown', UNKNOWN_FOLDER, save_str)
+
 
 
 def find_duplicates(df):
@@ -254,18 +224,16 @@ def find_duplicates(df):
         return df.index[idxs]
 
 
-def load_last_df(folder):
-    last_csv = None
+def load_all(folder):
     all_csvs = glob.glob(os.path.join(folder, '*.csv'))
-    if all_csvs:
-        last_csv = sorted(all_csvs)[-1]
-        df = pd.read_csv(last_csv, index_col=0)
-        logger.info('just loaded df from {}'.format(last_csv))
-    else:
-        df = pd.DataFrame([])
-        df.index.name = 'auction_id'
+    all_csvs.sort()
+    df = pd.DataFrame([])
+    for csv in all_csvs:
+        df = df.append(pd.read_csv(csv))
 
-    return df, last_csv
+    df = df.groupby('auction_id').last()
+    df.index = df.index.astype(int)
+    return df
 
 
 def merge_all_json(folder):
@@ -278,16 +246,27 @@ def merge_all_json(folder):
             final_d.update(d)
     return final_d
 
-def load_all(folder):
-    all_csvs = glob.glob(os.path.join(folder, '*.csv'))
-    all_csvs.sort()
-    df = pd.DataFrame([])
-    for csv in all_csvs:
-        df = df.append(pd.read_csv(csv))
 
-    df = df.groupby('auction_id').last()
-    df.index = df.index.astype(int)
-    return df
+def download_href(auction_id, href, driver, force, msg):
+    """
+    download and save url associated with href
+
+    :param auction_id: int
+    :param href:  str, url to download
+    :param driver:
+    :param force: bool:
+        True, forces downloading data from server
+        False, if local_name exists will load content from file
+    :return:
+    """
+    local_name = os.path.join(PROJ_ROOT, URL_FOLDER, '{}.html'.format(auction_id))
+    if force or not os.path.isfile(local_name):
+        logger.info(msg)
+        url = AUCTION_COM + href
+        driver.get(url)
+        time.sleep(3)
+        with open(local_name, 'w+t') as fid:
+            fid.write(driver.page_source)
 
 
 def get_single_auction_data(auction_id, href, driver, force, msg):
@@ -325,56 +304,10 @@ def get_single_auction_data(auction_id, href, driver, force, msg):
 # I have to test why they were wrongly classified
 
 
-def extract_property_series(html_txt):
-    """ From the html code that we get when clicking a particular property on auction.com (after a search)
-    exctract the pd.Series with all the data that we are going to keep
-    return pd.Series, name of the series will be the auction_id but that is not done here. Also
-    the series lacks the href
-    """
-    if os.path.isfile(html_txt):
-        with open(html_txt) as fid:
-            html_txt = fid.read()
-
-    html_lines = html_txt.split('\n')
-    with open('/tmp/html.txt', 'w+t') as fid:
-        fid.write(html_txt)
-
-    for line in html_lines:
-        line = line.strip()
-        if line.startswith('window.INITIAL_STATE'):
-            line = line.replace('window.INITIAL_STATE = ', '')
-            line = line[:-1]
-            d = json.loads(line)
-
-            s = pd.Series()
-            def extract_field(d, s, keys):
-                for k, v in d.items():
-                    if k == 'similarProperties':
-                        # don't get any info from these
-                        continue
-                    if isinstance(v, dict):
-                        extract_field(v, s, keys)
-                    elif k in keys:
-                        if k == 'images':
-                            v = len(v)
-                        s[k] = v
-
-            # below doesn't seem to work anymore as of 2019, Sep 14.
-            # Initial dictory has keys:
-            # 'verificationModalReducer', 'user', 'properties', 'modals', 'contracting', 'form', 'queues', 'bidding', 'message', 'featureFlags', 'biddingDeposit', 'propertyAnalytics', 'purchaseProfiles', 'finalOffer'])
-            # Most of them are useless except:
-            # properties    property info
-            # contracting ? (is empty but might be good when in contract)
-
-            extract_field(d, s, KEYS_TO_EXTRACT)
-            break
-
-    add_my_status(s)
-    return s
 
 
 def add_my_status(s):
-    # Completed - Reverted to Beneficiary   belongs to canceled
+    # Completed - Reverted to Beneficiary   belongs to active
     # Completed - Sold to 3rd Party         belongs to auctioned
     # Completed - Pending Sale Result       belongs to auctioned
     # Pending                               ?
@@ -383,10 +316,37 @@ def add_my_status(s):
     # Sold                                  belongs to auctioned
     # Gone                                  belongs to auctioned?
     if 'status_label' not in s:
-        s['my_status'] = 'unknown'
-    elif s['status_label'].startswith('Active') or s['status_label'].startswith('For Sale'):
-        s['my_status'] = 'active'
-    elif s['status_label'].startswith('Completed - Reverted to Beneficiary'):
         s['my_status'] = 'canceled'
+    elif s['status_label'].startswith('Active') or s['status_label'].startswith('For Sale') or \
+            s['status_label'].startswith('Completed - Reverted to Beneficiary'):
+        s['my_status'] = 'active'
+    elif s['status_label'] == 'Pending' or \
+        s['status_label'] == 'Sold' or \
+        s['status_label'].startswith('Completed - Sold to 3rd Party') or \
+        s['status_label'].startswith('Completed - Pending Sale Result'):
+            s['my_status'] = 'auctioned'
     else:
-        s['my_status'] = 'auctioned'
+        s['my_status'] = 'unknown'
+        logger.info('Did not classify {} correctly'.format(s['my_status']))
+
+
+def fix_address(df, filename):
+    """
+    Some html have property_address, some have street_name (or city instead of property_city or postal_code instead
+    of property_zip) This resulted in some rows with NaN because I was not extracting fields street_name,
+    postal_code, city
+
+    :param df:
+    :return:
+    """
+    driver = get_chrome_driver()
+    for auction_id, row in df.iterrows():
+        if isinstance(row.property_address, float) or isinstance(row.property_city, float):
+            msg = "Fixing information for {}".format(auction_id)
+            force = False
+            href = row.href
+            new_row = get_single_auction_data(auction_id, href, driver, force, msg)
+            df.loc[auction_id] = new_row
+    df.to_csv(filename)
+
+
