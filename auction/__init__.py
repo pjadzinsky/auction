@@ -1,0 +1,1 @@
+from auction import holoviews_defaults
