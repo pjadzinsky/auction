@@ -20,12 +20,35 @@ import pandas as pd
 
 from auction.going_headless import auction_crawler
 from auction import zillow
+from auction import summary as summary_module
 
 from auction.config import ACTIVE_AUCTION_FOLDER, LOGS, PROJ_ROOT, \
     COLUMNS, ZILLOWED_FOLDER, URL_FOLDER, KEYS_TO_EXTRACT, REPLACE_LIST
 
 logger = logging.getLogger(__name__)
 HALF_YEAR = timedelta(days=182)
+
+
+def main():
+    """
+    Process all data, outputs csvs to the correct folders
+
+    :return:
+    """
+    days = 90
+    os.environ['DEBUGGING_AUCTION'] = 'True'    # a string evaluating to True or False
+    logging.basicConfig(filename=LOGS,
+                        format='%(levelname).1s:%(module)s:%(lineno)d:%(asctime)s: %(message)s',
+                        level=logging.INFO)
+    logger.info('*' * 80)
+    today_str = date.today().strftime('%Y%m%d')
+
+    hrefs = auction_crawler.crawl_all_counties(today_str)
+    download_all_new_hrefs()
+    deactivated_hrefs = deactivated_auction_ids(hrefs, days=days)
+    auction_ids = list_to_zillowfy(deactivated_hrefs, today_str)
+
+    zillowfy_list(auction_ids, days)
 
 
 def remove_properties(from_here, that_are_in_here):
@@ -371,8 +394,8 @@ def load_last_df(folder, avoid_date=None):
         df.index.name = 'auction_id'
 
     df.index = df.index.astype(int)
-    #if 'property_zip' in df:
-    #    df.astype({'property_zip': int})
+    df.loc[:, 'auction_date'] = pd.to_datetime(df.auction_date)
+    df.loc[:, 'zillow_last_date_sold'] = pd.to_datetime(df.zillow_last_date_sold)
     return df, last_csv
 
 
@@ -393,19 +416,4 @@ def list_to_zillowfy(deactivated_hrefs, today_str):
 
 
 if __name__ == "__main__":
-    days = 90
-    os.environ['DEBUGGING_AUCTION'] = 'True'    # a string evaluating to True or False
-    logging.basicConfig(filename=LOGS,
-                        format='%(levelname).1s:%(module)s:%(lineno)d:%(asctime)s: %(message)s',
-                        level=logging.INFO)
-    logger.info('*' * 80)
-    today_str = date.today().strftime('%Y%m%d')
-
-    hrefs = auction_crawler.crawl_all_counties(today_str)
-    download_all_new_hrefs()
-    deactivated_hrefs = deactivated_auction_ids(hrefs, days=days)
-    auction_ids = list_to_zillowfy(deactivated_hrefs, today_str)
-
-    zillowfy_list(auction_ids, days)
-
-
+    main()

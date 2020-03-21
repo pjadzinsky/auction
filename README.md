@@ -1,3 +1,8 @@
+Feb 7, 2020,
+Same problem with chromdriver. Followed instructions from Oct 25, 2019. Downloaded latest release and copy/pasted it
+into ~/PycharmProjects/auction (replacing old 'chromdriver'). Then I right clicked on the chromedriver file
+and "open with" -> "terminal" (this does not open the file but asks just once if file should be trusted)
+
 Oct 25, 2019,
 chromedriver Canary problems. Follow instruction on this link https://chromedriver.chromium.org/chromedriver-canary
 
