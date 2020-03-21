@@ -42,8 +42,11 @@ def scatter_plot_1(df):
     kdims = ['zillow_last_date_sold', ]
     vdims = ['sold_to_estimated_ratio', 'zillow_last_sold_price']
     data = hv.Dataset(df, kdims, vdims)
-    crv = data.to(hv.Scatter, 'zillow_last_date_sold', 'sold_to_estimated_ratio')
-    crv *= hv.HLine(1, color='black', alpha=0.5, style='dash')
+    crv = hv.HLine(1)
+    crv *= data.to(hv.Scatter, 'zillow_last_date_sold', 'sold_to_estimated_ratio')
+    crv.opts({
+        'HLine': {'color': 'black', 'line_width': 1, 'alpha': 0.5},
+    })
     return crv
 
 
@@ -55,7 +58,10 @@ def scatter_plot_3(df):
     vdims = ['sold_to_estimated_ratio']
     data = hv.Dataset(df, kdims, vdims)
     crv = data.to(hv.Scatter, 'zillow_last_sold_price', 'sold_to_estimated_ratio')
-    crv *= hv.HLine(1, color='red', linewidth=6)
+    crv *= hv.HLine(1)
+    crv.opts({
+        'HLine': {'color': 'black', 'line_width': 1, 'alpha': 0.5},
+    })
     return crv
 
 
@@ -67,9 +73,12 @@ def scatter_plot_2(df):
     vdims = ['estimated_to_sold_diff']
     data = hv.Dataset(df, kdims, vdims)
     crv = data.to(hv.Scatter, 'zillow_last_date_sold', 'estimated_to_sold_diff')
-    crv *= hv.HLine(0, color='red', linewidth=6)
-    crv *= hv.HLine(1E5, color='red', linewidth=6)
-    crv *= hv.HLine(2E5, color='red', linewidth=6)
+    crv *= hv.HLine(0)
+    crv *= hv.HLine(1E5)
+    crv *= hv.HLine(2E5)
+    crv.opts({
+        'HLine': {'color': 'black', 'line_width': 1, 'alpha': 0.5},
+    })
     return crv
 
 
@@ -81,9 +90,12 @@ def scatter_plot_4(df):
     vdims = ['estimated_to_sold_diff']
     data = hv.Dataset(df, kdims, vdims)
     crv = data.to(hv.Scatter, 'zillow_last_sold_price', 'estimated_to_sold_diff')
-    crv *= hv.HLine(0, color='red', linewidth=6)
-    crv *= hv.HLine(1E5, color='red', linewidth=6)
-    crv *= hv.HLine(2E5, color='red', linewidth=6)
+    crv *= hv.HLine(0)
+    crv *= hv.HLine(1E5)
+    crv *= hv.HLine(2E5)
+    crv.opts({
+        'HLine': {'color': 'black', 'line_width': 1, 'alpha': 0.5},
+    })
     return crv
 
 
