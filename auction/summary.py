@@ -6,6 +6,7 @@ from datetime import datetime
 from auction.config import ZILLOWED_FOLDER
 
 pd.set_option('max_columns', 25)
+hv.extension('bokeh')
 #renderer = hv.renderer('bokeh')
 
 
@@ -44,9 +45,6 @@ def scatter_plot_1(df):
     data = hv.Dataset(df, kdims, vdims)
     crv = hv.HLine(1)
     crv *= data.to(hv.Scatter, 'zillow_last_date_sold', 'sold_to_estimated_ratio')
-    crv.opts({
-        'HLine': {'color': 'black', 'line_width': 1, 'alpha': 0.5},
-    })
     return crv
 
 
@@ -59,9 +57,6 @@ def scatter_plot_3(df):
     data = hv.Dataset(df, kdims, vdims)
     crv = data.to(hv.Scatter, 'zillow_last_sold_price', 'sold_to_estimated_ratio')
     crv *= hv.HLine(1)
-    crv.opts({
-        'HLine': {'color': 'black', 'line_width': 1, 'alpha': 0.5},
-    })
     return crv
 
 
@@ -76,9 +71,6 @@ def scatter_plot_2(df):
     crv *= hv.HLine(0)
     crv *= hv.HLine(1E5)
     crv *= hv.HLine(2E5)
-    crv.opts({
-        'HLine': {'color': 'black', 'line_width': 1, 'alpha': 0.5},
-    })
     return crv
 
 
@@ -93,9 +85,29 @@ def scatter_plot_4(df):
     crv *= hv.HLine(0)
     crv *= hv.HLine(1E5)
     crv *= hv.HLine(2E5)
-    crv.opts({
-        'HLine': {'color': 'black', 'line_width': 1, 'alpha': 0.5},
-    })
+    return crv
+
+
+def scatter_plot_5(df):
+    """ Produce a scatter plot of
+    'zillow_last_sold_price' vs 'estimated_value'
+    """
+    zillow = 'zillow_last_sold_price'
+    estimated = 'estimated_value'
+    alpha = 0.05
+    vdims = [zillow]
+    kdims = [estimated]
+    xmin = min(
+        df[estimated].min(),
+        df[zillow].min()
+    ) * (1 - alpha)
+    xmax = max(
+        df[estimated].max(),
+        df[zillow].max()
+    ) * (1 + alpha)
+    data = hv.Dataset(df, kdims, vdims)
+    crv = data.to(hv.Scatter, estimated, zillow)
+    crv *= hv.Curve([[xmin, xmin], [xmax, xmax]]).opts(line_dash='dashed', color='black')
     return crv
 
 
