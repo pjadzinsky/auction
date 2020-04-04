@@ -1,5 +1,18 @@
+April 4, 2020
+Same problem with chromdriver. Followed instructions from Oct 25, 2019. 
+* Go to https://chromedriver.chromium.org/chromedriver-canary
+* Find LAST_CHANGE
+* click on file to download, open and copy past release #
+* back to website, search for that release
+* Open folder
+* click on "chromedriver_mac64.zip" (downloads the file)
+* open the zip
+* right click on the chromedriver -> open with terminal (accept)
+* move chromedriver to auction folder
+
 Feb 7, 2020,
-Same problem with chromdriver. Followed instructions from Oct 25, 2019. Downloaded latest release and copy/pasted it
+Same problem with chromdriver. Followed instructions from Oct 25, 2019. 
+Downloaded latest release and copy/pasted it
 into ~/PycharmProjects/auction (replacing old 'chromdriver'). Then I right clicked on the chromedriver file
 and "open with" -> "terminal" (this does not open the file but asks just once if file should be trusted)
 
