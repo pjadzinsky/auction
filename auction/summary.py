@@ -43,8 +43,8 @@ def scatter_plot_1(df):
     kdims = ['zillow_last_date_sold', ]
     vdims = ['sold_to_estimated_ratio', 'zillow_last_sold_price']
     data = hv.Dataset(df, kdims, vdims)
-    crv = hv.HLine(1)
-    crv *= data.to(hv.Scatter, 'zillow_last_date_sold', 'sold_to_estimated_ratio')
+    crv = data.to(hv.Scatter, 'zillow_last_date_sold', 'sold_to_estimated_ratio')
+    crv *= hv.HLine(1)
     return crv
 
 
