@@ -4145,3 +4145,952 @@ I:auction2:190:2020-04-04 10:34:56,370: Problem getting address/zip from 2807879
 I:auction2:172:2020-04-04 10:34:56,696: auction_id: 2899680, 622-624 PROSPECT STREET, 94952
 I:auction2:190:2020-04-04 10:35:01,341: Problem getting address/zip from 2831168
 I:auction2:172:2020-04-04 10:35:05,867: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:43:2020-04-11 10:04:43,151: ********************************************************************************
+I:auction_crawler:89:2020-04-11 10:04:50,361: working on Alameda County, CA
+I:auction_crawler:89:2020-04-11 10:04:59,734: working on Contra Costa County, CA
+I:auction_crawler:89:2020-04-11 10:05:08,193: working on Marin County, CA
+I:auction_crawler:89:2020-04-11 10:05:14,991: working on Napa County, CA
+I:auction_crawler:89:2020-04-11 10:05:21,511: working on Sacramento County, CA
+I:auction_crawler:89:2020-04-11 10:05:30,188: working on San Francisco County, CA
+I:auction_crawler:89:2020-04-11 10:05:37,157: working on San Joaquin County, CA
+I:auction_crawler:89:2020-04-11 10:05:45,704: working on San Mateo County, CA
+I:auction_crawler:89:2020-04-11 10:05:52,867: working on Santa Clara County, CA
+I:auction_crawler:89:2020-04-11 10:06:00,631: working on Santa Cruz County, CA
+I:auction_crawler:89:2020-04-11 10:06:07,500: working on Solano County, CA
+I:auction_crawler:89:2020-04-11 10:06:15,279: working on Sonoma County, CA
+I:auction_crawler:89:2020-04-11 10:06:22,121: working on Stanislaus County, CA
+I:auction_crawler:264:2020-04-11 10:06:30,433: donwloading href for 2938328
+I:auction_crawler:264:2020-04-11 10:06:37,601: donwloading href for 2736446
+I:auction_crawler:264:2020-04-11 10:06:41,723: donwloading href for 2934842
+I:auction_crawler:264:2020-04-11 10:06:46,435: donwloading href for 2929994
+I:auction_crawler:264:2020-04-11 10:06:51,200: donwloading href for 1339291
+I:auction_crawler:264:2020-04-11 10:06:56,710: donwloading href for 2935086
+I:auction_crawler:264:2020-04-11 10:07:01,759: donwloading href for 2928784
+I:auction_crawler:264:2020-04-11 10:07:06,493: donwloading href for 2937884
+I:auction_crawler:264:2020-04-11 10:07:11,976: donwloading href for 2938262
+I:auction_crawler:264:2020-04-11 10:07:16,629: donwloading href for 2935010
+I:auction_crawler:264:2020-04-11 10:07:21,689: donwloading href for 2938221
+I:auction2:390:2020-04-11 10:07:26,507: just loaded df from auction/zillowed/20200404.csv
+I:auction2:190:2020-04-11 10:07:28,292: Problem getting address/zip from 2866302
+I:auction2:190:2020-04-11 10:07:28,302: Problem getting address/zip from 2853159
+I:auction2:190:2020-04-11 10:07:28,469: Problem getting address/zip from 2834874
+I:auction2:190:2020-04-11 10:07:28,478: Problem getting address/zip from 2822014
+I:auction2:190:2020-04-11 10:07:28,635: Problem getting address/zip from 2758491
+I:auction2:190:2020-04-11 10:07:28,665: Problem getting address/zip from 1399178
+I:auction2:190:2020-04-11 10:07:28,700: Problem getting address/zip from 2717961
+I:auction2:172:2020-04-11 10:07:29,234: auction_id: 2493405, 1387 AND 1389 145TH AVENUE, 94578
+I:auction2:190:2020-04-11 10:07:30,321: Problem getting address/zip from 2857196
+I:auction2:190:2020-04-11 10:07:30,352: Problem getting address/zip from 2865786
+I:auction2:190:2020-04-11 10:07:30,382: Problem getting address/zip from 2846259
+I:auction2:190:2020-04-11 10:07:30,417: Problem getting address/zip from 2840700
+I:auction2:190:2020-04-11 10:07:30,429: Problem getting address/zip from 2828920
+I:auction2:190:2020-04-11 10:07:30,437: Problem getting address/zip from 2831434
+I:auction2:190:2020-04-11 10:07:30,445: Problem getting address/zip from 2811539
+I:auction2:190:2020-04-11 10:07:30,486: Problem getting address/zip from 2822387
+I:auction2:190:2020-04-11 10:07:30,494: Problem getting address/zip from 2813015
+I:auction2:190:2020-04-11 10:07:30,505: Problem getting address/zip from 2812919
+I:auction2:190:2020-04-11 10:07:32,121: Problem getting address/zip from 2731531
+I:auction2:172:2020-04-11 10:07:36,476: auction_id: 2866754, 3743 IMMACULATA WAY, 95838
+I:auction2:172:2020-04-11 10:07:38,579: auction_id: 2878115, 355 1ST ST #S 505 AKA 355 01ST ST, 94105
+I:auction2:190:2020-04-11 10:07:38,612: Problem getting address/zip from 2831187
+I:auction2:190:2020-04-11 10:07:38,621: Problem getting address/zip from 2765404
+I:auction2:172:2020-04-11 10:07:39,743: auction_id: 2876214, 1062 ASPEN DRIVE, 95336
+I:auction2:172:2020-04-11 10:07:40,529: auction_id: 2875705, 2456 PORTER WAY AKA 2456 W PORTER WAY, 95207
+I:auction2:190:2020-04-11 10:07:40,817: Problem getting address/zip from 2812515
+I:auction2:190:2020-04-11 10:07:41,040: Problem getting address/zip from 2802265
+I:auction2:190:2020-04-11 10:07:42,486: Problem getting address/zip from 2788931
+I:auction2:190:2020-04-11 10:07:43,108: Problem getting address/zip from 2752129
+I:auction2:190:2020-04-11 10:07:43,327: Problem getting address/zip from 2824500
+I:auction2:190:2020-04-11 10:07:43,364: Problem getting address/zip from 2821757
+I:auction2:190:2020-04-11 10:07:43,393: Problem getting address/zip from 2792927
+I:auction2:190:2020-04-11 10:07:43,426: Problem getting address/zip from 2791141
+I:auction2:190:2020-04-11 10:07:43,460: Problem getting address/zip from 2765410
+I:auction2:190:2020-04-11 10:07:43,494: Problem getting address/zip from 2735027
+I:auction2:190:2020-04-11 10:07:43,525: Problem getting address/zip from 2734901
+I:auction2:190:2020-04-11 10:07:43,898: Problem getting address/zip from 2653944
+I:auction2:172:2020-04-11 10:07:44,538: auction_id: 2875071, 3971-3973 CAMDEN AVE, 95124
+I:auction_crawler:264:2020-04-11 10:07:45,914: 
+I:auction2:190:2020-04-11 10:07:52,772: Problem getting address/zip from 2868122
+I:auction2:190:2020-04-11 10:07:52,781: Problem getting address/zip from 2859909
+I:auction2:190:2020-04-11 10:07:52,820: Problem getting address/zip from 2857408
+I:auction2:172:2020-04-11 10:07:53,192: auction_id: 2857157, 1636 GYPSY PL COU, 95121
+I:auction2:190:2020-04-11 10:07:53,568: Problem getting address/zip from 2852800
+I:auction2:190:2020-04-11 10:07:53,945: Problem getting address/zip from 2791151
+I:auction2:190:2020-04-11 10:07:53,953: Problem getting address/zip from 2756210
+I:auction2:190:2020-04-11 10:07:53,962: Problem getting address/zip from 1399225
+I:auction2:190:2020-04-11 10:07:53,971: Problem getting address/zip from 2686529
+I:auction2:190:2020-04-11 10:07:54,011: Problem getting address/zip from 2654221
+I:auction2:190:2020-04-11 10:07:54,021: Problem getting address/zip from 2485512
+I:auction2:190:2020-04-11 10:07:54,029: Problem getting address/zip from 2430750
+I:auction2:190:2020-04-11 10:07:54,062: Problem getting address/zip from 2812523
+I:auction2:190:2020-04-11 10:07:56,038: Problem getting address/zip from 2868967
+I:auction2:190:2020-04-11 10:07:56,080: Problem getting address/zip from 2847075
+I:auction2:190:2020-04-11 10:07:56,118: Problem getting address/zip from 2831188
+I:auction2:190:2020-04-11 10:07:56,127: Problem getting address/zip from 2824493
+I:auction2:190:2020-04-11 10:07:56,394: Problem getting address/zip from 2814498
+I:auction_crawler:264:2020-04-11 10:07:58,222: 
+I:auction2:190:2020-04-11 10:08:03,556: Problem getting address/zip from 2765505
+I:auction2:190:2020-04-11 10:08:03,888: Problem getting address/zip from 2719856
+I:auction2:190:2020-04-11 10:08:03,897: Problem getting address/zip from 2719864
+I:auction2:190:2020-04-11 10:08:03,907: Problem getting address/zip from 2270063
+I:auction2:190:2020-04-11 10:08:03,945: Problem getting address/zip from 1725319
+I:auction2:190:2020-04-11 10:08:06,719: Problem getting address/zip from 2863857
+I:auction2:190:2020-04-11 10:08:06,727: Problem getting address/zip from 2874973
+I:auction2:190:2020-04-11 10:08:06,735: Problem getting address/zip from 2846411
+I:auction2:190:2020-04-11 10:08:06,766: Problem getting address/zip from 2803775
+I:auction2:190:2020-04-11 10:08:06,773: Problem getting address/zip from 2728674
+I:auction2:190:2020-04-11 10:08:06,804: Problem getting address/zip from 2719825
+I:auction2:190:2020-04-11 10:08:08,125: Problem getting address/zip from 1474437
+I:auction2:190:2020-04-11 10:08:08,134: Problem getting address/zip from 2715220
+I:auction2:172:2020-04-11 10:08:08,882: auction_id: 2763938, 17 ROBERT DOLLAR SCENIC DRIVE AKA 17 ROBERT DOLLAR DR, 94901
+I:auction2:190:2020-04-11 10:08:09,635: Problem getting address/zip from 2865763
+I:auction2:172:2020-04-11 10:08:09,982: auction_id: 2758413, 981 BEN INGRAM WY, 95377
+I:auction2:190:2020-04-11 10:08:10,150: Problem getting address/zip from 2868941
+I:auction2:190:2020-04-11 10:08:10,493: Problem getting address/zip from 2865779
+I:auction2:172:2020-04-11 10:08:10,971: auction_id: 2908583, 495 UNIT D CANYON OAKS DRIVE AKA 495 CANYON OAKS DR #D, 94605
+I:auction2:190:2020-04-11 10:08:13,783: Problem getting address/zip from 2873550
+I:auction2:190:2020-04-11 10:08:14,865: Problem getting address/zip from 2471511
+I:auction2:190:2020-04-11 10:08:15,206: Problem getting address/zip from 2865777
+I:auction2:190:2020-04-11 10:08:16,112: Problem getting address/zip from 2807879
+I:auction2:172:2020-04-11 10:08:17,200: auction_id: 2899680, 622-624 PROSPECT STREET, 94952
+I:auction2:190:2020-04-11 10:08:21,077: Problem getting address/zip from 2855738
+I:auction2:190:2020-04-11 10:08:22,195: Problem getting address/zip from 2831168
+I:auction2:172:2020-04-11 10:08:28,191: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:43:2020-04-18 16:02:11,537: ********************************************************************************
+I:auction_crawler:89:2020-04-18 16:02:18,172: working on Alameda County, CA
+I:auction_crawler:89:2020-04-18 16:02:27,147: working on Contra Costa County, CA
+I:auction_crawler:89:2020-04-18 16:02:35,391: working on Marin County, CA
+I:auction_crawler:89:2020-04-18 16:02:42,364: working on Napa County, CA
+I:auction_crawler:89:2020-04-18 16:02:49,161: working on Sacramento County, CA
+I:auction_crawler:89:2020-04-18 16:02:57,515: working on San Francisco County, CA
+I:auction_crawler:89:2020-04-18 16:03:04,601: working on San Joaquin County, CA
+I:auction_crawler:89:2020-04-18 16:03:12,903: working on San Mateo County, CA
+I:auction_crawler:89:2020-04-18 16:03:20,293: working on Santa Clara County, CA
+I:auction_crawler:89:2020-04-18 16:03:28,045: working on Santa Cruz County, CA
+I:auction_crawler:89:2020-04-18 16:03:34,668: working on Solano County, CA
+I:auction_crawler:89:2020-04-18 16:03:42,371: working on Sonoma County, CA
+I:auction_crawler:89:2020-04-18 16:03:49,203: working on Stanislaus County, CA
+I:auction_crawler:264:2020-04-18 16:03:57,435: donwloading href for 2939297
+I:auction_crawler:264:2020-04-18 16:04:03,320: donwloading href for 2939231
+I:auction_crawler:264:2020-04-18 16:04:08,165: donwloading href for 2929481
+I:auction_crawler:264:2020-04-18 16:04:13,021: donwloading href for 2930123
+I:auction_crawler:264:2020-04-18 16:04:18,652: donwloading href for 1323650
+I:auction_crawler:264:2020-04-18 16:04:23,980: donwloading href for 2731722
+I:auction_crawler:264:2020-04-18 16:04:28,709: donwloading href for 2936104
+I:auction_crawler:264:2020-04-18 16:04:35,390: donwloading href for 2939277
+I:auction2:390:2020-04-18 16:04:40,648: just loaded df from auction/zillowed/20200411.csv
+I:auction2:190:2020-04-18 16:04:45,031: Problem getting address/zip from 2866302
+I:auction2:190:2020-04-18 16:04:45,042: Problem getting address/zip from 2853159
+I:auction2:190:2020-04-18 16:04:45,232: Problem getting address/zip from 2834874
+I:auction2:190:2020-04-18 16:04:45,276: Problem getting address/zip from 2822014
+I:auction2:190:2020-04-18 16:04:45,431: Problem getting address/zip from 2758491
+I:auction2:190:2020-04-18 16:04:45,474: Problem getting address/zip from 1399178
+I:auction2:190:2020-04-18 16:04:45,483: Problem getting address/zip from 2717961
+I:auction2:190:2020-04-18 16:04:48,310: Problem getting address/zip from 2857196
+I:auction2:190:2020-04-18 16:04:48,354: Problem getting address/zip from 2865786
+I:auction2:190:2020-04-18 16:04:48,363: Problem getting address/zip from 2846259
+I:auction2:190:2020-04-18 16:04:48,371: Problem getting address/zip from 2840700
+I:auction2:190:2020-04-18 16:04:48,711: Problem getting address/zip from 2828920
+I:auction2:190:2020-04-18 16:04:48,720: Problem getting address/zip from 2831434
+I:auction2:190:2020-04-18 16:04:48,727: Problem getting address/zip from 2811539
+I:auction2:190:2020-04-18 16:04:48,737: Problem getting address/zip from 2822387
+I:auction2:190:2020-04-18 16:04:48,782: Problem getting address/zip from 2813015
+I:auction2:190:2020-04-18 16:04:48,794: Problem getting address/zip from 2812919
+I:auction2:172:2020-04-18 16:04:50,635: auction_id: 2763938, 17 ROBERT DOLLAR SCENIC DRIVE AKA 17 ROBERT DOLLAR DR, 94901
+I:auction2:190:2020-04-18 16:04:50,783: Problem getting address/zip from 2731531
+I:auction2:172:2020-04-18 16:05:00,455: auction_id: 2866754, 3743 IMMACULATA WAY, 95838
+I:auction2:190:2020-04-18 16:05:00,964: Problem getting address/zip from 2865763
+I:auction2:172:2020-04-18 16:05:01,755: auction_id: 2878115, 355 1ST ST #S 505 AKA 355 01ST ST, 94105
+I:auction2:190:2020-04-18 16:05:01,763: Problem getting address/zip from 2831187
+I:auction2:190:2020-04-18 16:05:02,026: Problem getting address/zip from 2765404
+I:auction2:172:2020-04-18 16:05:03,159: auction_id: 2876214, 1062 ASPEN DRIVE, 95336
+I:auction2:172:2020-04-18 16:05:05,001: auction_id: 2875705, 2456 PORTER WAY AKA 2456 W PORTER WAY, 95207
+I:auction_crawler:264:2020-04-18 16:05:06,323: 
+I:auction2:190:2020-04-18 16:05:12,625: Problem getting address/zip from 2869796
+I:auction_crawler:264:2020-04-18 16:05:13,952: 
+I:auction2:190:2020-04-18 16:05:19,295: Problem getting address/zip from 2871662
+I:auction_crawler:264:2020-04-18 16:05:20,619: 
+I:auction2:190:2020-04-18 16:05:26,474: Problem getting address/zip from 2864087
+I:auction2:190:2020-04-18 16:05:26,824: Problem getting address/zip from 2812515
+I:auction2:190:2020-04-18 16:05:26,854: Problem getting address/zip from 2802265
+I:auction2:190:2020-04-18 16:05:27,197: Problem getting address/zip from 2788931
+I:auction2:190:2020-04-18 16:05:27,914: Problem getting address/zip from 2752129
+I:auction2:172:2020-04-18 16:05:28,118: auction_id: 2758413, 981 BEN INGRAM WY, 95377
+I:auction2:190:2020-04-18 16:05:28,500: Problem getting address/zip from 2824500
+I:auction2:190:2020-04-18 16:05:28,509: Problem getting address/zip from 2821757
+I:auction2:190:2020-04-18 16:05:28,517: Problem getting address/zip from 2792927
+I:auction2:190:2020-04-18 16:05:28,552: Problem getting address/zip from 2735027
+I:auction2:190:2020-04-18 16:05:28,561: Problem getting address/zip from 2734901
+I:auction2:190:2020-04-18 16:05:28,762: Problem getting address/zip from 2653944
+I:auction_crawler:264:2020-04-18 16:05:30,094: 
+I:auction2:190:2020-04-18 16:05:35,298: Problem getting address/zip from 2549826
+I:auction2:190:2020-04-18 16:05:36,115: Problem getting address/zip from 2868122
+I:auction2:190:2020-04-18 16:05:36,124: Problem getting address/zip from 2859909
+I:auction2:190:2020-04-18 16:05:36,166: Problem getting address/zip from 2868941
+I:auction2:172:2020-04-18 16:05:36,411: auction_id: 2857157, 1636 GYPSY PL COU, 95121
+I:auction2:190:2020-04-18 16:05:36,603: Problem getting address/zip from 2852800
+I:auction_crawler:264:2020-04-18 16:05:37,908: 
+I:auction2:190:2020-04-18 16:05:42,878: Problem getting address/zip from 2823038
+I:auction2:190:2020-04-18 16:05:43,356: Problem getting address/zip from 2791151
+I:auction2:190:2020-04-18 16:05:43,385: Problem getting address/zip from 2756210
+I:auction2:190:2020-04-18 16:05:43,415: Problem getting address/zip from 1399225
+I:auction2:190:2020-04-18 16:05:43,425: Problem getting address/zip from 2686529
+I:auction2:190:2020-04-18 16:05:43,434: Problem getting address/zip from 2654221
+I:auction2:190:2020-04-18 16:05:43,463: Problem getting address/zip from 2485512
+I:auction2:190:2020-04-18 16:05:43,492: Problem getting address/zip from 2430750
+I:auction2:190:2020-04-18 16:05:46,357: Problem getting address/zip from 2865779
+I:auction2:190:2020-04-18 16:05:46,554: Problem getting address/zip from 2812523
+I:auction2:190:2020-04-18 16:05:48,971: Problem getting address/zip from 2868967
+I:auction2:190:2020-04-18 16:05:48,983: Problem getting address/zip from 2847075
+I:auction2:190:2020-04-18 16:05:48,994: Problem getting address/zip from 2831188
+I:auction2:190:2020-04-18 16:05:49,026: Problem getting address/zip from 2824493
+I:auction2:190:2020-04-18 16:05:49,034: Problem getting address/zip from 2814498
+I:auction2:190:2020-04-18 16:05:51,904: Problem getting address/zip from 2765505
+I:auction2:190:2020-04-18 16:05:52,089: Problem getting address/zip from 2719856
+I:auction2:190:2020-04-18 16:05:52,119: Problem getting address/zip from 2719864
+I:auction2:190:2020-04-18 16:05:52,152: Problem getting address/zip from 2270063
+I:auction2:190:2020-04-18 16:05:52,161: Problem getting address/zip from 1725319
+I:auction2:190:2020-04-18 16:05:54,506: Problem getting address/zip from 2863857
+I:auction2:190:2020-04-18 16:05:54,539: Problem getting address/zip from 2874973
+I:auction2:190:2020-04-18 16:05:54,855: Problem getting address/zip from 2846411
+I:auction2:190:2020-04-18 16:05:54,864: Problem getting address/zip from 2728674
+I:auction2:190:2020-04-18 16:05:54,893: Problem getting address/zip from 2719825
+I:auction2:190:2020-04-18 16:05:56,262: Problem getting address/zip from 2865697
+I:auction2:190:2020-04-18 16:05:56,271: Problem getting address/zip from 1474437
+I:auction2:190:2020-04-18 16:05:56,280: Problem getting address/zip from 2715220
+I:auction2:172:2020-04-18 16:05:56,770: auction_id: 2908583, 495 UNIT D CANYON OAKS DRIVE AKA 495 CANYON OAKS DR #D, 94605
+I:auction2:172:2020-04-18 16:05:57,299: auction_id: 2493405, 1387 AND 1389 145TH AVENUE, 94578
+I:auction2:190:2020-04-18 16:06:02,726: Problem getting address/zip from 2873550
+I:auction2:190:2020-04-18 16:06:05,853: Problem getting address/zip from 2471511
+I:auction2:190:2020-04-18 16:06:06,048: Problem getting address/zip from 2791141
+I:auction2:190:2020-04-18 16:06:06,737: Problem getting address/zip from 2865777
+I:auction2:190:2020-04-18 16:06:08,837: Problem getting address/zip from 2807879
+I:auction2:172:2020-04-18 16:06:09,274: auction_id: 2899680, 622-624 PROSPECT STREET, 94952
+I:auction2:190:2020-04-18 16:06:13,933: Problem getting address/zip from 2855738
+I:auction2:190:2020-04-18 16:06:15,013: Problem getting address/zip from 2831168
+I:auction2:172:2020-04-18 16:06:26,634: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:43:2020-04-25 11:51:53,451: ********************************************************************************
+I:auction_crawler:89:2020-04-25 11:52:03,977: working on Alameda County, CA
+I:auction_crawler:89:2020-04-25 11:52:13,771: working on Contra Costa County, CA
+I:auction_crawler:89:2020-04-25 11:52:21,959: working on Marin County, CA
+I:auction_crawler:89:2020-04-25 11:52:28,869: working on Napa County, CA
+I:auction_crawler:89:2020-04-25 11:52:36,340: working on Sacramento County, CA
+I:auction_crawler:89:2020-04-25 11:52:46,344: working on San Francisco County, CA
+I:auction_crawler:89:2020-04-25 11:52:53,753: working on San Joaquin County, CA
+I:auction_crawler:89:2020-04-25 11:53:01,837: working on San Mateo County, CA
+I:auction_crawler:89:2020-04-25 11:53:09,158: working on Santa Clara County, CA
+I:auction_crawler:89:2020-04-25 11:53:18,694: working on Santa Cruz County, CA
+I:auction_crawler:89:2020-04-25 11:53:25,611: working on Solano County, CA
+I:auction_crawler:89:2020-04-25 11:53:33,222: working on Sonoma County, CA
+I:auction_crawler:89:2020-04-25 11:53:40,130: working on Stanislaus County, CA
+I:auction_crawler:264:2020-04-25 11:53:49,301: donwloading href for 2940025
+I:auction_crawler:264:2020-04-25 11:53:57,321: donwloading href for 2930894
+I:auction_crawler:264:2020-04-25 11:54:03,159: donwloading href for 2937845
+I:auction_crawler:264:2020-04-25 11:54:08,510: donwloading href for 2937847
+I:auction2:390:2020-04-25 11:54:14,476: just loaded df from auction/zillowed/20200418.csv
+I:auction2:172:2020-04-25 11:54:14,898: auction_id: 2908583, 495 UNIT D CANYON OAKS DRIVE AKA 495 CANYON OAKS DR #D, 94605
+I:auction2:190:2020-04-25 11:54:16,379: Problem getting address/zip from 2866302
+I:auction2:190:2020-04-25 11:54:16,389: Problem getting address/zip from 2853159
+I:auction2:190:2020-04-25 11:54:16,584: Problem getting address/zip from 2822014
+I:auction2:190:2020-04-25 11:54:16,762: Problem getting address/zip from 2758491
+I:auction2:190:2020-04-25 11:54:16,793: Problem getting address/zip from 1399178
+I:auction2:172:2020-04-25 11:54:17,226: auction_id: 2493405, 1387 AND 1389 145TH AVENUE, 94578
+I:auction2:190:2020-04-25 11:54:18,045: Problem getting address/zip from 2857196
+I:auction2:190:2020-04-25 11:54:18,074: Problem getting address/zip from 2865786
+I:auction2:190:2020-04-25 11:54:18,107: Problem getting address/zip from 2846259
+I:auction2:190:2020-04-25 11:54:18,143: Problem getting address/zip from 2840700
+I:auction2:190:2020-04-25 11:54:18,345: Problem getting address/zip from 2828920
+I:auction2:190:2020-04-25 11:54:18,374: Problem getting address/zip from 2811539
+I:auction2:190:2020-04-25 11:54:18,415: Problem getting address/zip from 2822387
+I:auction2:190:2020-04-25 11:54:18,447: Problem getting address/zip from 2813015
+I:auction2:172:2020-04-25 11:54:19,818: auction_id: 2763938, 17 ROBERT DOLLAR SCENIC DRIVE AKA 17 ROBERT DOLLAR DR, 94901
+I:auction2:190:2020-04-25 11:54:19,845: Problem getting address/zip from 2731531
+I:auction2:190:2020-04-25 11:54:25,330: Problem getting address/zip from 2873550
+I:auction2:172:2020-04-25 11:54:25,503: auction_id: 2866754, 3743 IMMACULATA WAY, 95838
+I:auction2:172:2020-04-25 11:54:26,118: auction_id: 2878115, 355 1ST ST #S 505 AKA 355 01ST ST, 94105
+I:auction2:190:2020-04-25 11:54:26,155: Problem getting address/zip from 2831187
+I:auction2:190:2020-04-25 11:54:26,335: Problem getting address/zip from 2765404
+I:auction2:190:2020-04-25 11:54:27,902: Problem getting address/zip from 2869796
+I:auction2:190:2020-04-25 11:54:27,932: Problem getting address/zip from 2871662
+I:auction2:190:2020-04-25 11:54:27,965: Problem getting address/zip from 2864087
+I:auction2:190:2020-04-25 11:54:28,003: Problem getting address/zip from 2812515
+I:auction2:190:2020-04-25 11:54:28,034: Problem getting address/zip from 2788931
+I:auction2:172:2020-04-25 11:54:28,929: auction_id: 2758413, 981 BEN INGRAM WY, 95377
+I:auction2:190:2020-04-25 11:54:29,932: Problem getting address/zip from 2471511
+I:auction2:190:2020-04-25 11:54:30,291: Problem getting address/zip from 2824500
+I:auction2:190:2020-04-25 11:54:30,324: Problem getting address/zip from 2821757
+I:auction2:190:2020-04-25 11:54:30,353: Problem getting address/zip from 2792927
+I:auction2:190:2020-04-25 11:54:30,388: Problem getting address/zip from 2791141
+I:auction2:190:2020-04-25 11:54:30,420: Problem getting address/zip from 2735027
+I:auction2:190:2020-04-25 11:54:30,452: Problem getting address/zip from 2734901
+I:auction2:190:2020-04-25 11:54:30,683: Problem getting address/zip from 2653944
+I:auction2:190:2020-04-25 11:54:30,714: Problem getting address/zip from 2549826
+I:auction2:190:2020-04-25 11:54:31,065: Problem getting address/zip from 2868122
+I:auction2:190:2020-04-25 11:54:31,094: Problem getting address/zip from 2859909
+I:auction2:190:2020-04-25 11:54:31,129: Problem getting address/zip from 2865777
+I:auction2:190:2020-04-25 11:54:31,314: Problem getting address/zip from 2852800
+I:auction2:190:2020-04-25 11:54:31,555: Problem getting address/zip from 2823038
+I:auction2:190:2020-04-25 11:54:31,831: Problem getting address/zip from 2756210
+I:auction2:190:2020-04-25 11:54:31,876: Problem getting address/zip from 1399225
+I:auction2:190:2020-04-25 11:54:31,917: Problem getting address/zip from 2654221
+I:auction2:190:2020-04-25 11:54:31,955: Problem getting address/zip from 2485512
+I:auction2:190:2020-04-25 11:54:31,992: Problem getting address/zip from 2430750
+I:auction2:190:2020-04-25 11:54:32,499: Problem getting address/zip from 2865779
+I:auction2:190:2020-04-25 11:54:32,695: Problem getting address/zip from 2812523
+I:auction2:190:2020-04-25 11:54:33,704: Problem getting address/zip from 2868967
+I:auction2:190:2020-04-25 11:54:33,741: Problem getting address/zip from 2847075
+I:auction2:190:2020-04-25 11:54:33,775: Problem getting address/zip from 2831188
+I:auction2:190:2020-04-25 11:54:33,807: Problem getting address/zip from 2824493
+I:auction2:190:2020-04-25 11:54:33,837: Problem getting address/zip from 2807879
+I:auction2:190:2020-04-25 11:54:34,517: Problem getting address/zip from 2765505
+I:auction2:190:2020-04-25 11:54:34,697: Problem getting address/zip from 2719856
+I:auction2:190:2020-04-25 11:54:34,731: Problem getting address/zip from 2270063
+I:auction2:190:2020-04-25 11:54:34,768: Problem getting address/zip from 1725319
+I:auction2:172:2020-04-25 11:54:34,967: auction_id: 2899680, 622-624 PROSPECT STREET, 94952
+I:auction2:190:2020-04-25 11:54:35,445: Problem getting address/zip from 2863857
+I:auction2:190:2020-04-25 11:54:35,475: Problem getting address/zip from 2874973
+I:auction2:190:2020-04-25 11:54:35,638: Problem getting address/zip from 2846411
+I:auction2:190:2020-04-25 11:54:35,815: Problem getting address/zip from 2728674
+I:auction2:190:2020-04-25 11:54:36,317: Problem getting address/zip from 1474437
+I:auction2:190:2020-04-25 11:54:36,346: Problem getting address/zip from 2715220
+I:auction2:190:2020-04-25 11:54:38,301: Problem getting address/zip from 2865763
+I:auction2:172:2020-04-25 11:54:39,908: auction_id: 2857157, 1636 GYPSY PL COU, 95121
+I:auction2:190:2020-04-25 11:54:40,927: Problem getting address/zip from 2865697
+I:auction2:190:2020-04-25 11:54:40,935: Problem getting address/zip from 2855738
+I:auction2:190:2020-04-25 11:54:42,135: Problem getting address/zip from 2831168
+I:auction2:172:2020-04-25 11:54:46,889: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:190:2020-04-25 11:54:47,072: Problem getting address/zip from 2814498
+I:auction2:43:2020-05-01 21:56:29,737: ********************************************************************************
+I:auction_crawler:89:2020-05-01 21:56:36,795: working on Alameda County, CA
+I:auction_crawler:89:2020-05-01 21:56:46,849: working on Contra Costa County, CA
+I:auction_crawler:89:2020-05-01 21:56:55,474: working on Marin County, CA
+I:auction_crawler:89:2020-05-01 21:57:02,362: working on Napa County, CA
+I:auction_crawler:89:2020-05-01 21:57:09,119: working on Sacramento County, CA
+I:auction_crawler:89:2020-05-01 21:57:17,624: working on San Francisco County, CA
+I:auction_crawler:89:2020-05-01 21:57:24,611: working on San Joaquin County, CA
+I:auction_crawler:89:2020-05-01 21:57:33,248: working on San Mateo County, CA
+I:auction_crawler:89:2020-05-01 21:57:40,877: working on Santa Clara County, CA
+I:auction_crawler:89:2020-05-01 21:57:48,960: working on Santa Cruz County, CA
+I:auction_crawler:89:2020-05-01 21:57:55,740: working on Solano County, CA
+I:auction_crawler:89:2020-05-01 21:58:03,388: working on Sonoma County, CA
+I:auction_crawler:89:2020-05-01 21:58:10,627: working on Stanislaus County, CA
+I:auction_crawler:264:2020-05-01 21:58:19,056: donwloading href for 2940446
+I:auction_crawler:264:2020-05-01 21:58:25,441: donwloading href for 2940367
+I:auction_crawler:264:2020-05-01 21:58:30,660: donwloading href for 2937849
+I:auction_crawler:264:2020-05-01 21:58:36,707: donwloading href for 2937817
+I:auction_crawler:264:2020-05-01 21:58:42,413: donwloading href for 2937850
+I:auction_crawler:264:2020-05-01 21:58:47,661: donwloading href for 2940218
+I:auction_crawler:264:2020-05-01 21:58:52,849: donwloading href for 2917860
+I:auction2:390:2020-05-01 21:58:57,996: just loaded df from auction/zillowed/20200425.csv
+I:auction2:172:2020-05-01 21:58:58,407: auction_id: 2908583, 495 UNIT D CANYON OAKS DRIVE AKA 495 CANYON OAKS DR #D, 94605
+I:auction2:190:2020-05-01 21:59:00,259: Problem getting address/zip from 2866302
+I:auction2:190:2020-05-01 21:59:00,293: Problem getting address/zip from 2853159
+I:auction2:190:2020-05-01 21:59:00,452: Problem getting address/zip from 2822014
+I:auction2:190:2020-05-01 21:59:00,627: Problem getting address/zip from 2758491
+I:auction2:190:2020-05-01 21:59:00,662: Problem getting address/zip from 1399178
+I:auction2:172:2020-05-01 21:59:01,231: auction_id: 2493405, 1387 AND 1389 145TH AVENUE, 94578
+I:auction2:190:2020-05-01 21:59:02,097: Problem getting address/zip from 2857196
+I:auction2:190:2020-05-01 21:59:02,106: Problem getting address/zip from 2865786
+I:auction2:190:2020-05-01 21:59:02,115: Problem getting address/zip from 2846259
+I:auction2:190:2020-05-01 21:59:02,124: Problem getting address/zip from 2840700
+I:auction2:190:2020-05-01 21:59:02,397: Problem getting address/zip from 2828920
+I:auction2:190:2020-05-01 21:59:02,405: Problem getting address/zip from 2811539
+I:auction2:190:2020-05-01 21:59:02,416: Problem getting address/zip from 2822387
+I:auction2:190:2020-05-01 21:59:02,424: Problem getting address/zip from 2813015
+I:auction_crawler:264:2020-05-01 21:59:04,963: 
+I:auction2:190:2020-05-01 21:59:11,042: Problem getting address/zip from 2769891
+I:auction2:172:2020-05-01 21:59:11,261: auction_id: 2763938, 17 ROBERT DOLLAR SCENIC DRIVE AKA 17 ROBERT DOLLAR DR, 94901
+I:auction2:190:2020-05-01 21:59:11,300: Problem getting address/zip from 2731531
+I:auction2:190:2020-05-01 21:59:18,128: Problem getting address/zip from 2873550
+I:auction2:172:2020-05-01 21:59:18,329: auction_id: 2866754, 3743 IMMACULATA WAY, 95838
+I:auction2:172:2020-05-01 21:59:18,905: auction_id: 2878115, 355 1ST ST #S 505 AKA 355 01ST ST, 94105
+I:auction2:190:2020-05-01 21:59:18,919: Problem getting address/zip from 2831187
+I:auction_crawler:264:2020-05-01 21:59:20,259: 
+I:auction2:190:2020-05-01 21:59:27,308: Problem getting address/zip from 2822988
+I:auction2:190:2020-05-01 21:59:27,318: Problem getting address/zip from 2765404
+I:auction2:190:2020-05-01 21:59:30,160: Problem getting address/zip from 2869796
+I:auction2:190:2020-05-01 21:59:30,194: Problem getting address/zip from 2871662
+I:auction2:190:2020-05-01 21:59:30,204: Problem getting address/zip from 2864087
+I:auction2:190:2020-05-01 21:59:30,247: Problem getting address/zip from 2812515
+I:auction2:190:2020-05-01 21:59:30,286: Problem getting address/zip from 2788931
+I:auction2:172:2020-05-01 21:59:31,290: auction_id: 2758413, 981 BEN INGRAM WY, 95377
+I:auction2:190:2020-05-01 21:59:32,401: Problem getting address/zip from 2471511
+I:auction2:190:2020-05-01 21:59:32,785: Problem getting address/zip from 2824500
+I:auction2:190:2020-05-01 21:59:32,794: Problem getting address/zip from 2821757
+I:auction2:190:2020-05-01 21:59:32,802: Problem getting address/zip from 2792927
+I:auction2:190:2020-05-01 21:59:32,811: Problem getting address/zip from 2791141
+I:auction2:190:2020-05-01 21:59:32,820: Problem getting address/zip from 2735027
+I:auction2:190:2020-05-01 21:59:32,828: Problem getting address/zip from 2734901
+I:auction2:190:2020-05-01 21:59:32,999: Problem getting address/zip from 2653944
+I:auction2:190:2020-05-01 21:59:33,008: Problem getting address/zip from 2549826
+I:auction2:190:2020-05-01 21:59:33,319: Problem getting address/zip from 2868122
+I:auction2:190:2020-05-01 21:59:33,329: Problem getting address/zip from 2859909
+I:auction2:190:2020-05-01 21:59:33,340: Problem getting address/zip from 2865777
+I:auction2:190:2020-05-01 21:59:33,518: Problem getting address/zip from 2852800
+I:auction2:190:2020-05-01 21:59:33,675: Problem getting address/zip from 2823038
+I:auction_crawler:264:2020-05-01 21:59:35,225: 
+I:auction2:190:2020-05-01 21:59:40,556: Problem getting address/zip from 2769889
+I:auction2:190:2020-05-01 21:59:40,567: Problem getting address/zip from 2756210
+I:auction2:190:2020-05-01 21:59:40,610: Problem getting address/zip from 1399225
+I:auction2:190:2020-05-01 21:59:40,707: Problem getting address/zip from 2654221
+I:auction2:190:2020-05-01 21:59:40,717: Problem getting address/zip from 2485512
+I:auction2:190:2020-05-01 21:59:40,726: Problem getting address/zip from 2430750
+I:auction2:190:2020-05-01 21:59:41,290: Problem getting address/zip from 2865779
+I:auction2:190:2020-05-01 21:59:41,448: Problem getting address/zip from 2812523
+I:auction2:190:2020-05-01 21:59:42,738: Problem getting address/zip from 2868967
+I:auction2:190:2020-05-01 21:59:42,749: Problem getting address/zip from 2847075
+I:auction2:190:2020-05-01 21:59:42,760: Problem getting address/zip from 2831188
+I:auction2:190:2020-05-01 21:59:42,769: Problem getting address/zip from 2824493
+I:auction2:190:2020-05-01 21:59:42,778: Problem getting address/zip from 2807879
+I:auction2:190:2020-05-01 21:59:43,569: Problem getting address/zip from 2765505
+I:auction2:190:2020-05-01 21:59:43,758: Problem getting address/zip from 2719856
+I:auction2:190:2020-05-01 21:59:43,768: Problem getting address/zip from 2270063
+I:auction2:190:2020-05-01 21:59:43,778: Problem getting address/zip from 1725319
+I:auction2:172:2020-05-01 21:59:44,007: auction_id: 2899680, 622-624 PROSPECT STREET, 94952
+I:auction2:190:2020-05-01 21:59:44,528: Problem getting address/zip from 2863857
+I:auction2:190:2020-05-01 21:59:44,572: Problem getting address/zip from 2874973
+I:auction2:190:2020-05-01 21:59:44,582: Problem getting address/zip from 2846411
+I:auction2:190:2020-05-01 21:59:44,795: Problem getting address/zip from 2728674
+I:auction_crawler:264:2020-05-01 21:59:46,475: 
+I:auction2:190:2020-05-01 21:59:52,754: Problem getting address/zip from 2860828
+I:auction2:190:2020-05-01 21:59:52,923: Problem getting address/zip from 1474437
+I:auction2:190:2020-05-01 21:59:52,955: Problem getting address/zip from 2715220
+I:auction2:190:2020-05-01 21:59:54,934: Problem getting address/zip from 2865763
+I:auction2:172:2020-05-01 21:59:56,809: auction_id: 2857157, 1636 GYPSY PL COU, 95121
+I:auction2:190:2020-05-01 21:59:57,787: Problem getting address/zip from 2865697
+I:auction2:190:2020-05-01 21:59:57,796: Problem getting address/zip from 2855738
+I:auction2:190:2020-05-01 21:59:59,537: Problem getting address/zip from 2831168
+I:auction2:172:2020-05-01 22:00:05,336: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:190:2020-05-01 22:00:05,509: Problem getting address/zip from 2814498
+I:auction2:172:2020-05-01 22:00:09,300: auction_id: 2931358, 712-06-014 & 712-06-059 AKA 35 SAN BRUNO AVENUE, 95037
+I:auction2:43:2020-05-08 19:59:01,634: ********************************************************************************
+I:auction_crawler:89:2020-05-08 19:59:09,561: working on Alameda County, CA
+I:auction_crawler:89:2020-05-08 19:59:18,383: working on Contra Costa County, CA
+I:auction_crawler:89:2020-05-08 19:59:26,290: working on Marin County, CA
+I:auction_crawler:89:2020-05-08 19:59:33,062: working on Napa County, CA
+I:auction_crawler:89:2020-05-08 19:59:39,393: working on Sacramento County, CA
+I:auction_crawler:89:2020-05-08 19:59:47,888: working on San Francisco County, CA
+I:auction_crawler:89:2020-05-08 19:59:54,463: working on San Joaquin County, CA
+I:auction_crawler:89:2020-05-08 20:00:02,707: working on San Mateo County, CA
+I:auction_crawler:89:2020-05-08 20:00:09,946: working on Santa Clara County, CA
+I:auction_crawler:89:2020-05-08 20:00:19,361: working on Santa Cruz County, CA
+I:auction_crawler:89:2020-05-08 20:00:26,254: working on Solano County, CA
+I:auction_crawler:89:2020-05-08 20:00:34,360: working on Sonoma County, CA
+I:auction_crawler:89:2020-05-08 20:00:41,075: working on Stanislaus County, CA
+I:auction_crawler:264:2020-05-08 20:00:49,183: donwloading href for 2926619
+I:auction_crawler:264:2020-05-08 20:00:56,480: donwloading href for 2940187
+I:auction_crawler:264:2020-05-08 20:01:01,765: donwloading href for 2940964
+I:auction_crawler:264:2020-05-08 20:01:06,615: donwloading href for 2939756
+I:auction_crawler:264:2020-05-08 20:01:11,151: donwloading href for 2829494
+I:auction_crawler:264:2020-05-08 20:01:15,068: donwloading href for 2933200
+I:auction_crawler:264:2020-05-08 20:01:19,675: donwloading href for 2809503
+I:auction2:390:2020-05-08 20:01:25,016: just loaded df from auction/zillowed/20200425.csv
+I:auction2:172:2020-05-08 20:01:25,457: auction_id: 2908583, 495 UNIT D CANYON OAKS DRIVE AKA 495 CANYON OAKS DR #D, 94605
+I:auction2:190:2020-05-08 20:01:26,702: Problem getting address/zip from 2866302
+I:auction2:190:2020-05-08 20:01:26,736: Problem getting address/zip from 2853159
+I:auction2:190:2020-05-08 20:01:26,935: Problem getting address/zip from 2822014
+I:auction_crawler:264:2020-05-08 20:01:28,272: 
+I:auction2:190:2020-05-08 20:01:33,589: Problem getting address/zip from 2824490
+I:auction2:190:2020-05-08 20:01:33,793: Problem getting address/zip from 2758491
+I:auction2:190:2020-05-08 20:01:33,826: Problem getting address/zip from 1399178
+I:auction2:190:2020-05-08 20:01:35,658: Problem getting address/zip from 2857196
+I:auction2:190:2020-05-08 20:01:35,698: Problem getting address/zip from 2846259
+I:auction2:190:2020-05-08 20:01:35,735: Problem getting address/zip from 2840700
+I:auction2:190:2020-05-08 20:01:36,141: Problem getting address/zip from 2828920
+I:auction2:190:2020-05-08 20:01:36,178: Problem getting address/zip from 2811539
+I:auction2:190:2020-05-08 20:01:36,223: Problem getting address/zip from 2822387
+I:auction2:190:2020-05-08 20:01:37,855: Problem getting address/zip from 2769891
+I:auction2:172:2020-05-08 20:01:38,078: auction_id: 2763938, 17 ROBERT DOLLAR SCENIC DRIVE AKA 17 ROBERT DOLLAR DR, 94901
+I:auction2:190:2020-05-08 20:01:38,110: Problem getting address/zip from 2731531
+I:auction2:190:2020-05-08 20:01:44,854: Problem getting address/zip from 2873550
+I:auction2:172:2020-05-08 20:01:45,098: auction_id: 2866754, 3743 IMMACULATA WAY, 95838
+I:auction2:190:2020-05-08 20:01:45,694: Problem getting address/zip from 2865763
+I:auction2:172:2020-05-08 20:01:46,258: auction_id: 2878115, 355 1ST ST #S 505 AKA 355 01ST ST, 94105
+I:auction2:190:2020-05-08 20:01:46,299: Problem getting address/zip from 2831187
+I:auction2:190:2020-05-08 20:01:46,330: Problem getting address/zip from 2822988
+I:auction2:190:2020-05-08 20:01:46,367: Problem getting address/zip from 2765404
+I:auction2:190:2020-05-08 20:01:47,931: Problem getting address/zip from 2869796
+I:auction2:190:2020-05-08 20:01:47,960: Problem getting address/zip from 2871662
+I:auction2:190:2020-05-08 20:01:47,989: Problem getting address/zip from 2864087
+I:auction2:190:2020-05-08 20:01:48,017: Problem getting address/zip from 2788931
+I:auction2:172:2020-05-08 20:01:49,106: auction_id: 2758413, 981 BEN INGRAM WY, 95377
+I:auction2:190:2020-05-08 20:01:50,085: Problem getting address/zip from 2471511
+I:auction2:190:2020-05-08 20:01:50,594: Problem getting address/zip from 2824500
+I:auction2:190:2020-05-08 20:01:50,626: Problem getting address/zip from 2821757
+I:auction2:190:2020-05-08 20:01:50,653: Problem getting address/zip from 2792927
+I:auction2:190:2020-05-08 20:01:50,684: Problem getting address/zip from 2735027
+I:auction2:190:2020-05-08 20:01:50,712: Problem getting address/zip from 2734901
+I:auction2:190:2020-05-08 20:01:50,896: Problem getting address/zip from 2653944
+I:auction2:190:2020-05-08 20:01:50,924: Problem getting address/zip from 2549826
+I:auction2:190:2020-05-08 20:01:51,629: Problem getting address/zip from 2868122
+I:auction2:190:2020-05-08 20:01:51,660: Problem getting address/zip from 2859909
+I:auction2:190:2020-05-08 20:01:51,695: Problem getting address/zip from 2865777
+I:auction2:172:2020-05-08 20:01:51,906: auction_id: 2857157, 1636 GYPSY PL COU, 95121
+I:auction2:190:2020-05-08 20:01:52,083: Problem getting address/zip from 2852800
+I:auction2:190:2020-05-08 20:01:52,271: Problem getting address/zip from 2769889
+I:auction2:190:2020-05-08 20:01:52,300: Problem getting address/zip from 2756210
+I:auction2:190:2020-05-08 20:01:52,329: Problem getting address/zip from 1399225
+I:auction2:190:2020-05-08 20:01:52,357: Problem getting address/zip from 2654221
+I:auction2:190:2020-05-08 20:01:52,532: Problem getting address/zip from 2485512
+I:auction2:190:2020-05-08 20:01:52,561: Problem getting address/zip from 2430750
+I:auction2:190:2020-05-08 20:01:53,267: Problem getting address/zip from 2865779
+I:auction2:190:2020-05-08 20:01:53,300: Problem getting address/zip from 2812523
+I:auction2:190:2020-05-08 20:01:54,293: Problem getting address/zip from 2847075
+I:auction2:190:2020-05-08 20:01:54,324: Problem getting address/zip from 2824493
+I:auction2:190:2020-05-08 20:01:54,362: Problem getting address/zip from 2807879
+I:auction2:190:2020-05-08 20:01:55,047: Problem getting address/zip from 2765505
+I:auction2:190:2020-05-08 20:01:55,401: Problem getting address/zip from 2719856
+I:auction2:190:2020-05-08 20:01:55,446: Problem getting address/zip from 1725319
+I:auction2:172:2020-05-08 20:01:56,124: auction_id: 2899680, 622-624 PROSPECT STREET, 94952
+I:auction2:190:2020-05-08 20:01:56,474: Problem getting address/zip from 2874973
+I:auction2:190:2020-05-08 20:01:56,510: Problem getting address/zip from 2846411
+I:auction2:190:2020-05-08 20:01:57,175: Problem getting address/zip from 2865697
+I:auction2:190:2020-05-08 20:01:57,214: Problem getting address/zip from 2860828
+I:auction2:190:2020-05-08 20:01:57,418: Problem getting address/zip from 2855738
+I:auction2:190:2020-05-08 20:01:57,456: Problem getting address/zip from 1474437
+I:auction2:172:2020-05-08 20:01:58,676: auction_id: 2493405, 1387 AND 1389 145TH AVENUE, 94578
+I:auction2:190:2020-05-08 20:01:59,395: Problem getting address/zip from 2831168
+I:auction2:190:2020-05-08 20:02:00,920: Problem getting address/zip from 2831188
+I:auction2:172:2020-05-08 20:02:04,204: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:190:2020-05-08 20:02:04,400: Problem getting address/zip from 2814498
+I:auction2:190:2020-05-08 20:02:05,433: Problem getting address/zip from 2791141
+I:auction2:172:2020-05-08 20:02:09,462: auction_id: 2931358, 712-06-014 & 712-06-059 AKA 35 SAN BRUNO AVENUE, 95037
+I:auction2:43:2020-05-16 08:55:27,302: ********************************************************************************
+I:auction_crawler:89:2020-05-16 08:55:34,829: working on Alameda County, CA
+I:auction_crawler:89:2020-05-16 08:55:43,573: working on Contra Costa County, CA
+I:auction_crawler:89:2020-05-16 08:55:51,779: working on Marin County, CA
+I:auction_crawler:89:2020-05-16 08:55:58,319: working on Napa County, CA
+I:auction_crawler:89:2020-05-16 08:56:04,779: working on Sacramento County, CA
+I:auction_crawler:89:2020-05-16 08:56:12,846: working on San Francisco County, CA
+I:auction_crawler:89:2020-05-16 08:56:19,612: working on San Joaquin County, CA
+I:auction_crawler:89:2020-05-16 08:56:27,489: working on San Mateo County, CA
+I:auction_crawler:89:2020-05-16 08:56:34,473: working on Santa Clara County, CA
+I:auction_crawler:89:2020-05-16 08:56:42,010: working on Santa Cruz County, CA
+I:auction_crawler:89:2020-05-16 08:56:48,672: working on Solano County, CA
+I:auction_crawler:89:2020-05-16 08:56:56,242: working on Sonoma County, CA
+I:auction_crawler:89:2020-05-16 08:57:03,284: working on Stanislaus County, CA
+I:auction_crawler:264:2020-05-16 08:57:11,407: donwloading href for 2941331
+I:auction_crawler:264:2020-05-16 08:57:17,214: donwloading href for 2940105
+I:auction_crawler:264:2020-05-16 08:57:22,565: donwloading href for 2940249
+I:auction_crawler:264:2020-05-16 08:57:27,829: donwloading href for 2941380
+I:auction_crawler:264:2020-05-16 08:57:32,406: donwloading href for 2940266
+I:auction_crawler:264:2020-05-16 08:57:37,702: donwloading href for 2940106
+I:auction_crawler:264:2020-05-16 08:57:42,909: donwloading href for 2940257
+I:auction_crawler:264:2020-05-16 08:57:48,154: donwloading href for 2940326
+I:auction_crawler:264:2020-05-16 08:57:53,306: donwloading href for 2941329
+I:auction_crawler:264:2020-05-16 08:57:57,995: donwloading href for 2941368
+I:auction_crawler:264:2020-05-16 08:58:02,545: donwloading href for 2941330
+I:auction2:390:2020-05-16 08:58:07,167: just loaded df from auction/zillowed/20200508.csv
+I:auction2:190:2020-05-16 08:58:09,242: Problem getting address/zip from 2853159
+I:auction2:190:2020-05-16 08:58:09,415: Problem getting address/zip from 2822014
+I:auction2:190:2020-05-16 08:58:09,447: Problem getting address/zip from 2824490
+I:auction_crawler:264:2020-05-16 08:58:10,918: 
+I:auction2:190:2020-05-16 08:58:17,971: Problem getting address/zip from 2778042
+I:auction2:190:2020-05-16 08:58:18,003: Problem getting address/zip from 2758491
+I:auction2:190:2020-05-16 08:58:18,013: Problem getting address/zip from 1399178
+I:auction2:172:2020-05-16 08:58:18,533: auction_id: 2493405, 1387 AND 1389 145TH AVENUE, 94578
+I:auction2:190:2020-05-16 08:58:20,004: Problem getting address/zip from 2846259
+I:auction2:190:2020-05-16 08:58:20,168: Problem getting address/zip from 2831168
+I:auction2:190:2020-05-16 08:58:20,181: Problem getting address/zip from 2822387
+I:auction2:190:2020-05-16 08:58:21,388: Problem getting address/zip from 2769891
+I:auction2:172:2020-05-16 08:58:21,599: auction_id: 2763938, 17 ROBERT DOLLAR SCENIC DRIVE AKA 17 ROBERT DOLLAR DR, 94901
+I:auction2:190:2020-05-16 08:58:22,009: Problem getting address/zip from 2731531
+I:auction_crawler:264:2020-05-16 08:58:27,937: 
+I:auction2:190:2020-05-16 08:58:33,882: Problem getting address/zip from 2849926
+I:auction2:190:2020-05-16 08:58:33,893: Problem getting address/zip from 2831187
+I:auction2:190:2020-05-16 08:58:33,902: Problem getting address/zip from 2822988
+I:auction2:190:2020-05-16 08:58:33,938: Problem getting address/zip from 2765404
+I:auction2:190:2020-05-16 08:58:35,290: Problem getting address/zip from 2869796
+I:auction2:190:2020-05-16 08:58:35,301: Problem getting address/zip from 2871662
+I:auction2:190:2020-05-16 08:58:35,311: Problem getting address/zip from 2864087
+I:auction2:190:2020-05-16 08:58:35,320: Problem getting address/zip from 2788931
+I:auction2:172:2020-05-16 08:58:36,020: auction_id: 2758413, 981 BEN INGRAM WY, 95377
+I:auction2:190:2020-05-16 08:58:36,889: Problem getting address/zip from 2471511
+I:auction2:190:2020-05-16 08:58:37,484: Problem getting address/zip from 2824500
+I:auction2:190:2020-05-16 08:58:37,492: Problem getting address/zip from 2792927
+I:auction2:190:2020-05-16 08:58:37,523: Problem getting address/zip from 2735027
+I:auction2:190:2020-05-16 08:58:37,531: Problem getting address/zip from 2734901
+I:auction2:190:2020-05-16 08:58:37,706: Problem getting address/zip from 2653944
+I:auction2:190:2020-05-16 08:58:37,714: Problem getting address/zip from 2549826
+I:auction2:190:2020-05-16 08:58:39,178: Problem getting address/zip from 2868122
+I:auction2:190:2020-05-16 08:58:39,186: Problem getting address/zip from 2859909
+I:auction2:190:2020-05-16 08:58:39,195: Problem getting address/zip from 2865777
+I:auction2:172:2020-05-16 08:58:39,366: auction_id: 2857157, 1636 GYPSY PL COU, 95121
+I:auction2:190:2020-05-16 08:58:39,541: Problem getting address/zip from 2852800
+I:auction2:190:2020-05-16 08:58:39,848: Problem getting address/zip from 2769889
+I:auction2:190:2020-05-16 08:58:39,857: Problem getting address/zip from 2756210
+I:auction2:190:2020-05-16 08:58:39,865: Problem getting address/zip from 1399225
+I:auction2:190:2020-05-16 08:58:39,893: Problem getting address/zip from 2654221
+I:auction2:190:2020-05-16 08:58:40,043: Problem getting address/zip from 2485512
+I:auction2:190:2020-05-16 08:58:40,054: Problem getting address/zip from 2430750
+I:auction2:190:2020-05-16 08:58:40,364: Problem getting address/zip from 2865779
+I:auction2:190:2020-05-16 08:58:40,373: Problem getting address/zip from 2812523
+I:auction2:190:2020-05-16 08:58:41,507: Problem getting address/zip from 2847075
+I:auction2:190:2020-05-16 08:58:41,519: Problem getting address/zip from 2831188
+I:auction2:190:2020-05-16 08:58:41,528: Problem getting address/zip from 2824493
+I:auction2:190:2020-05-16 08:58:41,537: Problem getting address/zip from 2807879
+I:auction_crawler:264:2020-05-16 08:58:43,238: 
+I:auction2:190:2020-05-16 08:58:48,281: Problem getting address/zip from 2787083
+I:auction2:190:2020-05-16 08:58:48,571: Problem getting address/zip from 2765505
+I:auction2:190:2020-05-16 08:58:48,837: Problem getting address/zip from 2719856
+I:auction2:190:2020-05-16 08:58:48,874: Problem getting address/zip from 1725319
+I:auction2:172:2020-05-16 08:58:49,444: auction_id: 2899680, 622-624 PROSPECT STREET, 94952
+I:auction2:190:2020-05-16 08:58:49,596: Problem getting address/zip from 2874973
+I:auction2:190:2020-05-16 08:58:49,604: Problem getting address/zip from 2846411
+I:auction2:190:2020-05-16 08:58:50,147: Problem getting address/zip from 2865697
+I:auction2:190:2020-05-16 08:58:50,155: Problem getting address/zip from 2860828
+I:auction2:190:2020-05-16 08:58:50,309: Problem getting address/zip from 2855738
+I:auction2:190:2020-05-16 08:58:50,334: Problem getting address/zip from 1474437
+I:auction2:190:2020-05-16 08:58:51,638: Problem getting address/zip from 2873550
+I:auction2:172:2020-05-16 08:58:51,784: auction_id: 2866754, 3743 IMMACULATA WAY, 95838
+I:auction2:190:2020-05-16 08:58:52,198: Problem getting address/zip from 2865763
+I:auction2:190:2020-05-16 08:58:52,689: Problem getting address/zip from 2821757
+I:auction2:172:2020-05-16 08:58:55,595: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:190:2020-05-16 08:58:55,761: Problem getting address/zip from 2814498
+I:auction2:190:2020-05-16 08:58:56,592: Problem getting address/zip from 2791141
+I:auction2:172:2020-05-16 08:58:59,980: auction_id: 2931358, 712-06-014 & 712-06-059 AKA 35 SAN BRUNO AVENUE, 95037
+I:auction2:43:2020-05-23 10:12:45,617: ********************************************************************************
+I:auction_crawler:89:2020-05-23 10:12:53,994: working on Alameda County, CA
+I:auction_crawler:89:2020-05-23 10:13:02,790: working on Contra Costa County, CA
+I:auction_crawler:89:2020-05-23 10:13:10,737: working on Marin County, CA
+I:auction_crawler:89:2020-05-23 10:13:17,199: working on Napa County, CA
+I:auction_crawler:89:2020-05-23 10:13:23,892: working on Sacramento County, CA
+I:auction_crawler:89:2020-05-23 10:13:31,999: working on San Francisco County, CA
+I:auction_crawler:89:2020-05-23 10:13:38,753: working on San Joaquin County, CA
+I:auction_crawler:89:2020-05-23 10:13:46,671: working on San Mateo County, CA
+I:auction_crawler:89:2020-05-23 10:13:54,072: working on Santa Clara County, CA
+I:auction_crawler:89:2020-05-23 10:14:01,635: working on Santa Cruz County, CA
+I:auction_crawler:89:2020-05-23 10:14:11,178: working on Solano County, CA
+I:auction_crawler:89:2020-05-23 10:14:18,429: working on Sonoma County, CA
+I:auction_crawler:89:2020-05-23 10:14:25,308: working on Stanislaus County, CA
+I:auction_crawler:264:2020-05-23 10:14:33,376: donwloading href for 2934076
+I:auction_crawler:264:2020-05-23 10:14:40,363: donwloading href for 2942044
+I:auction_crawler:264:2020-05-23 10:14:45,190: donwloading href for 2897603
+I:auction_crawler:264:2020-05-23 10:14:49,529: donwloading href for 2942037
+I:auction_crawler:264:2020-05-23 10:14:54,502: donwloading href for 2941459
+I:auction_crawler:264:2020-05-23 10:14:59,176: donwloading href for 2935876
+I:auction_crawler:264:2020-05-23 10:15:05,924: donwloading href for 2933047
+I:auction_crawler:264:2020-05-23 10:15:11,444: donwloading href for 2940264
+I:auction_crawler:264:2020-05-23 10:15:16,605: donwloading href for 2940274
+I:auction_crawler:264:2020-05-23 10:15:21,505: donwloading href for 2940252
+I:auction_crawler:264:2020-05-23 10:15:26,619: donwloading href for 2941845
+I:auction_crawler:264:2020-05-23 10:15:31,542: donwloading href for 2940237
+I:auction_crawler:264:2020-05-23 10:15:36,994: donwloading href for 2940243
+I:auction_crawler:264:2020-05-23 10:15:42,514: donwloading href for 2940229
+I:auction_crawler:264:2020-05-23 10:15:47,566: donwloading href for 2939834
+I:auction_crawler:264:2020-05-23 10:15:52,765: donwloading href for 2940338
+I:auction2:390:2020-05-23 10:15:58,027: just loaded df from auction/zillowed/20200516.csv
+I:auction2:190:2020-05-23 10:15:59,344: Problem getting address/zip from 2853159
+I:auction2:190:2020-05-23 10:15:59,376: Problem getting address/zip from 2824490
+I:auction_crawler:264:2020-05-23 10:16:00,721: 
+I:auction2:190:2020-05-23 10:16:07,028: Problem getting address/zip from 2812840
+I:auction2:190:2020-05-23 10:16:07,060: Problem getting address/zip from 2778042
+I:auction2:190:2020-05-23 10:16:07,089: Problem getting address/zip from 2758491
+I:auction2:190:2020-05-23 10:16:07,119: Problem getting address/zip from 1399178
+I:auction2:172:2020-05-23 10:16:07,639: auction_id: 2493405, 1387 AND 1389 145TH AVENUE, 94578
+I:auction2:190:2020-05-23 10:16:09,094: Problem getting address/zip from 2846259
+I:auction2:190:2020-05-23 10:16:09,322: Problem getting address/zip from 2831168
+I:auction2:190:2020-05-23 10:16:09,378: Problem getting address/zip from 2822387
+I:auction2:190:2020-05-23 10:16:11,500: Problem getting address/zip from 2769891
+I:auction_crawler:264:2020-05-23 10:16:12,835: 
+I:auction2:190:2020-05-23 10:16:18,159: Problem getting address/zip from 2767252
+I:auction2:172:2020-05-23 10:16:18,361: auction_id: 2763938, 17 ROBERT DOLLAR SCENIC DRIVE AKA 17 ROBERT DOLLAR DR, 94901
+I:auction2:190:2020-05-23 10:16:23,525: Problem getting address/zip from 2873550
+I:auction2:172:2020-05-23 10:16:23,701: auction_id: 2866754, 3743 IMMACULATA WAY, 95838
+I:auction2:190:2020-05-23 10:16:24,248: Problem getting address/zip from 2865763
+I:auction2:190:2020-05-23 10:16:24,294: Problem getting address/zip from 2849926
+I:auction2:190:2020-05-23 10:16:24,338: Problem getting address/zip from 2831187
+I:auction2:190:2020-05-23 10:16:24,374: Problem getting address/zip from 2822988
+I:auction2:190:2020-05-23 10:16:24,408: Problem getting address/zip from 2765404
+I:auction2:190:2020-05-23 10:16:25,876: Problem getting address/zip from 2869796
+I:auction2:190:2020-05-23 10:16:25,912: Problem getting address/zip from 2865722
+I:auction2:190:2020-05-23 10:16:25,943: Problem getting address/zip from 2871662
+I:auction2:190:2020-05-23 10:16:25,979: Problem getting address/zip from 2864087
+I:auction_crawler:264:2020-05-23 10:16:27,315: 
+I:auction2:190:2020-05-23 10:16:32,446: Problem getting address/zip from 2853552
+I:auction2:190:2020-05-23 10:16:32,758: Problem getting address/zip from 2788931
+I:auction2:172:2020-05-23 10:16:33,453: auction_id: 2758413, 981 BEN INGRAM WY, 95377
+I:auction2:190:2020-05-23 10:16:34,775: Problem getting address/zip from 2824500
+I:auction2:190:2020-05-23 10:16:34,817: Problem getting address/zip from 2821757
+I:auction2:190:2020-05-23 10:16:34,849: Problem getting address/zip from 2792927
+I:auction2:190:2020-05-23 10:16:34,889: Problem getting address/zip from 2735027
+I:auction2:190:2020-05-23 10:16:34,922: Problem getting address/zip from 2734901
+I:auction2:190:2020-05-23 10:16:35,108: Problem getting address/zip from 2653944
+I:auction2:190:2020-05-23 10:16:35,144: Problem getting address/zip from 2549826
+I:auction2:190:2020-05-23 10:16:36,067: Problem getting address/zip from 2868122
+I:auction2:190:2020-05-23 10:16:36,097: Problem getting address/zip from 2859909
+I:auction2:190:2020-05-23 10:16:36,133: Problem getting address/zip from 2865777
+I:auction2:172:2020-05-23 10:16:36,353: auction_id: 2857157, 1636 GYPSY PL COU, 95121
+I:auction2:190:2020-05-23 10:16:36,910: Problem getting address/zip from 2769889
+I:auction2:190:2020-05-23 10:16:37,115: Problem getting address/zip from 2756210
+I:auction2:190:2020-05-23 10:16:37,147: Problem getting address/zip from 1399225
+I:auction2:190:2020-05-23 10:16:37,178: Problem getting address/zip from 2654221
+I:auction2:190:2020-05-23 10:16:37,352: Problem getting address/zip from 2485512
+I:auction2:190:2020-05-23 10:16:37,942: Problem getting address/zip from 2865779
+I:auction2:190:2020-05-23 10:16:37,976: Problem getting address/zip from 2812523
+I:auction2:190:2020-05-23 10:16:38,843: Problem getting address/zip from 2847075
+I:auction2:190:2020-05-23 10:16:38,876: Problem getting address/zip from 2831188
+I:auction2:190:2020-05-23 10:16:38,905: Problem getting address/zip from 2824493
+I:auction2:190:2020-05-23 10:16:39,105: Problem getting address/zip from 2787083
+I:auction_crawler:264:2020-05-23 10:16:40,471: 
+I:auction2:190:2020-05-23 10:16:45,746: Problem getting address/zip from 2782071
+I:auction2:190:2020-05-23 10:16:45,948: Problem getting address/zip from 2765505
+I:auction2:190:2020-05-23 10:16:46,178: Problem getting address/zip from 1725319
+I:auction2:172:2020-05-23 10:16:46,912: auction_id: 2899680, 622-624 PROSPECT STREET, 94952
+I:auction2:190:2020-05-23 10:16:47,247: Problem getting address/zip from 2874973
+I:auction2:190:2020-05-23 10:16:47,281: Problem getting address/zip from 2846411
+I:auction2:190:2020-05-23 10:16:47,968: Problem getting address/zip from 2865697
+I:auction2:190:2020-05-23 10:16:47,999: Problem getting address/zip from 2860828
+I:auction2:190:2020-05-23 10:16:48,213: Problem getting address/zip from 2855738
+I:auction2:190:2020-05-23 10:16:48,244: Problem getting address/zip from 1474437
+I:auction2:172:2020-05-23 10:16:50,423: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:190:2020-05-23 10:16:50,448: Problem getting address/zip from 2814498
+I:auction2:190:2020-05-23 10:16:51,226: Problem getting address/zip from 2791141
+I:auction2:172:2020-05-23 10:16:54,543: auction_id: 2931358, 712-06-014 & 712-06-059 AKA 35 SAN BRUNO AVENUE, 95037
+I:auction2:172:2020-05-23 10:16:57,118: auction_id: 2930105, 3508 GRANBY DR RANCHO CORDOVA (AKA SACRAMENTO), 95827
+I:auction2:43:2020-05-29 22:50:22,315: ********************************************************************************
+I:auction_crawler:89:2020-05-29 22:50:30,422: working on Alameda County, CA
+I:auction_crawler:89:2020-05-29 22:50:39,774: working on Contra Costa County, CA
+I:auction_crawler:89:2020-05-29 22:50:47,810: working on Marin County, CA
+I:auction_crawler:89:2020-05-29 22:50:54,213: working on Napa County, CA
+I:auction_crawler:89:2020-05-29 22:51:01,399: working on Sacramento County, CA
+I:auction_crawler:89:2020-05-29 22:51:09,488: working on San Francisco County, CA
+I:auction_crawler:89:2020-05-29 22:51:16,214: working on San Joaquin County, CA
+I:auction_crawler:89:2020-05-29 22:51:23,978: working on San Mateo County, CA
+I:auction_crawler:89:2020-05-29 22:51:30,912: working on Santa Clara County, CA
+I:auction_crawler:89:2020-05-29 22:51:38,352: working on Santa Cruz County, CA
+I:auction_crawler:89:2020-05-29 22:51:44,997: working on Solano County, CA
+I:auction_crawler:89:2020-05-29 22:51:52,393: working on Sonoma County, CA
+I:auction_crawler:89:2020-05-29 22:51:59,508: working on Stanislaus County, CA
+I:auction_crawler:264:2020-05-29 22:52:07,471: donwloading href for 2941445
+I:auction_crawler:264:2020-05-29 22:52:15,796: donwloading href for 2940335
+I:auction_crawler:264:2020-05-29 22:52:21,982: donwloading href for 2940236
+I:auction_crawler:264:2020-05-29 22:52:26,812: donwloading href for 2940248
+I:auction_crawler:264:2020-05-29 22:52:31,992: donwloading href for 2936794
+I:auction_crawler:264:2020-05-29 22:52:36,510: donwloading href for 2940227
+I:auction_crawler:264:2020-05-29 22:52:41,933: donwloading href for 2932765
+I:auction_crawler:264:2020-05-29 22:52:47,076: donwloading href for 2942355
+I:auction_crawler:264:2020-05-29 22:52:52,450: donwloading href for 2939994
+I:auction_crawler:264:2020-05-29 22:52:56,955: donwloading href for 2939800
+I:auction2:390:2020-05-29 22:53:02,349: just loaded df from auction/zillowed/20200516.csv
+I:auction2:190:2020-05-29 22:53:03,484: Problem getting address/zip from 2853159
+I:auction2:190:2020-05-29 22:53:03,524: Problem getting address/zip from 2824490
+I:auction2:190:2020-05-29 22:53:03,571: Problem getting address/zip from 2812840
+I:auction2:190:2020-05-29 22:53:03,604: Problem getting address/zip from 2778042
+I:auction2:190:2020-05-29 22:53:03,640: Problem getting address/zip from 2758491
+I:auction2:190:2020-05-29 22:53:03,678: Problem getting address/zip from 1399178
+I:auction2:172:2020-05-29 22:53:04,322: auction_id: 2493405, 1387 AND 1389 145TH AVENUE, 94578
+I:auction2:190:2020-05-29 22:53:06,407: Problem getting address/zip from 2846259
+I:auction2:190:2020-05-29 22:53:06,839: Problem getting address/zip from 2831168
+I:auction2:190:2020-05-29 22:53:06,882: Problem getting address/zip from 2822387
+I:auction2:190:2020-05-29 22:53:08,252: Problem getting address/zip from 2769891
+I:auction2:190:2020-05-29 22:53:08,290: Problem getting address/zip from 2767252
+I:auction2:190:2020-05-29 22:53:14,793: Problem getting address/zip from 2873550
+I:auction2:172:2020-05-29 22:53:15,002: auction_id: 2866754, 3743 IMMACULATA WAY, 95838
+I:auction2:190:2020-05-29 22:53:15,397: Problem getting address/zip from 2849926
+I:auction2:190:2020-05-29 22:53:15,440: Problem getting address/zip from 2831187
+I:auction2:190:2020-05-29 22:53:15,474: Problem getting address/zip from 2822988
+I:auction2:190:2020-05-29 22:53:15,504: Problem getting address/zip from 2765404
+I:auction2:190:2020-05-29 22:53:17,085: Problem getting address/zip from 2869796
+I:auction2:190:2020-05-29 22:53:17,124: Problem getting address/zip from 2865722
+I:auction2:190:2020-05-29 22:53:17,156: Problem getting address/zip from 2871662
+I:auction2:190:2020-05-29 22:53:17,193: Problem getting address/zip from 2864087
+I:auction_crawler:264:2020-05-29 22:53:18,538: 
+I:auction2:190:2020-05-29 22:53:23,907: Problem getting address/zip from 2853294
+I:auction2:190:2020-05-29 22:53:23,940: Problem getting address/zip from 2853552
+I:auction2:190:2020-05-29 22:53:24,172: Problem getting address/zip from 2788931
+I:auction2:172:2020-05-29 22:53:24,914: auction_id: 2758413, 981 BEN INGRAM WY, 95377
+I:auction2:190:2020-05-29 22:53:25,878: Problem getting address/zip from 2824500
+I:auction2:190:2020-05-29 22:53:25,918: Problem getting address/zip from 2821757
+I:auction2:190:2020-05-29 22:53:25,953: Problem getting address/zip from 2792927
+I:auction2:190:2020-05-29 22:53:25,984: Problem getting address/zip from 2734901
+I:auction2:190:2020-05-29 22:53:26,193: Problem getting address/zip from 2653944
+I:auction2:190:2020-05-29 22:53:26,232: Problem getting address/zip from 2549826
+I:auction2:172:2020-05-29 22:53:26,408: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:190:2020-05-29 22:53:26,987: Problem getting address/zip from 2868122
+I:auction2:190:2020-05-29 22:53:27,024: Problem getting address/zip from 2865777
+I:auction2:172:2020-05-29 22:53:27,259: auction_id: 2857157, 1636 GYPSY PL COU, 95121
+I:auction_crawler:264:2020-05-29 22:53:28,613: 
+I:auction2:190:2020-05-29 22:53:34,696: Problem getting address/zip from 2786799
+I:auction2:190:2020-05-29 22:53:34,743: Problem getting address/zip from 2769889
+I:auction2:190:2020-05-29 22:53:34,953: Problem getting address/zip from 2756210
+I:auction2:190:2020-05-29 22:53:34,981: Problem getting address/zip from 1399225
+I:auction2:190:2020-05-29 22:53:35,006: Problem getting address/zip from 2654221
+I:auction2:190:2020-05-29 22:53:35,197: Problem getting address/zip from 2485512
+I:auction2:190:2020-05-29 22:53:35,616: Problem getting address/zip from 2812523
+I:auction2:190:2020-05-29 22:53:36,573: Problem getting address/zip from 2824493
+I:auction2:190:2020-05-29 22:53:36,603: Problem getting address/zip from 2814498
+I:auction2:190:2020-05-29 22:53:36,824: Problem getting address/zip from 2787083
+I:auction2:190:2020-05-29 22:53:36,860: Problem getting address/zip from 2782071
+I:auction2:190:2020-05-29 22:53:37,068: Problem getting address/zip from 2765505
+I:auction2:190:2020-05-29 22:53:37,633: Problem getting address/zip from 2874973
+I:auction2:190:2020-05-29 22:53:37,668: Problem getting address/zip from 2865711
+I:auction2:190:2020-05-29 22:53:37,709: Problem getting address/zip from 2846411
+I:auction2:190:2020-05-29 22:53:38,795: Problem getting address/zip from 2865697
+I:auction2:190:2020-05-29 22:53:38,829: Problem getting address/zip from 2860828
+I:auction2:190:2020-05-29 22:53:39,066: Problem getting address/zip from 2855738
+I:auction_crawler:264:2020-05-29 22:53:40,669: 
+I:auction2:190:2020-05-29 22:53:45,948: Problem getting address/zip from 1434310
+I:auction2:190:2020-05-29 22:53:46,141: Problem getting address/zip from 1474437
+I:auction2:190:2020-05-29 22:53:47,562: Problem getting address/zip from 2791141
+I:auction2:172:2020-05-29 22:53:51,725: auction_id: 2931358, 712-06-014 & 712-06-059 AKA 35 SAN BRUNO AVENUE, 95037
+I:auction2:172:2020-05-29 22:53:55,192: auction_id: 2930105, 3508 GRANBY DR RANCHO CORDOVA (AKA SACRAMENTO), 95827
+I:auction2:190:2020-05-29 22:53:58,341: Problem getting address/zip from 2828920
+I:auction2:172:2020-05-29 22:53:58,742: auction_id: 2934076, 2503 - 2507 11TH AVE, 94606
+I:auction2:43:2020-06-05 21:46:57,533: ********************************************************************************
+I:auction_crawler:89:2020-06-05 21:47:03,645: working on Alameda County, CA
+I:auction_crawler:89:2020-06-05 21:47:12,802: working on Contra Costa County, CA
+I:auction_crawler:89:2020-06-05 21:47:20,941: working on Marin County, CA
+I:auction_crawler:89:2020-06-05 21:47:27,379: working on Napa County, CA
+I:auction_crawler:89:2020-06-05 21:47:33,966: working on Sacramento County, CA
+I:auction_crawler:89:2020-06-05 21:47:42,072: working on San Francisco County, CA
+I:auction_crawler:89:2020-06-05 21:47:48,873: working on San Joaquin County, CA
+I:auction_crawler:89:2020-06-05 21:47:57,428: working on San Mateo County, CA
+I:auction_crawler:89:2020-06-05 21:48:04,418: working on Santa Clara County, CA
+I:auction_crawler:89:2020-06-05 21:48:12,145: working on Santa Cruz County, CA
+I:auction_crawler:89:2020-06-05 21:48:18,800: working on Solano County, CA
+I:auction_crawler:89:2020-06-05 21:48:26,261: working on Sonoma County, CA
+I:auction_crawler:89:2020-06-05 21:48:33,009: working on Stanislaus County, CA
+I:auction_crawler:264:2020-06-05 21:48:41,291: donwloading href for 1430797
+I:auction_crawler:264:2020-06-05 21:48:50,928: donwloading href for 2939922
+I:auction_crawler:264:2020-06-05 21:48:56,782: donwloading href for 2532185
+I:auction_crawler:264:2020-06-05 21:49:01,811: donwloading href for 2941002
+I:auction_crawler:264:2020-06-05 21:49:07,049: donwloading href for 1989174
+I:auction2:390:2020-06-05 21:49:11,873: just loaded df from auction/zillowed/20200529.csv
+I:auction2:190:2020-06-05 21:49:12,492: Problem getting address/zip from 2853159
+I:auction2:190:2020-06-05 21:49:12,524: Problem getting address/zip from 2824490
+I:auction2:190:2020-06-05 21:49:12,565: Problem getting address/zip from 2812840
+I:auction2:190:2020-06-05 21:49:12,598: Problem getting address/zip from 2778042
+I:auction2:190:2020-06-05 21:49:12,628: Problem getting address/zip from 2758491
+I:auction2:190:2020-06-05 21:49:12,658: Problem getting address/zip from 1399178
+I:auction2:172:2020-06-05 21:49:13,280: auction_id: 2493405, 1387 AND 1389 145TH AVENUE, 94578
+I:auction2:190:2020-06-05 21:49:15,390: Problem getting address/zip from 2846259
+I:auction2:190:2020-06-05 21:49:15,637: Problem getting address/zip from 2831168
+I:auction2:190:2020-06-05 21:49:15,676: Problem getting address/zip from 2822387
+I:auction2:190:2020-06-05 21:49:16,692: Problem getting address/zip from 2769891
+I:auction2:190:2020-06-05 21:49:16,724: Problem getting address/zip from 2767252
+I:auction2:190:2020-06-05 21:49:23,423: Problem getting address/zip from 2873550
+I:auction2:172:2020-06-05 21:49:23,627: auction_id: 2866754, 3743 IMMACULATA WAY, 95838
+I:auction2:190:2020-06-05 21:49:23,658: Problem getting address/zip from 2822988
+I:auction2:190:2020-06-05 21:49:23,687: Problem getting address/zip from 2765404
+I:auction2:190:2020-06-05 21:49:25,573: Problem getting address/zip from 2869796
+I:auction2:190:2020-06-05 21:49:25,611: Problem getting address/zip from 2865722
+I:auction2:190:2020-06-05 21:49:25,642: Problem getting address/zip from 2871662
+I:auction2:190:2020-06-05 21:49:25,672: Problem getting address/zip from 2864087
+I:auction2:190:2020-06-05 21:49:25,707: Problem getting address/zip from 2853294
+I:auction2:190:2020-06-05 21:49:25,738: Problem getting address/zip from 2853552
+I:auction2:190:2020-06-05 21:49:25,964: Problem getting address/zip from 2788931
+I:auction2:190:2020-06-05 21:49:27,100: Problem getting address/zip from 2824500
+I:auction2:190:2020-06-05 21:49:27,134: Problem getting address/zip from 2821757
+I:auction2:190:2020-06-05 21:49:27,170: Problem getting address/zip from 2791141
+I:auction2:190:2020-06-05 21:49:27,202: Problem getting address/zip from 2734901
+I:auction2:190:2020-06-05 21:49:27,417: Problem getting address/zip from 2653944
+I:auction2:190:2020-06-05 21:49:27,452: Problem getting address/zip from 2549826
+I:auction2:172:2020-06-05 21:49:28,021: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:190:2020-06-05 21:49:28,464: Problem getting address/zip from 2868122
+I:auction2:190:2020-06-05 21:49:28,499: Problem getting address/zip from 2865777
+I:auction2:172:2020-06-05 21:49:28,739: auction_id: 2857157, 1636 GYPSY PL COU, 95121
+I:auction2:190:2020-06-05 21:49:29,029: Problem getting address/zip from 2786799
+I:auction2:190:2020-06-05 21:49:29,071: Problem getting address/zip from 2769889
+I:auction2:190:2020-06-05 21:49:29,283: Problem getting address/zip from 2756210
+I:auction2:190:2020-06-05 21:49:29,314: Problem getting address/zip from 1399225
+I:auction2:190:2020-06-05 21:49:29,341: Problem getting address/zip from 2654221
+I:auction2:190:2020-06-05 21:49:29,371: Problem getting address/zip from 2485512
+I:auction2:190:2020-06-05 21:49:29,604: Problem getting address/zip from 2812523
+I:auction2:190:2020-06-05 21:49:30,418: Problem getting address/zip from 2824493
+I:auction2:190:2020-06-05 21:49:30,450: Problem getting address/zip from 2814498
+I:auction2:190:2020-06-05 21:49:30,481: Problem getting address/zip from 2787083
+I:auction2:190:2020-06-05 21:49:30,514: Problem getting address/zip from 2782071
+I:auction2:190:2020-06-05 21:49:30,753: Problem getting address/zip from 2765505
+I:auction_crawler:264:2020-06-05 21:49:32,056: 
+I:auction2:190:2020-06-05 21:49:40,073: Problem getting address/zip from 2760296
+I:auction2:190:2020-06-05 21:49:40,518: Problem getting address/zip from 2874973
+I:auction2:190:2020-06-05 21:49:40,552: Problem getting address/zip from 2865711
+I:auction2:190:2020-06-05 21:49:40,583: Problem getting address/zip from 2846411
+I:auction2:190:2020-06-05 21:49:41,731: Problem getting address/zip from 2860828
+I:auction2:190:2020-06-05 21:49:41,956: Problem getting address/zip from 2855738
+I:auction2:190:2020-06-05 21:49:42,185: Problem getting address/zip from 1434310
+I:auction2:190:2020-06-05 21:49:42,385: Problem getting address/zip from 1474437
+I:auction_crawler:264:2020-06-05 21:49:43,692: 
+I:auction2:190:2020-06-05 21:49:49,047: Problem getting address/zip from 2721093
+I:auction2:172:2020-06-05 21:49:53,263: auction_id: 2931358, 712-06-014 & 712-06-059 AKA 35 SAN BRUNO AVENUE, 95037
+I:auction2:190:2020-06-05 21:49:53,300: Problem getting address/zip from 2843745
+I:auction2:190:2020-06-05 21:49:55,482: Problem getting address/zip from 2865697
+I:auction2:172:2020-06-05 21:49:57,298: auction_id: 2930105, 3508 GRANBY DR RANCHO CORDOVA (AKA SACRAMENTO), 95827
+I:auction2:172:2020-06-05 21:50:00,206: auction_id: 2926619, 9340- 9342 FOX CREEK DR, 95210
+I:auction2:172:2020-06-05 21:50:01,218: auction_id: 2934076, 2503 - 2507 11TH AVE, 94606
+I:auction2:43:2020-06-13 10:20:22,330: ********************************************************************************
+I:auction_crawler:89:2020-06-13 10:20:28,724: working on Alameda County, CA
+I:auction_crawler:89:2020-06-13 10:20:37,891: working on Contra Costa County, CA
+I:auction_crawler:89:2020-06-13 10:20:45,912: working on Marin County, CA
+I:auction_crawler:89:2020-06-13 10:20:52,368: working on Napa County, CA
+I:auction_crawler:89:2020-06-13 10:20:58,853: working on Sacramento County, CA
+I:auction_crawler:89:2020-06-13 10:21:07,132: working on San Francisco County, CA
+I:auction_crawler:89:2020-06-13 10:21:13,972: working on San Joaquin County, CA
+I:auction_crawler:89:2020-06-13 10:21:22,528: working on San Mateo County, CA
+I:auction_crawler:89:2020-06-13 10:21:30,324: working on Santa Clara County, CA
+I:auction_crawler:89:2020-06-13 10:21:37,921: working on Santa Cruz County, CA
+I:auction_crawler:89:2020-06-13 10:21:44,654: working on Solano County, CA
+I:auction_crawler:89:2020-06-13 10:21:52,121: working on Sonoma County, CA
+I:auction_crawler:89:2020-06-13 10:21:58,932: working on Stanislaus County, CA
+I:auction_crawler:264:2020-06-13 10:22:06,941: donwloading href for 2942246
+I:auction_crawler:264:2020-06-13 10:22:14,584: donwloading href for 2942248
+I:auction_crawler:264:2020-06-13 10:22:20,252: donwloading href for 1929664
+I:auction_crawler:264:2020-06-13 10:22:24,898: donwloading href for 2932770
+I:auction_crawler:264:2020-06-13 10:22:30,107: donwloading href for 2942691
+I:auction2:390:2020-06-13 10:22:34,818: just loaded df from auction/zillowed/20200605.csv
+I:auction2:190:2020-06-13 10:22:35,399: Problem getting address/zip from 2853159
+I:auction2:190:2020-06-13 10:22:35,430: Problem getting address/zip from 2824490
+I:auction2:190:2020-06-13 10:22:35,473: Problem getting address/zip from 2812840
+I:auction2:190:2020-06-13 10:22:35,504: Problem getting address/zip from 2778042
+I:auction2:190:2020-06-13 10:22:35,535: Problem getting address/zip from 2758491
+I:auction2:190:2020-06-13 10:22:35,565: Problem getting address/zip from 1399178
+I:auction2:172:2020-06-13 10:22:36,112: auction_id: 2493405, 1387 AND 1389 145TH AVENUE, 94578
+I:auction2:190:2020-06-13 10:22:37,677: Problem getting address/zip from 2846259
+I:auction2:190:2020-06-13 10:22:37,948: Problem getting address/zip from 2822387
+I:auction2:190:2020-06-13 10:22:38,483: Problem getting address/zip from 2769891
+I:auction2:190:2020-06-13 10:22:38,514: Problem getting address/zip from 2767252
+I:auction2:190:2020-06-13 10:22:43,104: Problem getting address/zip from 2822988
+I:auction2:190:2020-06-13 10:22:43,135: Problem getting address/zip from 2765404
+I:auction2:190:2020-06-13 10:22:44,591: Problem getting address/zip from 2869796
+I:auction2:190:2020-06-13 10:22:44,624: Problem getting address/zip from 2871662
+I:auction2:190:2020-06-13 10:22:44,657: Problem getting address/zip from 2864087
+I:auction2:190:2020-06-13 10:22:44,688: Problem getting address/zip from 2853294
+I:auction2:190:2020-06-13 10:22:44,720: Problem getting address/zip from 2853552
+I:auction2:190:2020-06-13 10:22:44,918: Problem getting address/zip from 2788931
+I:auction2:190:2020-06-13 10:22:46,246: Problem getting address/zip from 2821757
+I:auction2:190:2020-06-13 10:22:46,280: Problem getting address/zip from 2791141
+I:auction2:190:2020-06-13 10:22:46,310: Problem getting address/zip from 2734901
+I:auction2:190:2020-06-13 10:22:46,345: Problem getting address/zip from 2653944
+I:auction2:190:2020-06-13 10:22:46,376: Problem getting address/zip from 2549826
+I:auction2:172:2020-06-13 10:22:46,743: auction_id: 2931358, 712-06-014 & 712-06-059 AKA 35 SAN BRUNO AVENUE, 95037
+I:auction2:172:2020-06-13 10:22:47,203: auction_id: 2925578, 3539 SANTA CLARA TRL, 93225
+I:auction2:190:2020-06-13 10:22:47,411: Problem getting address/zip from 2868122
+I:auction2:190:2020-06-13 10:22:47,447: Problem getting address/zip from 2865777
+I:auction2:190:2020-06-13 10:22:47,640: Problem getting address/zip from 2786799
+I:auction2:190:2020-06-13 10:22:47,681: Problem getting address/zip from 2769889
+I:auction2:190:2020-06-13 10:22:47,710: Problem getting address/zip from 2756210
+I:auction2:190:2020-06-13 10:22:47,741: Problem getting address/zip from 1399225
+I:auction2:190:2020-06-13 10:22:47,771: Problem getting address/zip from 2654221
+I:auction2:190:2020-06-13 10:22:47,800: Problem getting address/zip from 2485512
+I:auction2:190:2020-06-13 10:22:47,830: Problem getting address/zip from 2812523
+I:auction2:190:2020-06-13 10:22:48,320: Problem getting address/zip from 2843745
+I:auction2:190:2020-06-13 10:22:48,349: Problem getting address/zip from 2824493
+I:auction2:190:2020-06-13 10:22:48,379: Problem getting address/zip from 2814498
+I:auction2:190:2020-06-13 10:22:48,412: Problem getting address/zip from 2787083
+I:auction2:190:2020-06-13 10:22:48,443: Problem getting address/zip from 2782071
+I:auction2:190:2020-06-13 10:22:48,628: Problem getting address/zip from 2765505
+I:auction2:190:2020-06-13 10:22:48,659: Problem getting address/zip from 2760296
+I:auction2:190:2020-06-13 10:22:48,990: Problem getting address/zip from 2874973
+I:auction2:190:2020-06-13 10:22:49,023: Problem getting address/zip from 2865711
+I:auction2:190:2020-06-13 10:22:49,850: Problem getting address/zip from 2860828
+I:auction2:190:2020-06-13 10:22:50,041: Problem getting address/zip from 2855738
+I:auction2:190:2020-06-13 10:22:50,225: Problem getting address/zip from 1434310
+I:auction2:190:2020-06-13 10:22:50,257: Problem getting address/zip from 1474437
+I:auction2:190:2020-06-13 10:22:50,294: Problem getting address/zip from 2721093
+I:auction2:190:2020-06-13 10:22:53,854: Problem getting address/zip from 2865697
+I:auction2:172:2020-06-13 10:22:55,365: auction_id: 2930105, 3508 GRANBY DR RANCHO CORDOVA (AKA SACRAMENTO), 95827
+I:auction2:190:2020-06-13 10:22:56,192: Problem getting address/zip from 2865722
+I:auction2:172:2020-06-13 10:22:57,956: auction_id: 2926619, 9340- 9342 FOX CREEK DR, 95210
+I:auction2:172:2020-06-13 10:22:58,786: auction_id: 2934076, 2503 - 2507 11TH AVE, 94606
+I:auction2:190:2020-06-13 10:22:58,822: Problem getting address/zip from 2852799
