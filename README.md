@@ -1,3 +1,4 @@
+Jun 29, 2020
 April 4, 2020
 Same problem with chromdriver. Followed instructions from Oct 25, 2019. 
 * Go to https://chromedriver.chromium.org/chromedriver-canary
