@@ -70,7 +70,7 @@ pluggy==0.13.1
 port-for==0.4
 prometheus-client==0.7.1
 prompt-toolkit==3.0.4
-protobuf==3.11.0
+protobuf==3.18.3
 psutil==5.7.0
 ptyprocess==0.6.0
 py==1.8.0
